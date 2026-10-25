@@ -15,7 +15,8 @@ export function Home() {
 
   return (
     <div className="fade-in flex flex-col">
-      <div className="flex flex-col gap-3.5 pb-2 pt-3">
+      <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
+        <div className="blobs" aria-hidden="true"><i className="blob a" /><i className="blob b" /></div>
         <span className="label">Apologetics, evangelism and discipleship</span>
         <h1>The Gita and the Gospel</h1>
         <p className="lede">
@@ -24,7 +25,7 @@ export function Home() {
           28:19-20).
         </p>
 
-        <div className="flex flex-wrap items-center gap-[18px] rounded-2xl border border-line bg-surface p-4">
+        <div className="flex flex-wrap items-center gap-[18px] rounded-[28px] border border-line bg-surface p-5 shadow-lift">
           <svg className="h-[84px] w-[84px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
             <circle cx="42" cy="42" r="34" fill="none" strokeWidth="8" stroke="var(--line)" />
             <circle
@@ -54,7 +55,7 @@ export function Home() {
             </p>
             <Link
               href={`/journey/${finished ? "method" : next.id}`}
-              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-gospel bg-gospel px-4 py-3 font-label text-[.95rem] font-semibold text-surface no-underline transition-transform active:scale-[.98]"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-lift transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98]"
             >
               {finished ? "Walk it again" : `${count ? "Continue" : "Begin"}: ${next.title}`}
             </Link>
@@ -73,13 +74,14 @@ export function Home() {
           <h3 className="text-[1.35rem]">{p.title}</h3>
           <p className="text-[.93rem] text-muted">{p.desc}</p>
           <div className="relative flex flex-col gap-2.5 before:absolute before:bottom-6 before:left-[34px] before:top-6 before:w-0.5 before:bg-line">
-            {STATIONS.filter((s) => s.part === pi).map((s) => {
+            {STATIONS.filter((s) => s.part === pi).map((s, si) => {
               const isDone = !!done[s.id];
               return (
                 <Link
                   key={s.id}
                   href={`/journey/${s.id}`}
-                  className="group relative flex items-center gap-3.5 rounded-[14px] border border-line bg-surface p-3.5 text-ink no-underline transition hover:border-gospel active:scale-[.98]"
+                  style={{ ['--i' as string]: si }}
+                  className="group relative flex items-center gap-3.5 rise rounded-[22px] border border-line bg-surface p-4 text-ink no-underline shadow-soft transition hover:-translate-y-0.5 hover:border-gospel hover:shadow-lift active:scale-[.98]"
                 >
                   <span
                     className={`grid h-10 w-10 flex-none place-items-center rounded-full border font-label font-semibold ${

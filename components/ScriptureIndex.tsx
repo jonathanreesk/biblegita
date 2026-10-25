@@ -40,16 +40,16 @@ export function ScriptureIndex({ groups }: { groups: RefGroup[] }) {
         onChange={(e) => setQ(e.target.value)}
         placeholder="Search a book or verse, like John 14 or Gita 18"
         aria-label="Search references"
-        className="w-full rounded-xl border border-line bg-surface px-3.5 py-3 text-base text-ink placeholder:text-muted"
+        className="w-full rounded-full border border-line bg-surface px-5 py-3 text-base shadow-soft text-ink placeholder:text-muted"
       />
-      <div role="group" aria-label="Filter by scripture" className="inline-flex flex-wrap gap-0.5 self-start rounded-xl border border-line bg-surface p-[3px]">
+      <div role="group" aria-label="Filter by scripture" className="inline-flex flex-wrap gap-0.5 self-start rounded-full border border-line bg-surface p-1 shadow-soft">
         {options.map((o) => (
           <button
             key={o.v}
             type="button"
             aria-pressed={filter === o.v}
             onClick={() => setFilter(o.v)}
-            className={`min-h-9 rounded-[9px] px-3.5 py-2 font-label text-[.88rem] font-semibold ${
+            className={`min-h-10 rounded-full px-4 py-2 font-label text-[.88rem] font-semibold ${
               filter === o.v ? "bg-gospel text-surface" : "text-muted"
             }`}
           >

@@ -17,7 +17,10 @@ const config: Config = {
         dharma: "var(--dharma)",
         "dharma-soft": "var(--dharma-soft)",
         warn: "var(--warn)",
+        sand: "var(--sand)",
+        amber: "var(--amber)",
       },
+      boxShadow: { soft: "var(--shadow-sm)", lift: "var(--shadow-md)" },
       fontFamily: {
         display: ["var(--f-display)"],
         body: ["var(--f-body)"],

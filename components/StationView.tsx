@@ -56,7 +56,7 @@ export function StationView({ id, html }: { id: string; html: string }) {
         {prev ? (
           <Link
             href={`/journey/${prev.id}`}
-            className="flex min-h-11 flex-col items-start rounded-xl border border-line bg-surface px-4 py-3 font-label font-semibold text-ink no-underline"
+            className="flex min-h-11 flex-col items-start rounded-[22px] border border-line bg-surface px-5 py-3.5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift font-label font-semibold text-ink no-underline"
           >
             <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">Previous</small>
             <span>{prev.title}</span>
@@ -68,7 +68,7 @@ export function StationView({ id, html }: { id: string; html: string }) {
           type="button"
           onClick={() => toggle(id)}
           aria-pressed={isDone}
-          className={`min-h-11 rounded-xl border px-4 py-3 font-label font-semibold transition ${
+          className={`min-h-12 rounded-full border px-6 py-3 font-label font-semibold transition hover:-translate-y-0.5 active:scale-[.98] ${
             isDone ? "border-gospel bg-gospel-soft text-gospel" : "border-line bg-surface text-ink"
           }`}
         >
@@ -77,7 +77,7 @@ export function StationView({ id, html }: { id: string; html: string }) {
         {next ? (
           <Link
             href={`/journey/${next.id}`}
-            className="flex min-h-11 flex-col items-end rounded-xl border border-gospel bg-gospel px-4 py-3 text-right font-label font-semibold text-surface no-underline"
+            className="flex min-h-11 flex-col items-end rounded-[22px] border border-gospel bg-gospel px-5 py-3.5 text-right shadow-lift transition hover:-translate-y-0.5 font-label font-semibold text-surface no-underline"
           >
             <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">Next</small>
             <span>{next.title}</span>
@@ -85,7 +85,7 @@ export function StationView({ id, html }: { id: string; html: string }) {
         ) : (
           <Link
             href="/"
-            className="flex min-h-11 flex-col items-end rounded-xl border border-gospel bg-gospel px-4 py-3 text-right font-label font-semibold text-surface no-underline"
+            className="flex min-h-11 flex-col items-end rounded-[22px] border border-gospel bg-gospel px-5 py-3.5 text-right shadow-lift transition hover:-translate-y-0.5 font-label font-semibold text-surface no-underline"
           >
             <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">Finished</small>
             <span>Back to home</span>

@@ -15,14 +15,14 @@ function Segmented<T extends string>({
   onChange: (v: T) => void;
 }) {
   return (
-    <div role="group" aria-label={label} className="inline-flex flex-wrap gap-0.5 self-start rounded-xl border border-line bg-surface p-[3px]">
+    <div role="group" aria-label={label} className="inline-flex flex-wrap gap-0.5 self-start rounded-full border border-line bg-surface p-1 shadow-soft">
       {options.map((o) => (
         <button
           key={o.v}
           type="button"
           aria-pressed={value === o.v}
           onClick={() => onChange(o.v)}
-          className={`min-h-9 rounded-[9px] px-3.5 py-2 font-label text-[.88rem] font-semibold ${
+          className={`min-h-10 rounded-full px-4 py-2 font-label text-[.88rem] font-semibold ${
             value === o.v ? "bg-gospel text-surface" : "text-muted"
           }`}
         >
@@ -84,14 +84,14 @@ export function SettingsView() {
                   setConfirming(false);
                   setCleared(true);
                 }}
-                className="min-h-11 rounded-xl border border-gospel bg-gospel px-4 py-3 font-label font-semibold text-surface"
+                className="min-h-12 rounded-full border border-gospel bg-gospel px-6 py-3 font-label font-semibold text-surface"
               >
                 Yes, reset
               </button>
               <button
                 type="button"
                 onClick={() => setConfirming(false)}
-                className="min-h-11 rounded-xl border border-line bg-surface px-4 py-3 font-label font-semibold text-ink"
+                className="min-h-12 rounded-full border border-line bg-surface px-6 py-3 font-label font-semibold text-ink"
               >
                 Cancel
               </button>
@@ -104,7 +104,7 @@ export function SettingsView() {
                   setConfirming(true);
                   setCleared(false);
                 }}
-                className="min-h-11 rounded-xl border border-line bg-surface px-4 py-3 font-label font-semibold text-ink"
+                className="min-h-12 rounded-full border border-line bg-surface px-6 py-3 font-label font-semibold text-ink"
               >
                 Reset progress
               </button>

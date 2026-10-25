@@ -50,7 +50,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                   key={s.id}
                   href={`/journey/${s.id}`}
                   aria-current={current ? "page" : undefined}
-                  className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-[.92rem] leading-snug no-underline transition-colors ${
+                  className={`flex items-center gap-2.5 rounded-xl px-3 py-2 text-[.92rem] leading-snug no-underline transition-colors ${
                     current ? "bg-gospel-soft text-gospel" : "text-ink hover:bg-page"
                   }`}
                 >
@@ -73,7 +73,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               key={t.href}
               href={t.href}
               aria-current={pathname === t.href ? "page" : undefined}
-              className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-[.92rem] no-underline ${
+              className={`flex items-center gap-2.5 rounded-xl px-3 py-2 text-[.92rem] no-underline ${
                 pathname === t.href ? "bg-gospel-soft text-gospel" : "text-ink hover:bg-page"
               }`}
             >
@@ -86,7 +86,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
       <div className="min-w-0">
         {/* Top bar */}
-        <header className="sticky z-20 border-b border-line bg-page" style={{ top: "env(safe-area-inset-top, 0px)" }}>
+        <header className="frost sticky z-20 border-b border-line" style={{ top: "env(safe-area-inset-top, 0px)" }}>
           <div
             className="mx-auto flex min-h-14 max-w-[860px] items-center gap-2.5"
             style={{
@@ -98,7 +98,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <Link
                 href="/"
                 aria-label="Back to home"
-                className="grid h-10 w-10 flex-none place-items-center rounded-[10px] border border-line bg-surface text-ink"
+                className="grid h-10 w-10 flex-none place-items-center rounded-full border border-line bg-surface text-ink shadow-soft"
               >
                 <BackIcon />
               </Link>
@@ -108,8 +108,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>
           </div>
-          <div className="h-[2px] bg-line" aria-hidden="true">
-            <i className="block h-full bg-gospel transition-[width] duration-500" style={{ width: `${pct}%` }} />
+          <div className="h-[3px] bg-line" aria-hidden="true">
+            <i className="block h-full bg-gradient-to-r from-gospel to-amber transition-[width] duration-500" style={{ width: `${pct}%` }} />
           </div>
         </header>
 
@@ -127,7 +127,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       {/* Mobile bottom tab bar */}
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-3 border-t border-line bg-surface lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-3 frost border-t border-line lg:hidden"
         style={{
           paddingBottom: "env(safe-area-inset-bottom, 0px)",
           paddingLeft: "max(8px, env(safe-area-inset-left, 0px))",
