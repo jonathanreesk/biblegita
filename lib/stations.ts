@@ -18,22 +18,24 @@ export const PARTS = [
 // Each id matches a file in content/stations/<id>.html
 export const STATIONS: Station[] = [
   { id: "method", n: 0, part: 0, title: "How to walk this journey", desc: "Five steps for every conversation" },
-  { id: "structure", n: 1, part: 1, title: "How the texts are built", desc: "Epic, dialogue and library" },
-  { id: "transmission", n: 2, part: 1, title: "How the texts were passed down", desc: "Oral performance and manuscripts" },
-  { id: "worldview", n: 3, part: 1, title: "Two shapes of reality", desc: "Cyclic and linear time" },
-  { id: "c1", n: 4, part: 2, title: "Monism and the personal God", desc: "Can love be ultimate?" },
-  { id: "c2", n: 5, part: 2, title: "Karma and the endless chain", desc: "The problem of infinite regress" },
-  { id: "c3", n: 6, part: 2, title: "Punished for a life you cannot remember", desc: "Rebirth and moral responsibility" },
-  { id: "c4", n: 7, part: 2, title: "Can every path be true?", desc: "Pluralism and non-contradiction" },
-  { id: "sin", n: 8, part: 3, title: "Sin, forgiveness and the Lamb", desc: "Who pays for sin?" },
-  { id: "bridge", n: 9, part: 3, title: "From argument to gospel", desc: "Longings the Gita reaches for" },
-  { id: "hope", n: 10, part: 4, title: "I go to prepare a place for you", desc: "Cross, empty tomb, return" },
-  { id: "destinies", n: 11, part: 4, title: "One life, two destinies", desc: "A loving warning" },
-  { id: "disciples", n: 12, part: 4, title: "Go and make disciples", desc: "The Great Commission in practice" },
+  { id: "story", n: 1, part: 1, title: "Two big stories", desc: "The Mahabharata and the Bible's one storyline" },
+  { id: "structure", n: 2, part: 1, title: "How the texts are built", desc: "Epic, dialogue and library" },
+  { id: "transmission", n: 3, part: 1, title: "How the texts were passed down", desc: "Oral performance and manuscripts" },
+  { id: "tensions", n: 4, part: 1, title: "Hard passages in both books", desc: "Difficulties in the Gita, the epic and the Bible" },
+  { id: "worldview", n: 5, part: 1, title: "Two shapes of reality", desc: "Cyclic and linear time" },
+  { id: "c1", n: 6, part: 2, title: "Monism and the personal God", desc: "Can love be ultimate?" },
+  { id: "c2", n: 7, part: 2, title: "Karma and the endless chain", desc: "The problem of infinite regress" },
+  { id: "c3", n: 8, part: 2, title: "Punished for a life you cannot remember", desc: "Rebirth and moral responsibility" },
+  { id: "c4", n: 9, part: 2, title: "Can every path be true?", desc: "Pluralism and non-contradiction" },
+  { id: "sin", n: 10, part: 3, title: "Sin, forgiveness and the Lamb", desc: "Who pays for sin?" },
+  { id: "bridge", n: 11, part: 3, title: "From argument to gospel", desc: "Longings the Gita reaches for" },
+  { id: "hope", n: 12, part: 4, title: "I go to prepare a place for you", desc: "Cross, empty tomb, return" },
+  { id: "destinies", n: 13, part: 4, title: "One life, two destinies", desc: "A loving warning" },
+  { id: "disciples", n: 14, part: 4, title: "Go and make disciples", desc: "The Great Commission in practice" },
 ];
 
 // Shown instead of a label word: "Start here" or "8 of 12" within the journey.
-export const progressLabel = (s: Station) => (s.n === 0 ? "Start here" : `${s.n} of 12`);
+export const progressLabel = (s: Station) => (s.n === 0 ? "Start here" : `${s.n} of ${STATIONS.length - 1}`);
 
 export const findStation = (id: string) => STATIONS.find((s) => s.id === id);
 

@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "The Gita and the Gospel",
     title: "The Gita and the Gospel",
-    description: "A 13-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
+    description: "A 15-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
     url: "/",
   },
-  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "A 13-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ." },
+  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "A 15-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ." },
   appleWebApp: { capable: true, title: "Gita and Gospel", statusBarStyle: "default" },
   icons: { icon: "/icon.svg" },
 };
