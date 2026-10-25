@@ -134,7 +134,7 @@ export const GLOSSARY: Term[] = [
 
   // Christian words
   { id: "gospel", term: "Gospel", side: "christian", match: ["gospel"],
-    plain: "\"Good news\": that Jesus died for our sins and rose again, so anyone can be forgiven and made right with God." },
+    plain: "\"Good news\": that Jesus died to forgive our sins and rose again, so anyone can be made right with God." },
   { id: "incarnation", term: "Incarnation", say: "in-kar-NAY-shun", side: "christian", match: ["Incarnation"],
     plain: "God becoming a real human being in Jesus, once, and for good." },
   { id: "trinity", term: "Trinity", side: "christian", match: ["Trinity"],
