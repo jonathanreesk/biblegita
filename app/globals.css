@@ -172,3 +172,16 @@ button.ref.verse:focus-visible{outline:3px solid var(--amber);outline-offset:2px
 /* Reader mode: the same page can speak to a seeker or coach someone who is sharing */
 html:not([data-mode="share"]) .for-share{display:none!important}
 html[data-mode="share"] .for-explore{display:none!important}
+tspan.verse{cursor:pointer;fill:var(--gospel);text-decoration:underline;text-decoration-style:dotted;font-weight:600}
+tspan.verse:hover{text-decoration-style:solid}
+tspan.verse:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* Side-by-side comparisons that stack on phones (instead of a wide table) */
+.compare{display:flex;flex-direction:column;gap:14px}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow-sm)}
+.cmp-q{grid-column:1/-1;font-family:var(--f-label);font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cmp{display:flex;flex-direction:column;gap:6px;border-left:3px solid var(--c);padding:2px 0 2px 12px;min-width:0}
+.cmp.d{--c:var(--dharma)}.cmp.g{--c:var(--gospel)}
+.cmp .who{font-family:var(--f-label);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.cmp b{display:block;font-weight:600}
+@media (max-width:640px){.cmp-row{grid-template-columns:1fr}}

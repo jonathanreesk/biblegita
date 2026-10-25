@@ -27,7 +27,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
 
   // Words in the text are buttons with data-term; one listener handles them all
   const onContentClick = (e: React.MouseEvent) => {
-    const v = (e.target as HTMLElement).closest<HTMLElement>("button.verse");
+    const v = (e.target as HTMLElement).closest<HTMLElement>(".verse[data-ref]");
     if (v?.dataset.ref) return setVerse(v.dataset.ref);
     const btn = (e.target as HTMLElement).closest<HTMLElement>("button.term");
     if (!btn) return;
@@ -52,6 +52,15 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
     return () => window.removeEventListener("keydown", onKey);
   }, [prev, next, router, open, verse]);
 
+  // Verse references inside diagrams are tspans, so Enter and Space open them too
+  const onContentKey = (e: React.KeyboardEvent) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const v = (e.target as HTMLElement).closest<HTMLElement>("tspan.verse[data-ref]");
+    if (!v?.dataset.ref) return;
+    e.preventDefault();
+    setVerse(v.dataset.ref);
+  };
+
   // Swipe on phones, ignoring swipes inside scrollable diagrams and tables
   const onTouchStart = (e: React.TouchEvent) => {
     if ((e.target as HTMLElement).closest(".diagram, .tablewrap, [role=dialog]")) {
@@ -72,7 +81,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
 
   return (
     <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-      <section key={id} id={id} className="station fade-in" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: html }} />
+      <section key={id} id={id} className="station fade-in" onClick={onContentClick} onKeyDown={onContentKey} dangerouslySetInnerHTML={{ __html: html }} />
       {findStation(id)?.reflect && <Reflect id={id} prompt={findStation(id)!.reflect} />}
       {verse && verses[verse] && <VerseSheet refKey={verse} entry={verses[verse]} onClose={close} />}
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}

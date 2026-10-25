@@ -57,7 +57,11 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
       }
       return part;
     }
-    if (stack.some((s) => s.skip) || !part.trim()) return part;
+    if (!part.trim()) return part;
+    const skips = stack.filter((s) => s.skip);
+    // Inside a diagram only verse references are linked (as tappable text), not glossary words
+    if (skips.length === 1 && skips[0].name === "svg") return linkScripture(part, refs, (t) => t, svgWrap);
+    if (skips.length) return part;
     return linkScripture(part, refs, (text) =>
       text.replace(WORD, (match: string) => {
         const id = lookup.get(match)!;
@@ -70,7 +74,12 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
 }
 
 // Wraps scripture references in a text segment; the rest goes through `rest` (glossary words).
-function linkScripture(text: string, refs: Set<string>, rest: (t: string) => string): string {
+const buttonWrap = (shown: string, key: string) =>
+  `<button type="button" class="verse" data-ref="${key}" aria-haspopup="dialog">${shown}</button>`;
+const svgWrap = (shown: string, key: string) =>
+  `<tspan class="verse" data-ref="${key}" role="button" tabindex="0" aria-haspopup="dialog">${shown}</tspan>`;
+
+function linkScripture(text: string, refs: Set<string>, rest: (t: string) => string, wrap = buttonWrap): string {
   const found: { start: number; end: number; key: string; from: number }[] = [];
   for (const m of text.matchAll(REF_RE())) found.push({ start: m.index!, end: m.index! + m[0].length, key: keyFromMatch(m), from: 0 });
   for (const m of text.matchAll(BARE_RE())) {
@@ -84,7 +93,7 @@ function linkScripture(text: string, refs: Set<string>, rest: (t: string) => str
     if (f.start < last || !SCRIPTURE[f.key]) continue;
     refs.add(f.key);
     out += rest(text.slice(last, f.start));
-    out += `<button type="button" class="verse" data-ref="${f.key}" aria-haspopup="dialog">${text.slice(f.start, f.end)}</button>`;
+    out += wrap(text.slice(f.start, f.end), f.key);
     last = f.end;
   }
   return out + rest(text.slice(last));

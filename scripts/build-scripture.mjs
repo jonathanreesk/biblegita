@@ -11,7 +11,7 @@ import { BARE_RE, REF_RE, keyFromBare, keyFromMatch, parseKey } from "../lib/scr
 const DIR = path.join(process.cwd(), "content", "stations");
 const keys = new Set();
 for (const f of fs.readdirSync(DIR)) {
-  const text = fs.readFileSync(path.join(DIR, f), "utf8").replace(/<svg[\s\S]*?<\/svg>/g, "").replace(/<[^>]+>/g, "|");
+  const text = fs.readFileSync(path.join(DIR, f), "utf8").replace(/<[^>]+>/g, "|");
   for (const m of text.matchAll(REF_RE())) keys.add(keyFromMatch(m));
   for (const m of text.matchAll(BARE_RE())) keys.add(keyFromBare(m));
 }

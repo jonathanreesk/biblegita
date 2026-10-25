@@ -50,6 +50,28 @@
    }
   ]
  },
+ "1 Corinthians 15:25-26": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 25,
+    "text": "For he must reign until he has put all his enemies under his feet."
+   },
+   {
+    "n": 26,
+    "text": "The last enemy that will be abolished is death."
+   }
+  ]
+ },
+ "1 Corinthians 15:3": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 3,
+    "text": "For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures,"
+   }
+  ]
+ },
  "1 Corinthians 15:3-4": {
   "t": "WEB",
   "v": [
@@ -229,6 +251,19 @@
    }
   ]
  },
+ "2 Samuel 7:12-13": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 12,
+    "text": "When your days are fulfilled, and you sleep with your fathers, I will set up your offspring after you, who will proceed out of your body, and I will establish his kingdom."
+   },
+   {
+    "n": 13,
+    "text": "He will build a house for my name, and I will establish the throne of his kingdom forever."
+   }
+  ]
+ },
  "2 Thessalonians 1:8-9": {
   "t": "WEB",
   "v": [
@@ -367,12 +402,34 @@
    }
   ]
  },
+ "Acts 2:8": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 8,
+    "text": "How do we hear, everyone in our own native language?"
+   }
+  ]
+ },
  "Acts 4:12": {
   "t": "WEB",
   "v": [
    {
     "n": 12,
     "text": "There is salvation in no one else, for there is no other name under heaven that is given among men, by which we must be saved!”"
+   }
+  ]
+ },
+ "Colossians 1:19-20": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 19,
+    "text": "For all the fullness was pleased to dwell in him,"
+   },
+   {
+    "n": 20,
+    "text": "and through him to reconcile all things to himself by him, whether things on the earth or things in the heavens, having made peace through the blood of his cross."
    }
   ]
  },
@@ -473,6 +530,15 @@
    }
   ]
  },
+ "Ezekiel 36:26": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 26,
+    "text": "I will also give you a new heart, and I will put a new spirit within you. I will take away the stony heart out of your flesh, and I will give you a heart of flesh."
+   }
+  ]
+ },
  "Galatians 3:28": {
   "t": "WEB",
   "v": [
@@ -507,6 +573,15 @@
     "n": 2,
     "text": "I will make of you a great nation. I will bless you and make your name great. You will be a blessing."
    },
+   {
+    "n": 3,
+    "text": "I will bless those who bless you, and I will curse him who treats you with contempt. All the families of the earth will be blessed through you.”"
+   }
+  ]
+ },
+ "Genesis 12:3": {
+  "t": "WEB",
+  "v": [
    {
     "n": 3,
     "text": "I will bless those who bless you, and I will curse him who treats you with contempt. All the families of the earth will be blessed through you.”"
@@ -564,6 +639,24 @@
    {
     "n": 15,
     "text": "Yahweh God took the man, and put him into the garden of Eden to cultivate and keep it."
+   }
+  ]
+ },
+ "Genesis 3:15": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 15,
+    "text": "I will put hostility between you and the woman, and between your offspring and her offspring. He will bruise your head, and you will bruise his heel.”"
+   }
+  ]
+ },
+ "Genesis 3:24": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 24,
+    "text": "So he drove out the man; and he placed cherubim at the east of the garden of Eden, and a flaming sword which turned every way, to guard the way to the tree of life."
    }
   ]
  },
@@ -728,6 +821,15 @@
    }
   ]
  },
+ "Gita 4:37": {
+  "t": "Sivananda",
+  "v": [
+   {
+    "n": 37,
+    "text": "As the blazing fire reduces fuel to ashes, O Arjuna, so does the fire of knowledge reduce all actions to ash."
+   }
+  ]
+ },
  "Gita 4:5": {
   "t": "Sivananda",
   "v": [
@@ -799,6 +901,15 @@
    }
   ]
  },
+ "Gita 9:32": {
+  "t": "Sivananda",
+  "v": [
+   {
+    "n": 32,
+    "text": "For, taking refuge in Me, they who, O Arjuna, may be of a sinful birth—women, Vaisyas, and Sudras—attain the Supreme Goal."
+   }
+  ]
+ },
  "Hebrews 10:10-14": {
   "t": "WEB",
   "v": [
@@ -821,6 +932,15 @@
    {
     "n": 14,
     "text": "For by one offering he has perfected forever those who are being sanctified."
+   }
+  ]
+ },
+ "Hebrews 2:14": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 14,
+    "text": "Since then the children have shared in flesh and blood, he also himself in the same way partook of the same, that through death he might bring to nothing him who had the power of death, that is, the devil,"
    }
   ]
  },
@@ -859,6 +979,15 @@
    }
   ]
  },
+ "Isaiah 25:8": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 8,
+    "text": "He has swallowed up death forever! The Lord Yahweh will wipe away tears from off all faces. He will take the reproach of his people away from off all the earth, for Yahweh has spoken it."
+   }
+  ]
+ },
  "Isaiah 53:5-7": {
   "t": "WEB",
   "v": [
@@ -885,6 +1014,19 @@
    }
   ]
  },
+ "Isaiah 9:6-7": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 6,
+    "text": "For a child is born to us. A son is given to us; and the government will be on his shoulders. His name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
+   },
+   {
+    "n": 7,
+    "text": "Of the increase of his government and of peace there shall be no end, on David’s throne, and on his kingdom, to establish it, and to uphold it with justice and with righteousness from that time on, even forever. The zeal of Yahweh of Armies will perform this."
+   }
+  ]
+ },
  "James 2:24": {
   "t": "WEB",
   "v": [
@@ -900,6 +1042,15 @@
    {
     "n": 31,
     "text": "“Behold, the days come,” says Yahweh, “that I will make a new covenant with the house of Israel, and with the house of Judah:"
+   }
+  ]
+ },
+ "Job 19:25": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 25,
+    "text": "But as for me, I know that my Redeemer lives. In the end, he will stand upon the earth."
    }
   ]
  },
@@ -947,6 +1098,24 @@
    {
     "n": 6,
     "text": "Jesus said to him, “I am the way, the truth, and the life. No one comes to the Father, except through me."
+   }
+  ]
+ },
+ "John 14:2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 2,
+    "text": "In my Father’s house are many homes. If it weren’t so, I would have told you. I am going to prepare a place for you."
+   }
+  ]
+ },
+ "John 14:3": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 3,
+    "text": "If I go and prepare a place for you, I will come again, and will receive you to myself; that where I am, you may be there also."
    }
   ]
  },
@@ -1104,6 +1273,15 @@
    }
   ]
  },
+ "Luke 24:27": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 27,
+    "text": "Beginning from Moses and from all the prophets, he explained to them in all the Scriptures the things concerning himself."
+   }
+  ]
+ },
  "Luke 24:5-6": {
   "t": "WEB",
   "v": [
@@ -1183,12 +1361,57 @@
    }
   ]
  },
+ "Nehemiah 8:8": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 8,
+    "text": "They read in the book, in the law of God, distinctly; and they gave the sense, so that they understood the reading."
+   }
+  ]
+ },
+ "Psalm 119:130": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 130,
+    "text": "The entrance of your words gives light. It gives understanding to the simple."
+   }
+  ]
+ },
  "Psalm 16:11": {
   "t": "WEB",
   "v": [
    {
     "n": 11,
     "text": "You will show me the path of life. In your presence is fullness of joy. In your right hand there are pleasures forever more."
+   }
+  ]
+ },
+ "Revelation 1:18": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 18,
+    "text": "and the Living one. I was dead, and behold, I am alive forever and ever. Amen. I have the keys of Death and of Hades."
+   }
+  ]
+ },
+ "Revelation 20:10": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "The devil who deceived them was thrown into the lake of fire and sulfur, where the beast and the false prophet are also. They will be tormented day and night forever and ever."
+   }
+  ]
+ },
+ "Revelation 20:14": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 14,
+    "text": "Death and Hades were thrown into the lake of fire. This is the second death, the lake of fire."
    }
   ]
  },
@@ -1219,6 +1442,24 @@
    {
     "n": 4,
     "text": "He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain, any more. The first things have passed away.”"
+   }
+  ]
+ },
+ "Revelation 22:2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 2,
+    "text": "in the middle of its street. On this side of the river and on that was the tree of life, bearing twelve kinds of fruits, yielding its fruit every month. The leaves of the tree were for the healing of the nations."
+   }
+  ]
+ },
+ "Revelation 22:3": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 3,
+    "text": "There will be no curse any more. The throne of God and of the Lamb will be in it, and his servants will serve him."
    }
   ]
  },
@@ -1304,6 +1545,15 @@
    {
     "n": 8,
     "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us."
+   }
+  ]
+ },
+ "Romans 8:1": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "There is therefore now no condemnation to those who are in Christ Jesus, who don’t walk according to the flesh, but according to the Spirit."
    }
   ]
  },
