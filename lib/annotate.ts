@@ -7,15 +7,6 @@ const VOID = new Set(["br", "hr", "img", "input", "meta", "link", "path", "circl
 const SKIP_TAGS = new Set(["svg", "h1", "h2", "h3", "h4", "a", "button", "script", "style"]);
 const SKIP_CLASS = /\bclass="[^"]*\b(label|ref|chip|head)\b/;
 
-const EXPLORE: Record<string, string> = {
-  "The Hindu claim": "What this tradition teaches",
-  "The apologetic argument": "The question this raises",
-  "Expect this reply": "A thoughtful reply",
-  "Your strongest answer": "How the Bible answers",
-  "How to speak the warning": "A gentle way to say it",
-  "Expect these questions": "Questions you may have",
-};
-
 const lookup = new Map<string, string>();
 for (const t of GLOSSARY) for (const m of t.match) lookup.set(m, t.id);
 
@@ -30,13 +21,8 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
   // Terms placed by hand in the content count as already explained
   for (const m of html.matchAll(/data-term="([a-z]+)"/g)) used.add(m[1]);
   const stack: { name: string; skip: boolean }[] = [];
-  // Headings that coach a Christian get a friendlier twin for everyone else (toggled in Settings)
-  const html1 = html.replace(/<h4>([^<]+)<\/h4>/g, (all, label: string) => {
-    const open = EXPLORE[label];
-    return open ? `<h4><span class="for-share">${label}</span><span class="for-explore">${open}</span></h4>` : all;
-  });
   // Reference chips become buttons that open the verse
-  const prepared = html1.replace(/<span class="ref( g| d)?">([^<]+)<\/span>/g, (all, kind = "", text: string) => {
+  const prepared = html.replace(/<span class="ref( g| d)?">([^<]+)<\/span>/g, (all, kind = "", text: string) => {
     const m = REF_RE().exec(text.trim());
     const key = m && keyFromMatch(m);
     if (!key || !SCRIPTURE[key]) return all;

@@ -2,9 +2,9 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"; mode: "explore" | "share" };
+export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"};
 
-const DEFAULT_PREFS: Prefs = { theme: "system", size: "default", mode: "explore" };
+const DEFAULT_PREFS: Prefs = { theme: "system", size: "default" };
 
 type Ctx = {
   done: Record<string, boolean>;
@@ -58,8 +58,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
     else root.setAttribute("data-theme", prefs.theme);
     if (prefs.size === "large") root.setAttribute("data-size", "large");
     else root.removeAttribute("data-size");
-    if (prefs.mode === "share") root.setAttribute("data-mode", "share");
-    else root.removeAttribute("data-mode");
     if (ready) write(PREFS_KEY, prefs);
   }, [prefs, ready]);
 

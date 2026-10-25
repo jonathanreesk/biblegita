@@ -16,12 +16,14 @@ export function Home() {
   return (
     <div className="fade-in flex flex-col">
       <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
-        <span className="label">Two scriptures, one question</span>
+        <span className="label">Apologetics, evangelism and discipleship</span>
         <h1>The Gita and the Gospel</h1>
         <p className="lede">
           Who is God, does he love us, and what are we here for? This is a walk through the Bhagavad Gita and the Bible,
           side by side, honest about the hard questions and warm toward every reader. Whether you grew up with one of
-          these books, both or neither, you are welcome to read at your own pace.
+          these books, both or neither, you are welcome to read at your own pace. For followers of Christ it is also a
+          guide to making disciples, baptizing them and teaching them to obey (Matthew 28:19-20), so that more people know
+          God and his love.
         </p>
 
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">

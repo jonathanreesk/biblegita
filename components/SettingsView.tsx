@@ -44,23 +44,6 @@ export function SettingsView() {
       <h2>Settings</h2>
 
       <div className="flex flex-col gap-2.5 border-b border-line py-[18px]">
-        <span className="label">How are you reading?</span>
-        <Segmented<Prefs["mode"]>
-          label="How are you reading"
-          value={prefs.mode}
-          onChange={(mode) => setPrefs({ ...prefs, mode })}
-          options={[
-            { v: "explore", label: "Exploring for myself" },
-            { v: "share", label: "Preparing to share" },
-          ]}
-        />
-        <p className="note">
-          Exploring keeps the wording open and conversational. Preparing to share adds coaching for talking with a friend, such
-          as the replies to expect.
-        </p>
-      </div>
-
-      <div className="flex flex-col gap-2.5 border-b border-line py-[18px]">
         <span className="label">Theme</span>
         <Segmented<Prefs["theme"]>
           label="Theme"

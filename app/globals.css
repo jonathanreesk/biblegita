@@ -169,9 +169,6 @@ button.ref.verse:hover{background:var(--gospel-soft)}
 button.ref.verse.d:hover{background:var(--dharma-soft)}
 button.ref.verse:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 
-/* Reader mode: the same page can speak to a seeker or coach someone who is sharing */
-html:not([data-mode="share"]) .for-share{display:none!important}
-html[data-mode="share"] .for-explore{display:none!important}
 tspan.verse{cursor:pointer;fill:var(--gospel);text-decoration:underline;text-decoration-style:dotted;font-weight:600}
 tspan.verse:hover{text-decoration-style:solid}
 tspan.verse:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
