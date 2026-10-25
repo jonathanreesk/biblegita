@@ -36,7 +36,7 @@ export function ScriptureIndex({ groups, verses }: { groups: RefGroup[]; verses:
   return (
     <div className="fade-in stack">
       <span className="label">Every reference in the guide</span>
-      <h2>Scripture index</h2>
+      <h2>Verse index</h2>
       <input
         id="vsearch"
         type="search"

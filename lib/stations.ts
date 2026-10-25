@@ -9,11 +9,11 @@ export type Station = {
 
 export const PARTS = [
   { title: "Start here", desc: "Read this before anything else." },
-  { title: "The two stories", desc: "What each book is, and where it comes from." },
-  { title: "The questions", desc: "Four honest questions, and how each book answers." },
+  { title: "The two stories", desc: "What each text is, and where it comes from." },
+  { title: "The questions", desc: "Four honest questions, and how the Gita and the Bible each answer." },
   { title: "The cross", desc: "The Bible's one thread, and the heart of the difference: how sin is forgiven." },
   { title: "Hope and mission", desc: "The hope of Christ, and the joy of sharing it." },
-  { title: "Going deeper", desc: "How the books were passed down, who can understand them, and their hard passages." },
+  { title: "Going deeper", desc: "How the texts were passed down, who can understand them, and their hard passages." },
 ];
 
 // Order matters: this is the journey sequence.
@@ -25,8 +25,8 @@ export const STATIONS: Station[] = [
     reflect: "Think of someone you could have an unhurried conversation with about these questions. What would you most like to ask them, or them you?" },
   { id: "story", n: 1, part: 1, title: "Two big stories", desc: "The Mahabharata and the Bible's one storyline",
     reflect: "If you had to say what each story is about in one sentence, what would you say? Which story do you find yourself in?" },
-  { id: "structure", n: 2, part: 1, title: "How the texts are built", desc: "Epic, dialogue and library",
-    reflect: "How does it change your reading to know a book is an epic, a dialogue or a library? What do you usually expect from a sacred text?" },
+  { id: "structure", n: 2, part: 1, title: "How the texts are built", desc: "An epic, a dialogue and one finished Bible",
+    reflect: "How does it change your reading to know where a text came from, who wrote it and when? What do you usually expect from a sacred text?" },
   { id: "c1", n: 3, part: 2, title: "Monism and the personal God", desc: "Can love be ultimate?",
     reflect: "Do you long to be loved by someone, or to be absorbed into something? What does your heart say love needs?" },
   { id: "worldview", n: 4, part: 2, title: "Two shapes of reality", desc: "Cyclic and linear time",
@@ -37,7 +37,7 @@ export const STATIONS: Station[] = [
     reflect: "What would you want justice to look like if you were wronged? What would you hope for if you were the one who did wrong?" },
   { id: "c4", n: 7, part: 2, title: "Can every path be true?", desc: "Pluralism and non-contradiction",
     reflect: "Can you hold deep respect for a person and still honestly disagree about what is true? What would that look like?" },
-  { id: "thread", n: 8, part: 3, title: "One thread through 66 books", desc: "How the Bible's hope runs from Genesis to Revelation",
+  { id: "thread", n: 8, part: 3, title: "One thread through the whole Bible", desc: "How the Bible's hope runs from Genesis to Revelation",
     reflect: "What do you hope for most when you think about the end of the story, for the world and for you? What would it take for that hope to be well-founded?" },
   { id: "sin", n: 9, part: 3, title: "Sin, forgiveness and the Lamb", desc: "Who pays for sin?",
     reflect: "What would it mean for a debt to be paid by someone else for you? How does that land: as relief, as discomfort, or as both?" },
@@ -50,11 +50,11 @@ export const STATIONS: Station[] = [
   { id: "disciples", n: 13, part: 4, title: "Go and make disciples", desc: "The Great Commission in practice",
     reflect: "Who has helped you know God better? Who could you walk alongside, simply by being a friend and listening?" },
   { id: "transmission", n: 14, part: 5, title: "How the texts were passed down", desc: "Oral performance and manuscripts",
-    reflect: "How much does it matter to you that a text has been carefully preserved? What would give you confidence in a scripture?" },
-  { id: "access", n: 15, part: 5, title: "Preserved, but who can understand?", desc: "The shape of each library and who it is for",
-    reflect: "How did you first meet the scriptures you know best: through a teacher, a story, a book or a family? What helped you understand them?" },
-  { id: "tensions", n: 16, part: 5, title: "Hard passages in both books", desc: "Difficulties in the Gita, the epic and the Bible",
-    reflect: "What is a hard passage in a book you love, and how have you learned to live with it? How might your friend feel about theirs?" },
+    reflect: "How much does it matter to you that a text has been carefully preserved? What would give you confidence in a sacred text?" },
+  { id: "access", n: 15, part: 5, title: "Preserved, but who can understand?", desc: "The shape of each text and who it is for",
+    reflect: "How did you first meet the sacred texts you know best: through a teacher, a story, a book or a family? What helped you understand them?" },
+  { id: "tensions", n: 16, part: 5, title: "Hard passages in both texts", desc: "Difficulties in the Gita, the epic and the Bible",
+    reflect: "What is a hard passage in a text you love, and how have you learned to live with it? How might your friend feel about theirs?" },
 ];
 
 // Shown instead of a label word: "Start here" or "8 of 12" within the journey.

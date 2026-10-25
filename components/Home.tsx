@@ -60,7 +60,7 @@ export function Home() {
                 ? "You have walked the whole journey. Now go and make disciples."
                 : count
                   ? `Next up: ${next.title}.`
-                  : "Start with the question beneath both books: what are we here for?"}
+                  : "Start with the question beneath both texts: what are we here for?"}
             </p>
           </div>
           <Link

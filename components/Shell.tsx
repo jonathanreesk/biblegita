@@ -11,7 +11,7 @@ function useHeader(pathname: string) {
     const s = findStation(pathname.split("/")[2] ?? "");
     if (s) return { eyebrow: s.n === 0 ? "Start here" : `${PARTS[s.part].title} · ${s.n} of ${NUMBERED}`, title: s.title, back: true };
   }
-  if (pathname === "/scripture") return { eyebrow: "Reference", title: "Scripture index", back: false };
+  if (pathname === "/scripture") return { eyebrow: "Reference", title: "Verse index", back: false };
   if (pathname === "/glossary") return { eyebrow: "Reference", title: "Glossary", back: false };
   if (pathname === "/settings") return { eyebrow: "Preferences", title: "Settings", back: false };
   return { eyebrow: "Your journey", title: "The Gita and the Gospel", back: false };
@@ -26,7 +26,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
   const tabs = [
     { href: "/", label: "Home", icon: <HomeIcon className="h-[22px] w-[22px]" />, active: pathname === "/" || pathname.startsWith("/journey/") },
-    { href: "/scripture", label: "Scripture", icon: <BookIcon className="h-[22px] w-[22px]" />, active: pathname === "/scripture" },
+    { href: "/scripture", label: "Verses", icon: <BookIcon className="h-[22px] w-[22px]" />, active: pathname === "/scripture" },
     { href: "/glossary", label: "Glossary", icon: <GlossaryIcon className="h-[22px] w-[22px]" />, active: pathname === "/glossary" },
     { href: "/settings", label: "Settings", icon: <SlidersIcon className="h-[22px] w-[22px]" />, active: pathname === "/settings" },
   ];
@@ -80,7 +80,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               }`}
             >
               {t.icon}
-              {t.label === "Scripture" ? "Scripture index" : t.label}
+              {t.label === "Verses" ? "Verse index" : t.label}
             </Link>
           ))}
         </div>
