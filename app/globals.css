@@ -29,7 +29,8 @@
   --gospel:#7fcfc4; --gospel-deep:#9fe0d6; --gospel-soft:rgba(127,207,196,.12); --dharma:#f2c98b; --dharma-soft:rgba(242,201,139,.11); --warn:#f0a29b;
   --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:0 12px 30px -12px rgba(0,0,0,.6); color-scheme:dark}
 *{box-sizing:border-box}
-body{overflow-x:clip;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent}
+html{overflow-x:hidden;overscroll-behavior-x:none}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent}
 h1,h2,h3{font-family:var(--f-display);font-weight:500;letter-spacing:-.01em;text-wrap:balance;line-height:1.15;margin:0}
 h1{font-size:clamp(2rem,6vw,3.1rem)}
 h2{font-size:clamp(1.55rem,4vw,2.1rem)}
@@ -124,7 +125,7 @@ html[data-size="large"]{font-size:112.5%}
 .station a{color:var(--gospel)}
 .fade-in{animation:fadeIn .35s ease both}
 @keyframes fadeIn{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.fade-in,.rise,.blob{animation:none!important}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade-in,.rise,.nudge{animation:none!important}*{transition:none!important}}
 :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
 
 /* Focus: comfortable reading measure, and quiet panels instead of loud fills */
@@ -138,12 +139,12 @@ html[data-size="large"]{font-size:112.5%}
 .frost{background:color-mix(in srgb,var(--bg) 80%,transparent);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px)}
 .rise{animation:rise .7s var(--ease-out) both;animation-delay:calc(var(--i,0)*55ms)}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.blobs{-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);position:absolute;inset:-40px -50vw auto -50vw;height:420px;z-index:-1;pointer-events:none}
-.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
-.blob.a{width:260px;height:260px;left:calc(50vw - 60px);top:-40px;background:var(--gospel-soft);animation:fa 18s ease-in-out infinite}
-.blob.b{width:240px;height:240px;right:calc(50vw - 70px);top:60px;background:var(--dharma-soft);animation:fb 22s ease-in-out infinite}
-@keyframes fa{50%{transform:translate(30px,20px) scale(1.08)}}
-@keyframes fb{50%{transform:translate(-26px,-14px) scale(1.1)}}
+/* Soft glow behind the page: painted by the browser, so it can never widen the layout */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(520px 380px at 12% 0%,var(--gospel-soft),transparent 70%),radial-gradient(460px 340px at 92% 8%,var(--dharma-soft),transparent 70%)}
+.nudge{display:inline-block;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(3px)}}
+html{scroll-behavior:smooth}
 .station .tag{border-radius:999px;padding:3px 12px}
 .ref{border-radius:999px;padding:3px 11px}
 

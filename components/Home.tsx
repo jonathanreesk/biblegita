@@ -16,7 +16,6 @@ export function Home() {
   return (
     <div className="fade-in flex flex-col">
       <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
-        <div className="blobs" aria-hidden="true"><i className="blob a" /><i className="blob b" /></div>
         <span className="label">Apologetics, evangelism and discipleship</span>
         <h1>The Gita and the Gospel</h1>
         <p className="lede">
@@ -60,8 +59,20 @@ export function Home() {
           >
             {finished ? "Walk it again" : count ? "Continue" : "Begin the journey"}
           </Link>
+          <a
+            href="#steps"
+            className="mx-auto inline-flex min-h-10 items-center gap-1.5 font-label text-[.9rem] font-semibold text-gospel no-underline"
+          >
+            Or browse all {STATIONS.length} steps <span aria-hidden="true" className="nudge">↓</span>
+          </a>
         </div>
 
+      </div>
+
+      <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
+        <span className="label">The whole guide</span>
+        <h2 className="text-[1.7rem]">{STATIONS.length} steps in 4 parts</h2>
+        <p className="text-[.95rem] text-muted">Each step takes a few minutes. Take them in order, or jump to any question. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
           <span className="chip g">Christian framework</span>
