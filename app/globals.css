@@ -157,3 +157,14 @@ button.term:focus-visible,a.term:focus-visible{outline:3px solid var(--amber);ou
 .term-card.flash{animation:flash 1.8s ease}
 @keyframes flash{0%,60%{box-shadow:0 0 0 3px var(--amber)}100%{box-shadow:var(--shadow-sm)}}
 @media (prefers-reduced-motion:reduce){.sheet,.term-card.flash{animation:none}}
+
+/* Tap-to-read verses: inline references look like quiet links, chips keep their style */
+button.verse{all:unset;cursor:pointer;color:var(--gospel);font-weight:600;border-bottom:1.5px solid color-mix(in srgb,var(--gospel) 40%,transparent);border-radius:2px;transition:background .2s var(--ease)}
+button.verse:hover{background:var(--gospel-soft)}
+button.verse:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+button.ref.verse{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;font-family:var(--f-label);font-size:.8rem;font-weight:600;padding:3px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted);transition:background .2s var(--ease)}
+button.ref.verse.g{color:var(--gospel);border-color:var(--gospel)}
+button.ref.verse.d{color:var(--dharma);border-color:var(--dharma)}
+button.ref.verse:hover{background:var(--gospel-soft)}
+button.ref.verse.d:hover{background:var(--dharma-soft)}
+button.ref.verse:focus-visible{outline:3px solid var(--amber);outline-offset:2px}

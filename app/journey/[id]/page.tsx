@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { StationView } from "@/components/StationView";
 import { annotate } from "@/lib/annotate";
 import { getStationHtml } from "@/lib/content";
+import { SCRIPTURE } from "@/lib/scripture";
 import { STATIONS, findStation } from "@/lib/stations";
 
 type Params = { params: Promise<{ id: string }> };
@@ -22,5 +23,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 export default async function StationPage({ params }: Params) {
   const { id } = await params;
   if (!findStation(id)) notFound();
-  return <StationView id={id} html={annotate(getStationHtml(id)).html} />;
+  const { html, refs } = annotate(getStationHtml(id));
+  const verses = Object.fromEntries(refs.map((k) => [k, SCRIPTURE[k]]));
+  return <StationView id={id} html={html} verses={verses} />;
 }

@@ -6,19 +6,27 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { neighbors } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { termById, type Term } from "@/lib/glossary";
+import type { VerseMap } from "@/lib/scripture";
 import { TermSheet } from "./TermSheet";
+import { VerseSheet } from "./VerseSheet";
 
-export function StationView({ id, html }: { id: string; html: string }) {
+export function StationView({ id, html, verses }: { id: string; html: string; verses: VerseMap }) {
   const router = useRouter();
   const { done, toggle } = useProgress();
   const { prev, next } = neighbors(id);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const isDone = !!done[id];
   const [open, setOpen] = useState<Term | null>(null);
-  const close = useCallback(() => setOpen(null), []);
+  const [verse, setVerse] = useState<string | null>(null);
+  const close = useCallback(() => {
+    setOpen(null);
+    setVerse(null);
+  }, []);
 
   // Words in the text are buttons with data-term; one listener handles them all
   const onContentClick = (e: React.MouseEvent) => {
+    const v = (e.target as HTMLElement).closest<HTMLElement>("button.verse");
+    if (v?.dataset.ref) return setVerse(v.dataset.ref);
     const btn = (e.target as HTMLElement).closest<HTMLElement>("button.term");
     if (!btn) return;
     const t = termById(btn.dataset.term ?? "");
@@ -34,13 +42,13 @@ export function StationView({ id, html }: { id: string; html: string }) {
   // Arrow keys move along the journey on desktop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (open || (e.target as HTMLElement).closest("input, textarea")) return;
+      if (open || verse || (e.target as HTMLElement).closest("input, textarea")) return;
       if (e.key === "ArrowRight" && next) router.push(`/journey/${next.id}`);
       if (e.key === "ArrowLeft" && prev) router.push(`/journey/${prev.id}`);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [prev, next, router, open]);
+  }, [prev, next, router, open, verse]);
 
   // Swipe on phones, ignoring swipes inside scrollable diagrams and tables
   const onTouchStart = (e: React.TouchEvent) => {
@@ -63,6 +71,7 @@ export function StationView({ id, html }: { id: string; html: string }) {
   return (
     <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: html }} />
+      {verse && verses[verse] && <VerseSheet refKey={verse} verses={verses[verse]} onClose={close} />}
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 
       <nav aria-label="Journey navigation" className="mt-9 flex flex-col gap-3 border-t border-line pt-5">

@@ -1,5 +1,7 @@
 // Server-only: wraps every mention of a glossary term in a tap-to-define button.
 import { GLOSSARY } from "./glossary";
+import { BARE_RE, REF_RE, keyFromBare, keyFromMatch } from "./scriptureRef.mjs";
+import { SCRIPTURE } from "./scripture";
 
 const VOID = new Set(["br", "hr", "img", "input", "meta", "link", "path", "circle", "rect", "line", "ellipse"]);
 const SKIP_TAGS = new Set(["svg", "h1", "h2", "h3", "h4", "a", "button", "script", "style"]);
@@ -12,13 +14,22 @@ const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const alternation = [...lookup.keys()].sort((a, b) => b.length - a.length).map(escape).join("|");
 const WORD = alternation ? new RegExp(`(?<![A-Za-z0-9])(${alternation})(?![A-Za-z0-9])`, "g") : null;
 
-export function annotate(html: string): { html: string; used: string[] } {
+export function annotate(html: string): { html: string; used: string[]; refs: string[] } {
   const used = new Set<string>();
-  if (!WORD) return { html, used: [] };
+  const refs = new Set<string>();
+  if (!WORD) return { html, used: [], refs: [] };
   // Terms placed by hand in the content count as already explained
   for (const m of html.matchAll(/data-term="([a-z]+)"/g)) used.add(m[1]);
   const stack: { name: string; skip: boolean }[] = [];
-  const out = html.split(/(<[^>]+>)/g).map((part) => {
+  // Reference chips become buttons that open the verse
+  const prepared = html.replace(/<span class="ref( g| d)?">([^<]+)<\/span>/g, (all, kind = "", text: string) => {
+    const m = REF_RE().exec(text.trim());
+    const key = m && keyFromMatch(m);
+    if (!key || !SCRIPTURE[key]) return all;
+    refs.add(key);
+    return `<button type="button" class="ref${kind} verse" data-ref="${key}" aria-haspopup="dialog">${text}</button>`;
+  });
+  const out = prepared.split(/(<[^>]+>)/g).map((part) => {
     if (part.startsWith("<")) {
       const m = /^<(\/?)([a-zA-Z0-9]+)/.exec(part);
       if (!m) return part;
@@ -33,11 +44,34 @@ export function annotate(html: string): { html: string; used: string[] } {
       return part;
     }
     if (stack.some((s) => s.skip) || !part.trim()) return part;
-    return part.replace(WORD, (match: string) => {
-      const id = lookup.get(match)!;
-      used.add(id);
-      return `<button type="button" class="term" data-term="${id}" aria-haspopup="dialog">${match}</button>`;
-    });
+    return linkScripture(part, refs, (text) =>
+      text.replace(WORD, (match: string) => {
+        const id = lookup.get(match)!;
+        used.add(id);
+        return `<button type="button" class="term" data-term="${id}" aria-haspopup="dialog">${match}</button>`;
+      }),
+    );
   });
-  return { html: out.join(""), used: [...used] };
+  return { html: out.join(""), used: [...used], refs: [...refs] };
+}
+
+// Wraps scripture references in a text segment; the rest goes through `rest` (glossary words).
+function linkScripture(text: string, refs: Set<string>, rest: (t: string) => string): string {
+  const found: { start: number; end: number; key: string; from: number }[] = [];
+  for (const m of text.matchAll(REF_RE())) found.push({ start: m.index!, end: m.index! + m[0].length, key: keyFromMatch(m), from: 0 });
+  for (const m of text.matchAll(BARE_RE())) {
+    // Only the numbers inside the parentheses are linked
+    found.push({ start: m.index! + 1, end: m.index! + m[0].length - 1, key: keyFromBare(m), from: 0 });
+  }
+  found.sort((a, b) => a.start - b.start);
+  let out = "";
+  let last = 0;
+  for (const f of found) {
+    if (f.start < last || !SCRIPTURE[f.key]) continue;
+    refs.add(f.key);
+    out += rest(text.slice(last, f.start));
+    out += `<button type="button" class="verse" data-ref="${f.key}" aria-haspopup="dialog">${text.slice(f.start, f.end)}</button>`;
+    last = f.end;
+  }
+  return out + rest(text.slice(last));
 }
