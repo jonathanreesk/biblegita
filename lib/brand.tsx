@@ -22,7 +22,7 @@ export function shareImage() {
         <div style={{ display: "flex", fontSize: 28, letterSpacing: 6, textTransform: "uppercase", color: "#8a4a0f" }}>Apologetics, evangelism and discipleship</div>
         <div style={{ display: "flex", fontSize: 108, fontWeight: 700, lineHeight: 1.05, marginTop: 28 }}>The Gita and the Gospel</div>
         <div style={{ display: "flex", fontSize: 38, lineHeight: 1.4, color: "#56636a", marginTop: 32, maxWidth: 900 }}>
-          Who is God, does he love us, and what are we here for? A walk through two scriptures, side by side.
+          Who is God, does He love us, and what are we here for? A walk through two scriptures, side by side.
         </div>
         <div style={{ display: "flex", marginTop: 48, height: 12, width: 360, borderRadius: 6, background: "linear-gradient(90deg,#1f5c5a,#e9a94b)" }} />
       </div>

@@ -21,7 +21,7 @@ export function Home() {
         <p className="lede">A walk through the Bhagavad Gita and the Bible, side by side, for readers of every background.</p>
 
         <ul className="m-0 my-1 flex list-none flex-col gap-2 p-0" aria-label="The questions this guide explores">
-          {["Who is God?", "Does he love us?", "What are we here for?"].map((q, i) => (
+          {["Who is God?", "Does He love us?", "What are we here for?"].map((q, i) => (
             <li
               key={q}
               style={{ ["--i" as string]: i }}

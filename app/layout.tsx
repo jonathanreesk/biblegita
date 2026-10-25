@@ -10,17 +10,17 @@ export const metadata: Metadata = {
     template: "%s | The Gita and the Gospel",
   },
   description:
-    "A study guide for any reader: the Bhagavad Gita and the Bible side by side, the hard questions, and the hope of knowing God and his love.",
+    "A study guide for any reader: the Bhagavad Gita and the Bible side by side, the hard questions, and the hope of knowing God and His love.",
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     siteName: "The Gita and the Gospel",
     title: "The Gita and the Gospel",
-    description: "Who is God, does he love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side.",
+    description: "Who is God, does He love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side.",
     url: "/",
   },
-  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "Who is God, does he love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side." },
+  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "Who is God, does He love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side." },
   appleWebApp: { capable: true, title: "Gita and Gospel", statusBarStyle: "default" },
   icons: { icon: "/icon.svg" },
 };
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "WebSite",
               name: "The Gita and the Gospel",
               url: "https://gitatogospel.org",
-              description: "A study guide for any reader: the Bhagavad Gita and the Bible side by side, the hard questions, and the hope of knowing God and his love.",
+              description: "A study guide for any reader: the Bhagavad Gita and the Bible side by side, the hard questions, and the hope of knowing God and His love.",
             }),
           }}
         />
