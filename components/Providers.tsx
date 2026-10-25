@@ -2,7 +2,9 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large" };
+export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"; mode: "explore" | "share" };
+
+const DEFAULT_PREFS: Prefs = { theme: "system", size: "default", mode: "explore" };
 
 type Ctx = {
   done: Record<string, boolean>;
@@ -37,12 +39,12 @@ function write(key: string, value: unknown) {
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [done, setDone] = useState<Record<string, boolean>>({});
-  const [prefs, setPrefsState] = useState<Prefs>({ theme: "system", size: "default" });
+  const [prefs, setPrefsState] = useState<Prefs>(DEFAULT_PREFS);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     setDone(read(DONE_KEY, {}));
-    setPrefsState(read(PREFS_KEY, { theme: "system", size: "default" } as Prefs));
+    setPrefsState({ ...DEFAULT_PREFS, ...read<Partial<Prefs>>(PREFS_KEY, {}) });
     setReady(true);
   }, []);
 
@@ -56,6 +58,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
     else root.setAttribute("data-theme", prefs.theme);
     if (prefs.size === "large") root.setAttribute("data-size", "large");
     else root.removeAttribute("data-size");
+    if (prefs.mode === "share") root.setAttribute("data-mode", "share");
+    else root.removeAttribute("data-mode");
     if (ready) write(PREFS_KEY, prefs);
   }, [prefs, ready]);
 

@@ -1,6 +1,7 @@
 // Collects every scripture reference used in content/stations and saves the verse text
 // to lib/scripture-data.json, so the site builds with no network.
-//   Bible: World English Bible (public domain), from github.com/TehShrike/world-english-bible
+//   Bible: ESV for any book found in data/esv/*.json (kept out of git; only quoted verses are saved),
+//          otherwise the World English Bible (public domain), from github.com/TehShrike/world-english-bible
 //   Gita:  Swami Sivananda's English translation, from github.com/gita/gita
 // Run: node scripts/build-scripture.mjs
 import fs from "node:fs";
@@ -15,7 +16,23 @@ for (const f of fs.readdirSync(DIR)) {
   for (const m of text.matchAll(BARE_RE())) keys.add(keyFromBare(m));
 }
 
-const fileFor = (book) => book.toLowerCase().replace(/\s+/g, "");
+const fileFor = (book) => (book === "Psalm" ? "psalms" : book.toLowerCase().replace(/\s+/g, ""));
+// ESV books supplied locally: { "1 Peter": { 1: { 1: "text", ... } } }
+const esv = {};
+const ESV_DIR = path.join(process.cwd(), "data", "esv");
+if (fs.existsSync(ESV_DIR)) {
+  for (const f of fs.readdirSync(ESV_DIR).filter((f) => f.endsWith(".json") || f.endsWith(".txt"))) {
+    const book = JSON.parse(fs.readFileSync(path.join(ESV_DIR, f), "utf8"));
+    const chapters = {};
+    for (const ch of book.text) {
+      const n = Number(/\.(\d+)$/.exec(ch.ID)?.[1]);
+      chapters[n] = {};
+      for (const frag of ch.text) chapters[n][frag.ID] = ((chapters[n][frag.ID] ?? "") + " " + frag.text).trim();
+    }
+    esv[book.name] = chapters;
+  }
+}
+
 const WEB = "https://raw.githubusercontent.com/TehShrike/world-english-bible/master/json/";
 const cache = new Map();
 async function bibleBook(book) {
@@ -40,8 +57,12 @@ const out = {};
 for (const k of [...keys].sort()) {
   const r = parseKey(k);
   const verses = [];
+  let tr = r.book === "Gita" ? "Sivananda" : "WEB";
   if (r.book === "Gita") {
     for (let v = r.from; v <= r.to; v++) verses.push({ n: v, text: gitaText(r.chapter, v) });
+  } else if (esv[r.book]) {
+    for (let v = r.from; v <= r.to; v++) verses.push({ n: v, text: esv[r.book][r.chapter]?.[v]?.replace(/\s+/g, " ").trim() });
+    tr = "ESV";
   } else {
     const data = await bibleBook(r.book);
     const byVerse = new Map();
@@ -55,7 +76,7 @@ for (const k of [...keys].sort()) {
     console.warn("MISSING", k);
     continue;
   }
-  out[k] = verses;
+  out[k] = { t: tr, v: verses };
 }
 fs.writeFileSync(path.join(process.cwd(), "lib", "scripture-data.json"), JSON.stringify(out, null, 1) + "\n");
 console.log(`${Object.keys(out).length} of ${keys.size} references saved`);

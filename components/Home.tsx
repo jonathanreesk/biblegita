@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { PARTS, STATIONS } from "@/lib/stations";
+import { NUMBERED, PARTS, STATIONS } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { ChevronIcon } from "./Icons";
 
@@ -16,12 +16,12 @@ export function Home() {
   return (
     <div className="fade-in flex flex-col">
       <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
-        <span className="label">Apologetics, evangelism and discipleship</span>
+        <span className="label">Two scriptures, one question</span>
         <h1>The Gita and the Gospel</h1>
         <p className="lede">
-          A walk through the Bhagavad Gita and the Bible: how each is built, the hard questions a Christian raises, and the
-          hope of Christ. The goal is the one Jesus gave: make disciples, baptizing them and teaching them to obey (Matthew
-          28:19-20).
+          Who is God, does he love us, and what are we here for? This is a walk through the Bhagavad Gita and the Bible,
+          side by side, honest about the hard questions and warm toward every reader. Whether you grew up with one of
+          these books, both or neither, you are welcome to read at your own pace.
         </p>
 
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
@@ -50,7 +50,7 @@ export function Home() {
                 ? "You have walked the whole journey. Now go and make disciples."
                 : count
                   ? `Next up: ${next.title}.`
-                  : "Start with a short guide to the five steps of every conversation."}
+                  : "Start with the question beneath both books: what are we here for?"}
             </p>
           </div>
           <Link
@@ -63,7 +63,7 @@ export function Home() {
             href="#steps"
             className="mx-auto inline-flex min-h-10 items-center gap-1.5 font-label text-[.9rem] font-semibold text-gospel no-underline"
           >
-            Or browse all {STATIONS.length} steps <span aria-hidden="true" className="nudge">↓</span>
+            Or browse the whole guide <span aria-hidden="true" className="nudge">↓</span>
           </a>
         </div>
 
@@ -71,8 +71,8 @@ export function Home() {
 
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
-        <h2 className="text-[1.7rem]">{STATIONS.length} steps in 4 parts</h2>
-        <p className="text-[.95rem] text-muted">Each step takes a few minutes. Take them in order, or jump to any question. Look for these two colors throughout:</p>
+        <h2 className="text-[1.7rem]">{NUMBERED} steps in 4 parts</h2>
+        <p className="text-[.95rem] text-muted">Each step takes a few minutes. Take them in order, or jump to any question that matters to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
           <span className="chip g">Christian framework</span>

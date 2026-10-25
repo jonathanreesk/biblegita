@@ -2,22 +2,23 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { sourceFor, type Verse } from "@/lib/scripture";
+import { sourceFor, type Entry } from "@/lib/scripture";
 
 // A bottom sheet (a floating card on desktop) that shows the verse itself.
 export function VerseSheet({
   refKey,
-  verses,
+  entry,
   onClose,
   usedIn,
 }: {
   refKey: string;
-  verses: Verse[];
+  entry: Entry;
   onClose: () => void;
   usedIn?: { href: string; title: string };
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const src = sourceFor(refKey);
+  const src = sourceFor(refKey, entry.t);
+  const verses = entry.v;
   const gita = src.book === "Bhagavad Gita";
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export function VerseSheet({
             </p>
           ))}
         </blockquote>
-        <span className="font-label text-[.82rem] text-muted">{src.credit}</span>
+        <span className="font-label text-[.78rem] leading-snug text-muted">{src.credit}</span>
         <div className="mt-1 flex flex-wrap items-center gap-2.5">
           <button
             type="button"

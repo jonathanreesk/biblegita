@@ -97,7 +97,7 @@ export function ScriptureIndex({ groups, verses }: { groups: RefGroup[]; verses:
       {open && (
         <VerseSheet
           refKey={open.key}
-          verses={verses[open.key]}
+          entry={verses[open.key]}
           onClose={() => setOpen(null)}
           usedIn={{ href: `/journey/${open.stationId}`, title: findStation(open.stationId)?.title ?? "" }}
         />

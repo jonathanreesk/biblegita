@@ -10,17 +10,17 @@ export const metadata: Metadata = {
     template: "%s | The Gita and the Gospel",
   },
   description:
-    "A study guide for apologetics, evangelism and discipleship: the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
+    "A study guide for any reader: the Bhagavad Gita and the Bible side by side, the hard questions, and the hope of knowing God and his love.",
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     siteName: "The Gita and the Gospel",
     title: "The Gita and the Gospel",
-    description: "A 15-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
+    description: "Who is God, does he love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side.",
     url: "/",
   },
-  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "A 15-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ." },
+  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "Who is God, does he love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side." },
   appleWebApp: { capable: true, title: "Gita and Gospel", statusBarStyle: "default" },
   icons: { icon: "/icon.svg" },
 };
@@ -36,7 +36,7 @@ export const viewport: Viewport = {
 };
 
 // Applies saved theme and text size before first paint to avoid a flash.
-const prefsScript = `try{var p=JSON.parse(localStorage.getItem('gg-prefs')||'null');if(p){var r=document.documentElement;if(p.theme&&p.theme!=='system')r.setAttribute('data-theme',p.theme);if(p.size==='large')r.setAttribute('data-size','large')}}catch(e){}`;
+const prefsScript = `try{var p=JSON.parse(localStorage.getItem('gg-prefs')||'null');if(p){var r=document.documentElement;if(p.theme&&p.theme!=='system')r.setAttribute('data-theme',p.theme);if(p.size==='large')r.setAttribute('data-size','large');if(p.mode==='share')r.setAttribute('data-mode','share')}}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "WebSite",
               name: "The Gita and the Gospel",
               url: "https://gitatogospel.org",
-              description: "A study guide for apologetics, evangelism and discipleship: the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
+              description: "A study guide for any reader: the Bhagavad Gita and the Bible side by side, the hard questions, and the hope of knowing God and his love.",
             }),
           }}
         />

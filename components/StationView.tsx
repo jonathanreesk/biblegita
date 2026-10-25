@@ -6,6 +6,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { neighbors } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { termById, type Term } from "@/lib/glossary";
+import { findStation } from "@/lib/stations";
+import { Reflect } from "./Reflect";
 import type { VerseMap } from "@/lib/scripture";
 import { TermSheet } from "./TermSheet";
 import { VerseSheet } from "./VerseSheet";
@@ -71,7 +73,8 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
   return (
     <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: html }} />
-      {verse && verses[verse] && <VerseSheet refKey={verse} verses={verses[verse]} onClose={close} />}
+      {findStation(id)?.reflect && <Reflect id={id} prompt={findStation(id)!.reflect} />}
+      {verse && verses[verse] && <VerseSheet refKey={verse} entry={verses[verse]} onClose={close} />}
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 
       <nav aria-label="Journey navigation" className="mt-9 flex flex-col gap-3 border-t border-line pt-5">

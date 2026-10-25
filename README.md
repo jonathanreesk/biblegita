@@ -1,6 +1,6 @@
 # The Gita and the Gospel
 
-An app-style study guide for apologetics, evangelism and discipleship. It walks through the Bhagavad Gita and the Bible as a 15-step journey: how each scripture is built, four philosophical challenges with the replies to expect, the cross, the living hope of Christ, and the call to make disciples (Matthew 28:19-20).
+An app-style study guide for any reader, whether Hindu, Christian or curious. It walks through the Bhagavad Gita and the Bible as a guided journey for any reader: why we are here, how each scripture is built, honest hard questions, the cross, the living hope of Christ, and an invitation to know God, find joy in his purposes and share it with others (Matthew 28:19-20).
 
 ## Stack
 

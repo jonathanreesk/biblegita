@@ -1,15 +1,22 @@
 import data from "./scripture-data.json";
 
 export type Verse = { n: number; text: string };
-export type VerseMap = Record<string, Verse[]>;
+export type Entry = { t: "WEB" | "ESV" | "Sivananda"; v: Verse[] };
+export type VerseMap = Record<string, Entry>;
 
 export const SCRIPTURE = data as VerseMap;
 
 // Where the text comes from, shown on each verse card
-export function sourceFor(key: string) {
+const CREDIT = {
+  Sivananda: "Translation by Swami Sivananda",
+  WEB: "World English Bible, public domain",
+  ESV: "ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.",
+};
+
+export function sourceFor(key: string, t: Entry["t"]) {
   return key.startsWith("Gita ")
-    ? { book: "Bhagavad Gita", credit: "Translation by Swami Sivananda", url: (k: string) => gitaUrl(k) }
-    : { book: "Bible", credit: "World English Bible, public domain", url: (k: string) => bibleUrl(k) };
+    ? { book: "Bhagavad Gita", credit: CREDIT[t], url: (k: string) => gitaUrl(k) }
+    : { book: "Bible", credit: CREDIT[t], url: (k: string) => bibleUrl(k) };
 }
 
 function gitaUrl(key: string) {

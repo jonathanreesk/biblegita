@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PARTS, STATIONS, findStation } from "@/lib/stations";
+import { NUMBERED, PARTS, STATIONS, findStation } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { BackIcon, BookIcon, GlossaryIcon, HomeIcon, SlidersIcon } from "./Icons";
 
 function useHeader(pathname: string) {
   if (pathname.startsWith("/journey/")) {
     const s = findStation(pathname.split("/")[2] ?? "");
-    if (s) return { eyebrow: s.n === 0 ? "Start here" : `${PARTS[s.part].title} · ${s.n} of ${STATIONS.length - 1}`, title: s.title, back: true };
+    if (s) return { eyebrow: s.n === 0 ? "Start here" : `${PARTS[s.part].title} · ${s.n} of ${NUMBERED}`, title: s.title, back: true };
   }
   if (pathname === "/scripture") return { eyebrow: "Reference", title: "Scripture index", back: false };
   if (pathname === "/glossary") return { eyebrow: "Reference", title: "Glossary", back: false };

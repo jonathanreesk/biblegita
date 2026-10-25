@@ -19,10 +19,10 @@ export function shareImage() {
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 96px", background: "#fbf7f0", color: "#1f2a2e" }}>
-        <div style={{ display: "flex", fontSize: 28, letterSpacing: 6, textTransform: "uppercase", color: "#8a4a0f" }}>Apologetics, evangelism and discipleship</div>
+        <div style={{ display: "flex", fontSize: 28, letterSpacing: 6, textTransform: "uppercase", color: "#8a4a0f" }}>Two scriptures, one question</div>
         <div style={{ display: "flex", fontSize: 108, fontWeight: 700, lineHeight: 1.05, marginTop: 28 }}>The Gita and the Gospel</div>
         <div style={{ display: "flex", fontSize: 38, lineHeight: 1.4, color: "#56636a", marginTop: 32, maxWidth: 900 }}>
-          A 15-step journey through two scriptures, the hard questions, and the hope of Christ.
+          Who is God, does he love us, and what are we here for? A walk through two scriptures, side by side.
         </div>
         <div style={{ display: "flex", marginTop: 48, height: 12, width: 360, borderRadius: 6, background: "linear-gradient(90deg,#1f5c5a,#e9a94b)" }} />
       </div>

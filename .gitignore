@@ -7,3 +7,6 @@ next-env.d.ts
 .env*.local
 .DS_Store
 npm-debug.log*
+
+# Licensed Bible text kept out of the repo; scripts/build-scripture.mjs extracts only the verses the guide quotes
+data/esv/
