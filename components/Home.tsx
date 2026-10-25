@@ -1,0 +1,106 @@
+"use client";
+
+import Link from "next/link";
+import { PARTS, STATIONS } from "@/lib/stations";
+import { useProgress } from "./Providers";
+import { ChevronIcon } from "./Icons";
+
+const CIRC = 2 * Math.PI * 34;
+
+export function Home() {
+  const { done } = useProgress();
+  const count = STATIONS.filter((s) => done[s.id]).length;
+  const next = STATIONS.find((s) => !done[s.id]);
+  const finished = !next;
+
+  return (
+    <div className="fade-in flex flex-col">
+      <div className="flex flex-col gap-3.5 pb-2 pt-3">
+        <span className="label">Apologetics, evangelism and discipleship</span>
+        <h1>The Gita and the Gospel</h1>
+        <p className="lede">
+          A walk through the Bhagavad Gita and the Bible: how each is built, the hard questions a Christian raises, and the
+          hope of Christ. The goal is the one Jesus gave: make disciples, baptizing them and teaching them to obey (Matthew
+          28:19-20).
+        </p>
+
+        <div className="flex flex-wrap items-center gap-[18px] rounded-2xl border border-line bg-surface p-4">
+          <svg className="h-[84px] w-[84px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
+            <circle cx="42" cy="42" r="34" fill="none" strokeWidth="8" stroke="var(--line)" />
+            <circle
+              cx="42"
+              cy="42"
+              r="34"
+              fill="none"
+              strokeWidth="8"
+              stroke="var(--gospel)"
+              strokeLinecap="round"
+              strokeDasharray={CIRC}
+              strokeDashoffset={CIRC * (1 - count / STATIONS.length)}
+              style={{ transform: "rotate(-90deg)", transformOrigin: "50% 50%", transition: "stroke-dashoffset .6s ease" }}
+            />
+            <text x="42" y="47" textAnchor="middle" fontSize="16" fontWeight={600} fill="var(--ink)" fontFamily="var(--f-label)">
+              {count}/{STATIONS.length}
+            </text>
+          </svg>
+          <div className="flex min-w-[180px] flex-1 flex-col gap-2">
+            <span className="label">{finished ? "Journey complete" : count ? "Keep going" : "Your journey"}</span>
+            <p>
+              {finished
+                ? "You have walked the whole journey. Now go and make disciples."
+                : count
+                  ? `Next up: ${next.title}.`
+                  : "Start here, then walk the journey at your own pace, alone or with a group."}
+            </p>
+            <Link
+              href={`/journey/${finished ? "method" : next.id}`}
+              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-gospel bg-gospel px-4 py-3 font-label text-[.95rem] font-semibold text-surface no-underline transition-transform active:scale-[.98]"
+            >
+              {finished ? "Walk it again" : `${count ? "Continue" : "Begin"}: ${next.title}`}
+            </Link>
+          </div>
+        </div>
+
+        <div className="legend">
+          <span className="chip d">Hindu framework</span>
+          <span className="chip g">Christian framework</span>
+        </div>
+      </div>
+
+      {PARTS.map((p, pi) => (
+        <div key={p.title} className="flex flex-col gap-2.5 pt-7">
+          <span className="label">{pi === 0 ? "Begin" : `Part ${pi} of 4`}</span>
+          <h3 className="text-[1.35rem]">{p.title}</h3>
+          <p className="text-[.93rem] text-muted">{p.desc}</p>
+          <div className="relative flex flex-col gap-2.5 before:absolute before:bottom-6 before:left-[34px] before:top-6 before:w-0.5 before:bg-line">
+            {STATIONS.filter((s) => s.part === pi).map((s) => {
+              const isDone = !!done[s.id];
+              return (
+                <Link
+                  key={s.id}
+                  href={`/journey/${s.id}`}
+                  className="group relative flex items-center gap-3.5 rounded-[14px] border border-line bg-surface p-3.5 text-ink no-underline transition hover:border-gospel active:scale-[.98]"
+                >
+                  <span
+                    className={`grid h-10 w-10 flex-none place-items-center rounded-full border font-label font-semibold ${
+                      isDone ? "border-gospel bg-gospel text-surface" : "border-line bg-page text-muted"
+                    }`}
+                  >
+                    {isDone ? "✓" : s.n === 0 ? "★" : s.n}
+                  </span>
+                  <span className="flex min-w-0 flex-col gap-0.5">
+                    <b className="font-display text-[1.08rem] font-normal leading-tight">{s.title}</b>
+                    <span className="text-[.84rem] text-muted">{s.desc}</span>
+                  </span>
+                  <span className="ml-auto flex-none text-muted transition-transform group-hover:translate-x-0.5">
+                    <ChevronIcon />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
