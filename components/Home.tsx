@@ -32,10 +32,7 @@ export function Home() {
           ))}
         </ul>
 
-        <p className="note">
-          Honest about the hard questions and warm toward every reader. For followers of Christ it is also a guide to making
-          disciples, baptizing them and teaching them to obey (Matthew 28:19-20), so that more people know God and his love.
-        </p>
+        <p className="note">Honest about the hard questions, and warm toward every reader.</p>
 
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
           <svg className="h-[72px] w-[72px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
