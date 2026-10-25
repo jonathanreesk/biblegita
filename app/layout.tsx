@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   },
   description:
     "A study guide for apologetics, evangelism and discipleship: the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     siteName: "The Gita and the Gospel",
@@ -51,6 +52,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "The Gita and the Gospel",
+              url: "https://gitatogospel.org",
+              description: "A study guide for apologetics, evangelism and discipleship: the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
+            }),
+          }}
+        />
         <Providers>
           <Shell>{children}</Shell>
         </Providers>

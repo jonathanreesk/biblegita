@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { id } = await params;
   const s = findStation(id);
-  return s ? { title: s.title, description: s.desc } : {};
+  return s ? { title: s.title, description: s.desc, alternates: { canonical: `/journey/${s.id}` } } : {};
 }
 
 export default async function StationPage({ params }: Params) {

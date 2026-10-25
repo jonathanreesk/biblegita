@@ -58,4 +58,4 @@ lib/content.ts          Reads station content and builds the Scripture index at 
 2. In Vercel, choose **Add New Project** and import the repository. The Next.js preset is detected automatically; no settings need to change.
 3. Every push to `main` redeploys.
 
-The site asks search engines not to index it. A standard Vercel deployment can still be opened by anyone who has the link, so check Vercel's Deployment Protection settings if you want to restrict access.
+The site is open to search engines (see `app/robots.ts` and `app/sitemap.ts`). The canonical domain is set in `app/layout.tsx`, `app/robots.ts` and `app/sitemap.ts`; update it if the domain changes. After launch, submit `https://<your domain>/sitemap.xml` in Google Search Console.
