@@ -5,22 +5,23 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { neighbors } from "@/lib/stations";
 import { useProgress } from "./Providers";
-import { TermSheet, type TermInfo } from "./TermSheet";
+import { termById, type Term } from "@/lib/glossary";
+import { TermSheet } from "./TermSheet";
 
-export function StationView({ id, html, terms }: { id: string; html: string; terms: TermInfo[] }) {
+export function StationView({ id, html }: { id: string; html: string }) {
   const router = useRouter();
   const { done, toggle } = useProgress();
   const { prev, next } = neighbors(id);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const isDone = !!done[id];
-  const [open, setOpen] = useState<TermInfo | null>(null);
+  const [open, setOpen] = useState<Term | null>(null);
   const close = useCallback(() => setOpen(null), []);
 
   // Words in the text are buttons with data-term; one listener handles them all
   const onContentClick = (e: React.MouseEvent) => {
     const btn = (e.target as HTMLElement).closest<HTMLElement>("button.term");
     if (!btn) return;
-    const t = terms.find((x) => x.id === btn.dataset.term);
+    const t = termById(btn.dataset.term ?? "");
     if (t) setOpen(t);
   };
 
@@ -62,7 +63,7 @@ export function StationView({ id, html, terms }: { id: string; html: string; ter
   return (
     <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: html }} />
-      {open && <TermSheet term={open} onClose={close} />}
+      {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 
       <nav aria-label="Journey navigation" className="mt-9 flex flex-col gap-3 border-t border-line pt-5">
         <button

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { GLOSSARY, SIDE_LABEL, type Side } from "@/lib/glossary";
+import { GLOSSARY, SIDE_LABEL, splitTerms, type Side } from "@/lib/glossary";
 import { findStation } from "@/lib/stations";
 
 const FILTERS: { v: Side | "all"; label: string }[] = [
@@ -23,6 +23,18 @@ export function GlossaryView({ appears }: { appears: Record<string, string[]> })
       .filter((t) => filter === "all" || t.side === filter)
       .filter((t) => !needle || `${t.term} ${t.plain} ${t.match.join(" ")}`.toLowerCase().includes(needle));
   }, [q, filter]);
+
+  const jump = (id: string) => {
+    setQ("");
+    setFilter("all");
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      el?.scrollIntoView({ block: "center", behavior: "smooth" });
+      el?.classList.remove("flash");
+      void el?.offsetWidth;
+      el?.classList.add("flash");
+    });
+  };
 
   // Jump to a term when arriving from a definition sheet (#id)
   useEffect(() => {
@@ -73,7 +85,17 @@ export function GlossaryView({ appears }: { appears: Record<string, string[]> })
               <h3 className="text-[1.3rem]">{t.term}</h3>
               {t.say && <span className="font-label text-[.85rem] text-muted">{t.say}</span>}
             </div>
-            <p>{t.plain}</p>
+            <p>
+              {splitTerms(t.plain, t.id).map((p, i) =>
+                p.id ? (
+                  <a key={i} href={`#${p.id}`} className="term" onClick={() => jump(p.id!)}>
+                    {p.text}
+                  </a>
+                ) : (
+                  p.text
+                ),
+              )}
+            </p>
             <div className="flex flex-wrap items-center gap-2">
               <span className={`chip ${t.side === "christian" ? "g" : t.side === "hindu" ? "d" : ""}`} style={t.side === "logic" ? { background: "var(--sand)", color: "var(--muted)" } : undefined}>
                 {SIDE_LABEL[t.side]}

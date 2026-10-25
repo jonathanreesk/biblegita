@@ -145,13 +145,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .nudge{display:inline-block;animation:nudge 1.8s ease-in-out infinite}
 @keyframes nudge{50%{transform:translateY(3px)}}
 html{scroll-behavior:smooth}
-.station .tag{border-radius:999px;padding:3px 12px}
+.station .tag{border-radius:999px;padding:3px 12px;gap:.3em}
 .ref{border-radius:999px;padding:3px 11px}
 
 /* Tap-to-define words */
-button.term{all:unset;cursor:help;color:inherit;border-bottom:2px dotted var(--amber);padding-bottom:1px;border-radius:2px;transition:background .2s var(--ease),border-color .2s var(--ease)}
-button.term:hover{background:var(--dharma-soft);border-bottom-style:solid}
-button.term:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+button.term,a.term{all:unset;cursor:help;color:inherit;border-bottom:1.5px dotted var(--amber);padding-bottom:1px;border-radius:2px;transition:background .2s var(--ease),border-color .2s var(--ease)}
+button.term:hover,a.term:hover{background:var(--dharma-soft);border-bottom-style:solid}
+button.term:focus-visible,a.term:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 .sheet{animation:sheetUp .32s var(--ease-out) both}
 @keyframes sheetUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
 .term-card.flash{animation:flash 1.8s ease}

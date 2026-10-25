@@ -1,4 +1,4 @@
-// Server-only: wraps the first mention of each glossary term in a tap-to-define button.
+// Server-only: wraps every mention of a glossary term in a tap-to-define button.
 import { GLOSSARY } from "./glossary";
 
 const VOID = new Set(["br", "hr", "img", "input", "meta", "link", "path", "circle", "rect", "line", "ellipse"]);
@@ -35,7 +35,6 @@ export function annotate(html: string): { html: string; used: string[] } {
     if (stack.some((s) => s.skip) || !part.trim()) return part;
     return part.replace(WORD, (match: string) => {
       const id = lookup.get(match)!;
-      if (used.has(id)) return match;
       used.add(id);
       return `<button type="button" class="term" data-term="${id}" aria-haspopup="dialog">${match}</button>`;
     });

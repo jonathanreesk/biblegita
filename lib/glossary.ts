@@ -143,3 +143,25 @@ export const GLOSSARY: Term[] = [
 
 const BY_ID = new Map(GLOSSARY.map((t) => [t.id, t]));
 export const termById = (id: string) => BY_ID.get(id);
+
+// Splits plain text into pieces, turning glossary words into links (used inside definitions).
+const lookup = new Map<string, string>();
+for (const t of GLOSSARY) for (const m of t.match) lookup.set(m, t.id);
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const pattern = new RegExp(`(?<![A-Za-z0-9])(${[...lookup.keys()].sort((a, b) => b.length - a.length).map(esc).join("|")})(?![A-Za-z0-9])`, "g");
+
+export type Piece = { text: string; id?: string };
+
+export function splitTerms(text: string, selfId?: string): Piece[] {
+  const out: Piece[] = [];
+  let last = 0;
+  for (const m of text.matchAll(pattern)) {
+    const id = lookup.get(m[0])!;
+    if (id === selfId) continue;
+    if (m.index! > last) out.push({ text: text.slice(last, m.index) });
+    out.push({ text: m[0], id });
+    last = m.index! + m[0].length;
+  }
+  if (last < text.length) out.push({ text: text.slice(last) });
+  return out;
+}

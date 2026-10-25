@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-
-export type TermInfo = { id: string; term: string; say?: string; plain: string };
+import { splitTerms, termById, type Term } from "@/lib/glossary";
 
 // A small bottom sheet (a floating card on desktop) that explains a word in plain English.
-export function TermSheet({ term, onClose }: { term: TermInfo; onClose: () => void }) {
+export function TermSheet({ term, onClose, onOpen }: { term: Term; onClose: () => void; onOpen?: (t: Term) => void }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,7 +37,17 @@ export function TermSheet({ term, onClose }: { term: TermInfo; onClose: () => vo
           <h3 className="text-[1.6rem]">{term.term}</h3>
           {term.say && <span className="font-label text-[.9rem] text-muted">Say it: {term.say}</span>}
         </div>
-        <p className="text-[1.05rem] leading-relaxed">{term.plain}</p>
+        <p className="text-[1.05rem] leading-relaxed">
+          {splitTerms(term.plain, term.id).map((p, i) =>
+            p.id && onOpen ? (
+              <button key={i} type="button" className="term" onClick={() => onOpen(termById(p.id!)!)}>
+                {p.text}
+              </button>
+            ) : (
+              p.text
+            ),
+          )}
+        </p>
         <div className="mt-1 flex flex-wrap items-center gap-2.5">
           <button
             type="button"
