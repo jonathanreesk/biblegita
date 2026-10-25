@@ -29,7 +29,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
   const onContentClick = (e: React.MouseEvent) => {
     const v = (e.target as HTMLElement).closest<HTMLElement>(".verse[data-ref]");
     if (v?.dataset.ref) return setVerse(v.dataset.ref);
-    const btn = (e.target as HTMLElement).closest<HTMLElement>("button.term");
+    const btn = (e.target as HTMLElement).closest<HTMLElement>("button.term, tspan.term");
     if (!btn) return;
     const t = termById(btn.dataset.term ?? "");
     if (t) setOpen(t);
@@ -55,10 +55,12 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
   // Verse references inside diagrams are tspans, so Enter and Space open them too
   const onContentKey = (e: React.KeyboardEvent) => {
     if (e.key !== "Enter" && e.key !== " ") return;
-    const v = (e.target as HTMLElement).closest<HTMLElement>("tspan.verse[data-ref]");
-    if (!v?.dataset.ref) return;
+    const target = (e.target as HTMLElement).closest<HTMLElement>("tspan.verse[data-ref], tspan.term[data-term]");
+    if (!target) return;
     e.preventDefault();
-    setVerse(v.dataset.ref);
+    if (target.dataset.ref) return setVerse(target.dataset.ref);
+    const t = termById(target.dataset.term ?? "");
+    if (t) setOpen(t);
   };
 
   // Swipe on phones, ignoring swipes inside scrollable diagrams and tables

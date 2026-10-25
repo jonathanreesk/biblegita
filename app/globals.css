@@ -188,3 +188,6 @@ tspan.verse:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .gospel-card .label{color:color-mix(in srgb,var(--surface) 78%,transparent)}
 .gospel-card p{font-family:var(--f-display);font-weight:500;font-size:clamp(1.3rem,4.6vw,1.7rem);line-height:1.3;max-width:none}
 .gospel-card::after{content:"";position:absolute;right:-40px;bottom:-60px;width:180px;height:180px;border-radius:50%;background:var(--gold);opacity:.14;pointer-events:none}
+tspan.term{cursor:help;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--amber);text-underline-offset:3px}
+tspan.term:hover{text-decoration-style:solid}
+tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}

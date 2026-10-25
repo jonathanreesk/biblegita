@@ -41,7 +41,7 @@ export const GLOSSARY: Term[] = [
     plain: "Ultimate reality \"with qualities\": God as a personal Lord who can be known, loved and worshipped." },
   { id: "ishvara", term: "Ishvara", say: "ISH-vuh-ruh", side: "hindu", match: ["Ishvara"],
     plain: "\"The Lord\": God seen as a personal ruler and creator." },
-  { id: "maya", term: "Maya", say: "MAH-yah", side: "hindu", match: ["Maya"],
+  { id: "maya", term: "Maya", say: "MAH-yah", side: "hindu", match: ["Maya", "MAYA"],
     plain: "In Advaita, the veil that makes the one reality look like many separate things. It is often translated \"illusion\", though thinkers say it is more like an appearance than a lie. In the Gita it is also God's own mysterious power." },
   { id: "anirvachaniya", term: "Anirvachaniya", say: "uh-nir-vuh-CHUH-nee-yuh", side: "hindu", match: ["anirvachaniya"],
     plain: "\"Cannot be put into words\": a way Advaita describes the world, as neither fully real nor fully unreal." },

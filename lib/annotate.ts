@@ -46,7 +46,17 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
     if (!part.trim()) return part;
     const skips = stack.filter((s) => s.skip);
     // Inside a diagram only verse references are linked (as tappable text), not glossary words
-    if (skips.length === 1 && skips[0].name === "svg") return linkScripture(part, refs, (t) => t, svgWrap);
+    if (skips.length === 1 && skips[0].name === "svg") return linkScripture(
+        part,
+        refs,
+        (t) =>
+          t.replace(WORD!, (match: string) => {
+            const id = lookup.get(match)!;
+            used.add(id);
+            return `<tspan class="term" data-term="${id}" role="button" tabindex="0" aria-haspopup="dialog">${match}</tspan>`;
+          }),
+        svgWrap,
+      );
     if (skips.length) return part;
     return linkScripture(part, refs, (text) =>
       text.replace(WORD, (match: string) => {

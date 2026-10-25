@@ -81,7 +81,7 @@ export function Home() {
 
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
-        <h2 className="text-[1.7rem]">{NUMBERED} steps in 4 parts</h2>
+        <h2 className="text-[1.7rem]">{NUMBERED} steps in {PARTS.length - 1} parts</h2>
         <p className="text-[.95rem] text-muted">Each step takes a few minutes. Take them in order, or jump to any question that matters to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
@@ -91,7 +91,7 @@ export function Home() {
 
       {PARTS.map((p, pi) => (
         <div key={p.title} className="flex flex-col gap-2.5 pt-7">
-          <span className="label">{pi === 0 ? "Begin" : `Part ${pi} of 4`}</span>
+          <span className="label">{pi === 0 ? "Begin" : `Part ${pi} of ${PARTS.length - 1}`}</span>
           <h3 className="text-[1.35rem]">{p.title}</h3>
           <p className="text-[.93rem] text-muted">{p.desc}</p>
           <div className="relative flex flex-col gap-2.5 before:absolute before:bottom-6 before:left-[34px] before:top-6 before:w-0.5 before:bg-line">
