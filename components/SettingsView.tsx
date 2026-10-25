@@ -117,7 +117,7 @@ export function SettingsView() {
       <div className="flex flex-col gap-2.5 py-[18px]">
         <span className="label">About this guide</span>
         <p className="note">
-          Built from <i>The Architecture of Sacred Texts</i>. Gita references follow the standard 18-chapter, 700-verse
+          Made to honor Jesus Christ, "the image of the invisible God" (Colossians 1:15), and to help every reader know Him. Built from <i>The Architecture of Sacred Texts</i>. Gita references follow the standard 18-chapter, 700-verse
           numbering; wording varies between translations, so read each verse in a translation you trust before using it.
         </p>
       </div>

@@ -32,7 +32,7 @@ export function Home() {
           ))}
         </ul>
 
-        <p className="note">Honest about the hard questions, and warm toward every reader.</p>
+        <p className="note">Honest about the hard questions, warm toward every reader, and centered on Jesus Christ.</p>
 
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
           <svg className="h-[72px] w-[72px] flex-none" viewBox="0 0 84 84" aria-hidden="true">

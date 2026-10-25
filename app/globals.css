@@ -191,3 +191,8 @@ tspan.verse:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 tspan.term{cursor:help;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--amber);text-underline-offset:3px}
 tspan.term:hover{text-decoration-style:solid}
 tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* Christ above all: closes each step with the Lord of the whole story */
+.christ-card{display:flex;flex-direction:column;gap:8px;margin-top:6px;padding:22px 22px 20px;border-radius:24px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--amber);box-shadow:var(--shadow-md)}
+.christ-card .label{color:var(--dharma)}
+.christ-card p{font-family:var(--f-display);font-weight:500;font-size:1.18rem;line-height:1.45;max-width:none}
