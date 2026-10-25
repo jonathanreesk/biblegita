@@ -4,6 +4,7 @@ import { Shell } from "@/components/Shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gitatogospel.org"),
   title: {
     default: "The Gita and the Gospel",
     template: "%s | The Gita and the Gospel",
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
   description:
     "A study guide for apologetics, evangelism and discipleship: the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
   robots: { index: false, follow: false },
+  openGraph: {
+    type: "website",
+    siteName: "The Gita and the Gospel",
+    title: "The Gita and the Gospel",
+    description: "A 13-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ.",
+    url: "/",
+  },
+  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "A 13-step journey through the Bhagavad Gita and the Bible, the hard questions, and the hope of Christ." },
+  appleWebApp: { capable: true, title: "Gita and Gospel", statusBarStyle: "default" },
   icons: { icon: "/icon.svg" },
 };
 

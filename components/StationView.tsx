@@ -64,45 +64,37 @@ export function StationView({ id, html, terms }: { id: string; html: string; ter
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: html }} />
       {open && <TermSheet term={open} onClose={close} />}
 
-      <nav aria-label="Journey navigation" className="mt-9 grid grid-cols-1 gap-2.5 border-t border-line pt-5 sm:grid-cols-[1fr_auto_1fr]">
-        {prev ? (
-          <Link
-            href={`/journey/${prev.id}`}
-            className="flex min-h-11 flex-col items-start rounded-[22px] border border-line bg-surface px-5 py-3.5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-lift font-label font-semibold text-ink no-underline"
-          >
-            <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">Previous</small>
-            <span>{prev.title}</span>
-          </Link>
-        ) : (
-          <span className="hidden sm:block" />
-        )}
+      <nav aria-label="Journey navigation" className="mt-9 flex flex-col gap-3 border-t border-line pt-5">
         <button
           type="button"
           onClick={() => toggle(id)}
           aria-pressed={isDone}
-          className={`min-h-12 rounded-full border px-6 py-3 font-label font-semibold transition hover:-translate-y-0.5 active:scale-[.98] ${
-            isDone ? "border-gospel bg-gospel-soft text-gospel" : "border-line bg-surface text-ink"
+          className={`min-h-12 self-center rounded-full border px-7 py-3 font-label font-semibold transition hover:-translate-y-0.5 active:scale-[.98] ${
+            isDone ? "border-gospel bg-gospel-soft text-gospel" : "border-line bg-surface text-ink shadow-soft"
           }`}
         >
           {isDone ? "Completed ✓" : "Mark complete"}
         </button>
-        {next ? (
+        <div className="grid grid-cols-2 gap-2.5">
+          {prev ? (
+            <Link
+              href={`/journey/${prev.id}`}
+              className="flex min-h-14 min-w-0 flex-col items-start justify-center rounded-[20px] border border-line bg-surface px-4 py-2.5 font-label font-semibold text-ink no-underline shadow-soft transition hover:-translate-y-0.5"
+            >
+              <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">← Previous</small>
+              <span className="line-clamp-2 w-full text-[.9rem] leading-tight">{prev.title}</span>
+            </Link>
+          ) : (
+            <span />
+          )}
           <Link
-            href={`/journey/${next.id}`}
-            className="flex min-h-11 flex-col items-end rounded-[22px] border border-gospel bg-gospel px-5 py-3.5 text-right shadow-lift transition hover:-translate-y-0.5 font-label font-semibold text-surface no-underline"
+            href={next ? `/journey/${next.id}` : "/"}
+            className="flex min-h-14 min-w-0 flex-col items-end justify-center rounded-[20px] border border-gospel bg-gospel px-4 py-2.5 text-right font-label font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5"
           >
-            <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">Next</small>
-            <span>{next.title}</span>
+            <small className="text-[.7rem] uppercase tracking-[.08em] opacity-80">{next ? "Next →" : "Finished"}</small>
+            <span className="line-clamp-2 w-full text-[.9rem] leading-tight">{next ? next.title : "Back to home"}</span>
           </Link>
-        ) : (
-          <Link
-            href="/"
-            className="flex min-h-11 flex-col items-end rounded-[22px] border border-gospel bg-gospel px-5 py-3.5 text-right shadow-lift transition hover:-translate-y-0.5 font-label font-semibold text-surface no-underline"
-          >
-            <small className="text-[.7rem] uppercase tracking-[.08em] opacity-75">Finished</small>
-            <span>Back to home</span>
-          </Link>
-        )}
+        </div>
       </nav>
       <p className="mt-2.5 text-center font-label text-[.78rem] text-muted lg:hidden">Swipe left or right to move along the journey</p>
     </div>

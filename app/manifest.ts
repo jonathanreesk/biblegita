@@ -8,8 +8,12 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "A study guide for apologetics, evangelism and discipleship.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f6f7f4",
-    theme_color: "#23466e",
-    icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
+    background_color: "#fbf7f0",
+    theme_color: "#1f5c5a",
+    icons: [
+      { src: "/icon.svg", sizes: "any", type: "image/svg+xml" },
+      { src: "/pwa-icon/192", sizes: "192x192", type: "image/png" },
+      { src: "/pwa-icon/512", sizes: "512x512", type: "image/png", purpose: "any" },
+    ],
   };
 }

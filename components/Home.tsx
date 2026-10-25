@@ -25,8 +25,8 @@ export function Home() {
           28:19-20).
         </p>
 
-        <div className="flex flex-wrap items-center gap-[18px] rounded-[28px] border border-line bg-surface p-5 shadow-lift">
-          <svg className="h-[84px] w-[84px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
+        <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
+          <svg className="h-[72px] w-[72px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
             <circle cx="42" cy="42" r="34" fill="none" strokeWidth="8" stroke="var(--line)" />
             <circle
               cx="42"
@@ -44,22 +44,22 @@ export function Home() {
               {count}/{STATIONS.length}
             </text>
           </svg>
-          <div className="flex min-w-[180px] flex-1 flex-col gap-2">
+          <div className="flex min-w-0 flex-1 flex-col gap-1.5">
             <span className="label">{finished ? "Journey complete" : count ? "Keep going" : "Your journey"}</span>
-            <p>
+            <p className="leading-snug">
               {finished
                 ? "You have walked the whole journey. Now go and make disciples."
                 : count
                   ? `Next up: ${next.title}.`
-                  : "Start here, then walk the journey at your own pace, alone or with a group."}
+                  : "Start with a short guide to the five steps of every conversation."}
             </p>
-            <Link
-              href={`/journey/${finished ? "method" : next.id}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-lift transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98]"
-            >
-              {finished ? "Walk it again" : `${count ? "Continue" : "Begin"}: ${next.title}`}
-            </Link>
           </div>
+          <Link
+            href={`/journey/${finished ? "method" : next.id}`}
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98]"
+          >
+            {finished ? "Walk it again" : count ? "Continue" : "Begin the journey"}
+          </Link>
         </div>
 
         <div className="legend">
