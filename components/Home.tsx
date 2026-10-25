@@ -18,12 +18,23 @@ export function Home() {
       <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
         <span className="label">Apologetics, evangelism and discipleship</span>
         <h1>The Gita and the Gospel</h1>
-        <p className="lede">
-          Who is God, does he love us, and what are we here for? This is a walk through the Bhagavad Gita and the Bible,
-          side by side, honest about the hard questions and warm toward every reader. Whether you grew up with one of
-          these books, both or neither, you are welcome to read at your own pace. For followers of Christ it is also a
-          guide to making disciples, baptizing them and teaching them to obey (Matthew 28:19-20), so that more people know
-          God and his love.
+        <p className="lede">A walk through the Bhagavad Gita and the Bible, side by side, for readers of every background.</p>
+
+        <ul className="m-0 my-1 flex list-none flex-col gap-2 p-0" aria-label="The questions this guide explores">
+          {["Who is God?", "Does he love us?", "What are we here for?"].map((q, i) => (
+            <li
+              key={q}
+              style={{ ["--i" as string]: i }}
+              className="rise flex items-center gap-3 border-l-[3px] border-amber py-1 pl-4 font-display text-[1.55rem] leading-tight text-ink"
+            >
+              {q}
+            </li>
+          ))}
+        </ul>
+
+        <p className="note">
+          Honest about the hard questions and warm toward every reader. For followers of Christ it is also a guide to making
+          disciples, baptizing them and teaching them to obey (Matthew 28:19-20), so that more people know God and his love.
         </p>
 
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
