@@ -146,3 +146,13 @@ html[data-size="large"]{font-size:112.5%}
 @keyframes fb{50%{transform:translate(-26px,-14px) scale(1.1)}}
 .station .tag{border-radius:999px;padding:3px 12px}
 .ref{border-radius:999px;padding:3px 11px}
+
+/* Tap-to-define words */
+button.term{all:unset;cursor:help;color:inherit;border-bottom:2px dotted var(--amber);padding-bottom:1px;border-radius:2px;transition:background .2s var(--ease),border-color .2s var(--ease)}
+button.term:hover{background:var(--dharma-soft);border-bottom-style:solid}
+button.term:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.sheet{animation:sheetUp .32s var(--ease-out) both}
+@keyframes sheetUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.term-card.flash{animation:flash 1.8s ease}
+@keyframes flash{0%,60%{box-shadow:0 0 0 3px var(--amber)}100%{box-shadow:var(--shadow-sm)}}
+@media (prefers-reduced-motion:reduce){.sheet,.term-card.flash{animation:none}}

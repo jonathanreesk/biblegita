@@ -1,6 +1,7 @@
 // Server-only helpers: read station content from content/stations at build time.
 import fs from "node:fs";
 import path from "node:path";
+import { annotate } from "./annotate";
 import { STATIONS } from "./stations";
 
 const DIR = path.join(process.cwd(), "content", "stations");
@@ -28,4 +29,13 @@ export function getAllRefs(): RefGroup[] {
     }
     return { stationId: s.id, refs };
   }).filter((g) => g.refs.length > 0);
+}
+
+// Which stations mention each glossary term (for the "Where it appears" links).
+export function getTermStations(): Record<string, string[]> {
+  const map: Record<string, string[]> = {};
+  for (const s of STATIONS) {
+    for (const id of annotate(getStationHtml(s.id)).used) (map[id] ??= []).push(s.id);
+  }
+  return map;
 }

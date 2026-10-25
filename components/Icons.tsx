@@ -43,3 +43,10 @@ export const ChevronIcon = ({ className = "h-4 w-4" }: P) => (
     <path d="M9 18l6-6-6-6" />
   </svg>
 );
+
+export const GlossaryIcon = ({ className = "h-5 w-5" }: P) => (
+  <svg {...base} className={className}>
+    <path d="M4 20V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2" />
+    <path d="M9 14l2-6 2 6M9.8 12h2.4" />
+  </svg>
+);

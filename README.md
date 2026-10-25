@@ -49,6 +49,7 @@ lib/content.ts          Reads station content and builds the Scripture index at 
 
 - **Change a step's text or diagram:** edit `content/stations/<id>.html`. The class names (`block claim`, `block arg`, `ref g`, `diagram`, and so on) are styled in `app/globals.css`.
 - **Add a step:** create `content/stations/<new-id>.html` and add an entry to `STATIONS` in `lib/stations.ts`. It will appear on the home screen, in the sidebar and in the Scripture index automatically.
+- **Plain-English glossary:** definitions live in `lib/glossary.ts`. At build time the first mention of each term on a page becomes a tap-to-define button (`lib/annotate.ts`), and every term is listed on the Glossary page. To add a word, add an entry with the exact spellings to match.
 - **Scripture references** tagged `<span class="ref g">` (Bible) or `<span class="ref d">` (Gita and Vedas) are collected into the Scripture index.
 
 ## Deploy to Vercel

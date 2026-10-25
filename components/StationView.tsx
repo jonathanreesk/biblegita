@@ -2,16 +2,27 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { neighbors } from "@/lib/stations";
 import { useProgress } from "./Providers";
+import { TermSheet, type TermInfo } from "./TermSheet";
 
-export function StationView({ id, html }: { id: string; html: string }) {
+export function StationView({ id, html, terms }: { id: string; html: string; terms: TermInfo[] }) {
   const router = useRouter();
   const { done, toggle } = useProgress();
   const { prev, next } = neighbors(id);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const isDone = !!done[id];
+  const [open, setOpen] = useState<TermInfo | null>(null);
+  const close = useCallback(() => setOpen(null), []);
+
+  // Words in the text are buttons with data-term; one listener handles them all
+  const onContentClick = (e: React.MouseEvent) => {
+    const btn = (e.target as HTMLElement).closest<HTMLElement>("button.term");
+    if (!btn) return;
+    const t = terms.find((x) => x.id === btn.dataset.term);
+    if (t) setOpen(t);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -22,17 +33,17 @@ export function StationView({ id, html }: { id: string; html: string }) {
   // Arrow keys move along the journey on desktop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement).closest("input, textarea")) return;
+      if (open || (e.target as HTMLElement).closest("input, textarea")) return;
       if (e.key === "ArrowRight" && next) router.push(`/journey/${next.id}`);
       if (e.key === "ArrowLeft" && prev) router.push(`/journey/${prev.id}`);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [prev, next, router]);
+  }, [prev, next, router, open]);
 
   // Swipe on phones, ignoring swipes inside scrollable diagrams and tables
   const onTouchStart = (e: React.TouchEvent) => {
-    if ((e.target as HTMLElement).closest(".diagram, .tablewrap")) {
+    if ((e.target as HTMLElement).closest(".diagram, .tablewrap, [role=dialog]")) {
       touch.current = null;
       return;
     }
@@ -50,7 +61,8 @@ export function StationView({ id, html }: { id: string; html: string }) {
 
   return (
     <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-      <section key={id} id={id} className="station fade-in" dangerouslySetInnerHTML={{ __html: html }} />
+      <section key={id} id={id} className="station fade-in" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: html }} />
+      {open && <TermSheet term={open} onClose={close} />}
 
       <nav aria-label="Journey navigation" className="mt-9 grid grid-cols-1 gap-2.5 border-t border-line pt-5 sm:grid-cols-[1fr_auto_1fr]">
         {prev ? (

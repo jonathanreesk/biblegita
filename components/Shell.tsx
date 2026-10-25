@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PARTS, STATIONS, findStation } from "@/lib/stations";
 import { useProgress } from "./Providers";
-import { BackIcon, BookIcon, HomeIcon, SlidersIcon } from "./Icons";
+import { BackIcon, BookIcon, GlossaryIcon, HomeIcon, SlidersIcon } from "./Icons";
 
 function useHeader(pathname: string) {
   if (pathname.startsWith("/journey/")) {
@@ -12,6 +12,7 @@ function useHeader(pathname: string) {
     if (s) return { eyebrow: s.n === 0 ? "Start here" : `${PARTS[s.part].title} · ${s.n} of 12`, title: s.title, back: true };
   }
   if (pathname === "/scripture") return { eyebrow: "Reference", title: "Scripture index", back: false };
+  if (pathname === "/glossary") return { eyebrow: "Reference", title: "Glossary", back: false };
   if (pathname === "/settings") return { eyebrow: "Preferences", title: "Settings", back: false };
   return { eyebrow: "Your journey", title: "The Gita and the Gospel", back: false };
 }
@@ -26,6 +27,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const tabs = [
     { href: "/", label: "Home", icon: <HomeIcon className="h-[22px] w-[22px]" />, active: pathname === "/" || pathname.startsWith("/journey/") },
     { href: "/scripture", label: "Scripture", icon: <BookIcon className="h-[22px] w-[22px]" />, active: pathname === "/scripture" },
+    { href: "/glossary", label: "Glossary", icon: <GlossaryIcon className="h-[22px] w-[22px]" />, active: pathname === "/glossary" },
     { href: "/settings", label: "Settings", icon: <SlidersIcon className="h-[22px] w-[22px]" />, active: pathname === "/settings" },
   ];
 
@@ -127,7 +129,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       {/* Mobile bottom tab bar */}
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-3 frost border-t border-line lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 frost border-t border-line lg:hidden"
         style={{
           paddingBottom: "env(safe-area-inset-bottom, 0px)",
           paddingLeft: "max(8px, env(safe-area-inset-left, 0px))",
