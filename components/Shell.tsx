@@ -108,7 +108,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>
           </div>
-          <div className="h-[3px] bg-line" aria-hidden="true">
+          <div className="h-[2px] bg-line" aria-hidden="true">
             <i className="block h-full bg-gospel transition-[width] duration-500" style={{ width: `${pct}%` }} />
           </div>
         </header>

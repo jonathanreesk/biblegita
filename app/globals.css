@@ -7,22 +7,23 @@
 
 /* Each step of the journey has a diagram, the argument, the expected reply, and a bridge to the gospel. */
 :root{
-  --bg:#f6f7f4; --surface:#ffffff; --ink:#1d2430; --muted:#5b6473; --line:#d9ddd6;
-  --gospel:#23466e; --gospel-soft:#e3ebf4;
-  --dharma:#a8620f; --dharma-soft:#f6ead9;
-  --warn:#9b2c2c;
+  --bg:#f8f7f4; --surface:#ffffff; --ink:#1b1c1f; --muted:#5d616a; --line:#e3e1db;
+  --gospel:#1f4b7c; --gospel-soft:#e9eff6;
+  --dharma:#8f5213; --dharma-soft:#f8eee0;
+  --warn:#a1302f;
   --f-display:"Libre Caslon Display", "Georgia", serif;
   --f-body:"Literata", "Georgia", serif;
   --f-label:"IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
 }
+/* Dark: neutral graphite and a warm off-white, so long reading stays calm. Tints are translucent so panels never turn muddy. */
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#12161d; --surface:#1a2029; --ink:#e6e8ec; --muted:#9aa3b2; --line:#2c3440;
-  --gospel:#8fb4e0; --gospel-soft:#1e2c3e; --dharma:#e3a456; --dharma-soft:#3a2b18; --warn:#e88a8a; color-scheme:dark}}
+  --bg:#141517; --surface:#1c1d20; --ink:#ecebe7; --muted:#a4a7ad; --line:#303236;
+  --gospel:#8fb6e8; --gospel-soft:rgba(143,182,232,.12); --dharma:#e2ab62; --dharma-soft:rgba(226,171,98,.11); --warn:#f09c98; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#12161d; --surface:#1a2029; --ink:#e6e8ec; --muted:#9aa3b2; --line:#2c3440;
-  --gospel:#8fb4e0; --gospel-soft:#1e2c3e; --dharma:#e3a456; --dharma-soft:#3a2b18; --warn:#e88a8a; color-scheme:dark}
+  --bg:#141517; --surface:#1c1d20; --ink:#ecebe7; --muted:#a4a7ad; --line:#303236;
+  --gospel:#8fb6e8; --gospel-soft:rgba(143,182,232,.12); --dharma:#e2ab62; --dharma-soft:rgba(226,171,98,.11); --warn:#f09c98; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent}
 h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;line-height:1.15;margin:0}
 h1{font-size:clamp(2rem,6vw,3.1rem)}
 h2{font-size:clamp(1.55rem,4vw,2.1rem)}
@@ -118,3 +119,10 @@ html[data-size="large"]{font-size:112.5%}
 @keyframes fadeIn{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.fade-in{animation:none}*{transition:none!important}}
 :focus-visible{outline:2px solid var(--gospel);outline-offset:2px}
+
+/* Focus: comfortable reading measure, and quiet panels instead of loud fills */
+.station p,.station li{max-width:68ch}
+.station .grid2 p,.station .grid2 li,.station .panel p{max-width:none}
+.block.claim{border-color:color-mix(in srgb,var(--dharma) 28%,transparent)}
+.block.answer{border-color:color-mix(in srgb,var(--gospel) 28%,transparent)}
+::selection{background:var(--gospel-soft)}
