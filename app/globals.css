@@ -226,3 +226,7 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
   .stage.big svg{width:60px;height:60px}
   .stage:not(:last-child)::after{content:"\25BE";top:auto;bottom:-17px;right:auto;left:22px}
 }
+
+.outline-panel{animation:panelIn .28s var(--ease-out) both}
+@keyframes panelIn{from{transform:translateX(30px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.outline-panel{animation:none}}

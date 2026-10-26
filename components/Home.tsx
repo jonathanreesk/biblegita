@@ -81,7 +81,7 @@ export function Home() {
 
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
-        <h2 className="text-[1.7rem]">{NUMBERED} steps in {PARTS.length - 1} parts</h2>
+        <h2 className="text-[1.7rem]">{NUMBERED} steps, in order</h2>
         <p className="text-[.95rem] text-muted">Each step takes a few minutes. Take them in order, or jump to any question that matters to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
@@ -109,7 +109,7 @@ export function Home() {
                       isDone ? "border-gospel bg-gospel text-surface" : "border-line bg-page text-muted"
                     }`}
                   >
-                    {isDone ? "✓" : s.n === 0 ? "★" : s.n}
+                    {isDone ? "✓" : s.n}
                   </span>
                   <span className="flex min-w-0 flex-col gap-0.5">
                     <b className="font-display text-[1.08rem] font-normal leading-tight">{s.title}</b>

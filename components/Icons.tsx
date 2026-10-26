@@ -50,3 +50,12 @@ export const GlossaryIcon = ({ className = "h-5 w-5" }: P) => (
     <path d="M9 14l2-6 2 6M9.8 12h2.4" />
   </svg>
 );
+
+export const ListIcon = ({ className = "h-5 w-5" }: P) => (
+  <svg {...base} className={className}>
+    <path d="M9 6h11M9 12h11M9 18h11" />
+    <circle cx="4.5" cy="6" r="1" />
+    <circle cx="4.5" cy="12" r="1" />
+    <circle cx="4.5" cy="18" r="1" />
+  </svg>
+);

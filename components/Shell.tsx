@@ -3,13 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NUMBERED, PARTS, STATIONS, findStation } from "@/lib/stations";
+import { useEffect, useRef, useState } from "react";
+import { OutlineDrawer, OutlineList } from "./Outline";
 import { useProgress } from "./Providers";
-import { BackIcon, BookIcon, GlossaryIcon, HomeIcon, SlidersIcon } from "./Icons";
+import { BackIcon, BookIcon, GlossaryIcon, HomeIcon, ListIcon, SlidersIcon } from "./Icons";
 
 function useHeader(pathname: string) {
   if (pathname.startsWith("/journey/")) {
     const s = findStation(pathname.split("/")[2] ?? "");
-    if (s) return { eyebrow: s.n === 0 ? "Start here" : `${PARTS[s.part].title} · ${s.n} of ${NUMBERED}`, title: s.title, back: true };
+    if (s) return { eyebrow: `${PARTS[s.part].title} · ${s.n} of ${NUMBERED}`, title: s.title, back: true };
   }
   if (pathname === "/scripture") return { eyebrow: "Reference", title: "Verse index", back: false };
   if (pathname === "/glossary") return { eyebrow: "Reference", title: "Glossary", back: false };
@@ -23,6 +25,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const header = useHeader(pathname);
   const count = STATIONS.filter((s) => done[s.id]).length;
   const pct = (count / STATIONS.length) * 100;
+  const [outline, setOutline] = useState(false);
+  const aside = useRef<HTMLElement>(null);
+
+  // The outline closes when you move to another page, and the sidebar keeps the current step in view
+  useEffect(() => {
+    setOutline(false);
+    aside.current?.querySelector('[aria-current="page"]')?.scrollIntoView({ block: "nearest" });
+  }, [pathname]);
 
   const tabs = [
     { href: "/", label: "Home", icon: <HomeIcon className="h-[22px] w-[22px]" />, active: pathname === "/" || pathname.startsWith("/journey/") },
@@ -35,40 +45,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
     <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)]">
       {/* Desktop sidebar */}
       <aside
+        ref={aside}
         aria-label="Journey"
         className="sticky top-0 hidden h-screen flex-col gap-1 overflow-y-auto border-r border-line bg-surface px-3.5 py-5 lg:flex"
       >
         <Link href="/" className="px-2.5 pb-3 font-display text-[1.35rem] leading-tight text-ink no-underline">
           The Gita and the Gospel
         </Link>
-        {PARTS.map((p, pi) => (
-          <div key={p.title} className="flex flex-col gap-0.5">
-            <h5 className="mx-2.5 mb-1 mt-3.5 font-label text-[.72rem] font-semibold uppercase tracking-[.09em] text-muted">{p.title}</h5>
-            {STATIONS.filter((s) => s.part === pi).map((s) => {
-              const current = pathname === `/journey/${s.id}`;
-              const isDone = !!done[s.id];
-              return (
-                <Link
-                  key={s.id}
-                  href={`/journey/${s.id}`}
-                  aria-current={current ? "page" : undefined}
-                  className={`flex items-center gap-2.5 rounded-xl px-3 py-2 text-[.92rem] leading-snug no-underline transition-colors ${
-                    current ? "bg-gospel-soft text-gospel" : "text-ink hover:bg-page"
-                  }`}
-                >
-                  <span
-                    className={`grid h-6 w-6 flex-none place-items-center rounded-full border font-label text-[.75rem] font-semibold ${
-                      isDone ? "border-gospel bg-gospel text-surface" : "border-line text-muted"
-                    }`}
-                  >
-                    {isDone ? "✓" : s.n === 0 ? "★" : s.n}
-                  </span>
-                  <span>{s.title}</span>
-                </Link>
-              );
-            })}
-          </div>
-        ))}
+        <OutlineList pathname={pathname} done={done} />
         <div className="mt-auto flex flex-col gap-0.5 border-t border-line pt-3.5">
           {tabs.slice(1).map((t) => (
             <Link
@@ -109,6 +93,15 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <small className="font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>
+            <button
+              type="button"
+              onClick={() => setOutline(true)}
+              aria-label="Open the journey outline"
+              aria-haspopup="dialog"
+              className="grid h-10 w-10 flex-none place-items-center rounded-full border border-line bg-surface text-ink shadow-soft lg:hidden"
+            >
+              <ListIcon />
+            </button>
           </div>
           <div className="h-[3px] bg-line" aria-hidden="true">
             <i className="block h-full bg-gradient-to-r from-gospel to-amber transition-[width] duration-500" style={{ width: `${pct}%` }} />
@@ -125,6 +118,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
           {children}
         </main>
       </div>
+
+      <OutlineDrawer open={outline} onClose={() => setOutline(false)} pathname={pathname} done={done} />
 
       {/* Mobile bottom tab bar */}
       <nav
