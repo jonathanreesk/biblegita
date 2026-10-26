@@ -1,6 +1,6 @@
 // Server-only: wraps every mention of a glossary term in a tap-to-define button.
 import { GLOSSARY } from "./glossary";
-import { BARE_RE, REF_RE, keyFromBare, keyFromMatch } from "./scriptureRef.mjs";
+import { BARE_RE, HINDU_RE, REF_RE, keyFromBare, keyFromHindu, keyFromMatch, refKeyFor } from "./scriptureRef.mjs";
 import { SCRIPTURE } from "./scripture";
 
 const VOID = new Set(["br", "hr", "img", "input", "meta", "link", "path", "circle", "rect", "line", "ellipse"]);
@@ -23,8 +23,7 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
   const stack: { name: string; skip: boolean }[] = [];
   // Reference chips become buttons that open the verse
   const prepared = html.replace(/<span class="ref( g| d)?">([^<]+)<\/span>/g, (all, kind = "", text: string) => {
-    const m = REF_RE().exec(text.trim());
-    const key = m && keyFromMatch(m);
+    const key = refKeyFor(text, SCRIPTURE);
     if (!key || !SCRIPTURE[key]) return all;
     refs.add(key);
     return `<button type="button" class="ref${kind} verse" data-ref="${key}" aria-haspopup="dialog">${text}</button>`;
@@ -70,17 +69,19 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
 }
 
 // Wraps scripture references in a text segment; the rest goes through `rest` (glossary words).
-const buttonWrap = (shown: string, key: string) =>
-  `<button type="button" class="verse" data-ref="${key}" aria-haspopup="dialog">${shown}</button>`;
-const svgWrap = (shown: string, key: string) =>
-  `<tspan class="verse" data-ref="${key}" role="button" tabindex="0" aria-haspopup="dialog">${shown}</tspan>`;
+const buttonWrap = (shown: string, key: string, cls = "") =>
+  `<button type="button" class="verse${cls}" data-ref="${key}" aria-haspopup="dialog">${shown}</button>`;
+const svgWrap = (shown: string, key: string, cls = "") =>
+  `<tspan class="verse${cls}" data-ref="${key}" role="button" tabindex="0" aria-haspopup="dialog">${shown}</tspan>`;
 
 function linkScripture(text: string, refs: Set<string>, rest: (t: string) => string, wrap = buttonWrap): string {
-  const found: { start: number; end: number; key: string; from: number }[] = [];
-  for (const m of text.matchAll(REF_RE())) found.push({ start: m.index!, end: m.index! + m[0].length, key: keyFromMatch(m), from: 0 });
+  const found: { start: number; end: number; key: string; cls?: string }[] = [];
+  for (const m of text.matchAll(REF_RE())) found.push({ start: m.index!, end: m.index! + m[0].length, key: keyFromMatch(m) });
+  // Hindu texts get their own colour
+  for (const m of text.matchAll(HINDU_RE())) found.push({ start: m.index!, end: m.index! + m[0].length, key: keyFromHindu(m), cls: " h" });
   for (const m of text.matchAll(BARE_RE())) {
     // Only the numbers inside the parentheses are linked
-    found.push({ start: m.index! + 1, end: m.index! + m[0].length - 1, key: keyFromBare(m), from: 0 });
+    found.push({ start: m.index! + 1, end: m.index! + m[0].length - 1, key: keyFromBare(m) });
   }
   found.sort((a, b) => a.start - b.start);
   let out = "";
@@ -89,7 +90,7 @@ function linkScripture(text: string, refs: Set<string>, rest: (t: string) => str
     if (f.start < last || !SCRIPTURE[f.key]) continue;
     refs.add(f.key);
     out += rest(text.slice(last, f.start));
-    out += wrap(text.slice(f.start, f.end), f.key);
+    out += wrap(text.slice(f.start, f.end), f.key, f.cls);
     last = f.end;
   }
   return out + rest(text.slice(last));

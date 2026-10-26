@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { PARTS, findStation } from "@/lib/stations";
 import type { RefGroup } from "@/lib/content";
 import type { VerseMap } from "@/lib/scripture";
-import { REF_RE, keyFromMatch } from "@/lib/scriptureRef.mjs";
+import { refKeyFor } from "@/lib/scriptureRef.mjs";
 import { VerseSheet } from "./VerseSheet";
 
 type Filter = "all" | "g" | "d";
@@ -30,7 +30,7 @@ export function ScriptureIndex({ groups, verses }: { groups: RefGroup[]; verses:
   const options: { v: Filter; label: string }[] = [
     { v: "all", label: "All" },
     { v: "g", label: "Bible" },
-    { v: "d", label: "Gita and Vedas" },
+    { v: "d", label: "Hindu texts" },
   ];
 
   return (
@@ -74,8 +74,7 @@ export function ScriptureIndex({ groups, verses }: { groups: RefGroup[]; verses:
               </h4>
               <div className="flex flex-wrap gap-2">
                 {g.refs.map((r) => {
-                  const m = REF_RE().exec(r.text);
-                  const key = m ? keyFromMatch(m) : null;
+                  const key = refKeyFor(r.text, verses);
                   const cls = `rounded-full border bg-surface px-3 py-1.5 font-label text-[.88rem] font-semibold no-underline ${
                     r.kind === "g" ? "border-gospel text-gospel" : r.kind === "d" ? "border-dharma text-dharma" : "border-line text-muted"
                   }`;

@@ -161,6 +161,8 @@ button.term:focus-visible,a.term:focus-visible{outline:3px solid var(--amber);ou
 /* Tap-to-read verses: inline references look like quiet links, chips keep their style */
 button.verse{all:unset;cursor:pointer;color:var(--gospel);font-weight:600;border-bottom:1.5px solid color-mix(in srgb,var(--gospel) 40%,transparent);border-radius:2px;transition:background .2s var(--ease)}
 button.verse:hover{background:var(--gospel-soft)}
+button.verse.h{color:var(--dharma);border-bottom-color:color-mix(in srgb,var(--dharma) 40%,transparent)}
+button.verse.h:hover{background:var(--dharma-soft)}
 button.verse:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
 button.ref.verse{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;font-family:var(--f-label);font-size:.8rem;font-weight:600;padding:3px 11px;border-radius:999px;border:1px solid var(--line);color:var(--muted);transition:background .2s var(--ease)}
 button.ref.verse.g{color:var(--gospel);border-color:var(--gospel)}

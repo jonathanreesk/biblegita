@@ -17,9 +17,10 @@ export function VerseSheet({
   usedIn?: { href: string; title: string };
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const src = sourceFor(refKey, entry.t);
+  const src = sourceFor(refKey, entry);
   const verses = entry.v;
-  const gita = src.book === "Bhagavad Gita";
+  const summary = entry.t === "Summary";
+  const gita = src.book === "Bhagavad Gita" || summary;
 
   useEffect(() => {
     const opener = document.activeElement as HTMLElement | null;
@@ -47,6 +48,7 @@ export function VerseSheet({
       >
         <span className="label">{src.book}</span>
         <h3 className="text-[1.6rem]">{refKey.replace(/^Gita/, "Gita")}</h3>
+        {summary && <span className="font-label text-[.72rem] font-semibold uppercase tracking-[.1em] text-muted">In plain English</span>}
         <blockquote className={`m-0 flex flex-col gap-2 border-l-[3px] pl-4 text-[1.05rem] leading-relaxed ${gita ? "border-dharma" : "border-gospel"}`}>
           {verses.map((v) => (
             <p key={v.n}>
@@ -55,6 +57,13 @@ export function VerseSheet({
             </p>
           ))}
         </blockquote>
+        {entry.note && <p className="rounded-2xl bg-sand px-4 py-3 text-[.95rem] leading-relaxed">{entry.note}</p>}
+        {entry.sa && (
+          <div className="flex flex-col gap-1">
+            <span className="font-label text-[.72rem] font-semibold uppercase tracking-[.1em] text-muted">The original Sanskrit</span>
+            <p lang="sa" className="whitespace-pre-line text-[1rem] leading-relaxed text-muted">{entry.sa}</p>
+          </div>
+        )}
         <span className="font-label text-[.78rem] leading-snug text-muted">{src.credit}</span>
         <div className="mt-1 flex flex-wrap items-center gap-2.5">
           <button
@@ -69,6 +78,7 @@ export function VerseSheet({
               See where it is used
             </Link>
           )}
+          {src.url && (
           <a
             href={src.url(refKey)}
             target="_blank"
@@ -77,6 +87,7 @@ export function VerseSheet({
           >
             {gita ? "Read the full chapter" : "Read in the NIV"} ↗
           </a>
+          )}
         </div>
       </div>
     </div>
