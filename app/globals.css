@@ -54,6 +54,10 @@ p{margin:0}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow-sm)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
 .grid2>*{min-width:0}
+/* A lone last item spans the row instead of leaving an empty half */
+.grid2>:last-child:nth-child(odd),.cast>:last-child:nth-child(odd){grid-column:1/-1}
+.cmp-row>.cmp-q+.cmp:last-child,.cmp-row>.cmp:only-child{grid-column:1/-1}
+.cmp-row>.cmp:only-child p{max-width:none}
 
 /* method steps */
 ol.method{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px;counter-reset:m}
