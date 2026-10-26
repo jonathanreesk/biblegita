@@ -562,15 +562,6 @@
    }
   ]
  },
- "Ephesians 1:7": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 7,
-    "text": "in whom we have our redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace,"
-   }
-  ]
- },
  "Ephesians 2:8-10": {
   "t": "WEB",
   "v": [
@@ -1148,12 +1139,24 @@
    }
   ]
  },
- "Jeremiah 31:31": {
+ "Jeremiah 31:31-34": {
   "t": "WEB",
   "v": [
    {
     "n": 31,
     "text": "“Behold, the days come,” says Yahweh, “that I will make a new covenant with the house of Israel, and with the house of Judah:"
+   },
+   {
+    "n": 32,
+    "text": "not according to the covenant that I made with their fathers in the day that I took them by the hand to bring them out of the land of Egypt; which covenant of mine they broke, although I was a husband to them,” says Yahweh."
+   },
+   {
+    "n": 33,
+    "text": "“But this is the covenant that I will make with the house of Israel after those days,” says Yahweh: “I will put my law in their inward parts, and I will write it in their heart. I will be their God, and they shall be my people."
+   },
+   {
+    "n": 34,
+    "text": "They will no longer each teach his neighbor, and every man teach his brother, saying, ‘Know Yahweh;’ for they will all know me, from their least to their greatest,” says Yahweh: “for I will forgive their iniquity, and I will remember their sin no more.”"
    }
   ]
  },
@@ -1685,6 +1688,15 @@
    }
   ]
  },
+ "Psalm 103:12": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 12,
+    "text": "As far as the east is from the west, so far has he removed our transgressions from us."
+   }
+  ]
+ },
  "Psalm 119:130": {
   "t": "WEB",
   "v": [
@@ -1958,6 +1970,15 @@
    {
     "n": 23,
     "text": "for all have sinned, and fall short of the glory of God;"
+   }
+  ]
+ },
+ "Romans 3:24": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 24,
+    "text": "being justified freely by his grace through the redemption that is in Christ Jesus;"
    }
   ]
  },

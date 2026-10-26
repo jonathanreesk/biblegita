@@ -271,3 +271,16 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .rpath li.link .where{color:color-mix(in srgb,var(--surface) 78%,transparent)}
 .rpath li.link b{color:var(--surface);font-size:1.5rem}
 .rpath li.link .ref,.rpath li.link button.verse{color:var(--surface);border-color:color-mix(in srgb,var(--surface) 70%,transparent)}
+
+.rpath p.man,.rpath p.god{position:relative;display:block;padding-left:3.5rem;max-width:none;margin:2px 0 0}
+.rpath p.man>span,.rpath p.god>span{position:absolute;left:0;top:.35em;font-family:var(--f-label);font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.rpath p.man>span{color:var(--warn)}
+.rpath p.god>span{color:var(--gospel)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.duo>div{display:flex;flex-direction:column;gap:4px;border-radius:22px;padding:16px 18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-sm)}
+.duo .who{font-family:var(--f-label);font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.duo b{font-family:var(--f-display);font-weight:500;font-size:1.2rem;line-height:1.2}
+.duo p{font-size:.93rem;color:var(--muted);max-width:none}
+.duo-man{border-top:4px solid var(--warn)}.duo-man .who{color:var(--warn)}
+.duo-god{border-top:4px solid var(--gospel)}.duo-god .who{color:var(--gospel)}
+@media (max-width:640px){.duo{grid-template-columns:1fr}}
