@@ -223,6 +223,15 @@
    }
   ]
  },
+ "1 Peter 3:18": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 18,
+    "text": "For Christ also suffered once for sins, the righteous for the unrighteous, that he might bring us to God, being put to death in the flesh but made alive in the spirit,"
+   }
+  ]
+ },
  "1 Thessalonians 1:9": {
   "t": "WEB",
   "v": [
@@ -746,15 +755,6 @@
    {
     "n": 24,
     "text": "So he drove out the man; and he placed cherubim at the east of the garden of Eden, and a flaming sword which turned every way, to guard the way to the tree of life."
-   }
-  ]
- },
- "Gita 10:10": {
-  "t": "Sivananda",
-  "v": [
-   {
-    "n": 10,
-    "text": "To those who are ever steadfast, worshipping me with love, I give the yoga of discrimination, by which they come to me."
    }
   ]
  },
@@ -1468,6 +1468,15 @@
    }
   ]
  },
+ "Mark 10:18": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 18,
+    "text": "Jesus said to him, “Why do you call me good? No one is good except one—God."
+   }
+  ]
+ },
  "Mark 10:29-30": {
   "t": "WEB",
   "v": [
@@ -1659,6 +1668,15 @@
    {
     "n": 11,
     "text": "You will show me the path of life. In your presence is fullness of joy. In your right hand there are pleasures forever more."
+   }
+  ]
+ },
+ "Revelation 12:9": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 9,
+    "text": "The great dragon was thrown down, the old serpent, he who is called the devil and Satan, the deceiver of the whole world. He was thrown down to the earth, and his angels were thrown down with him."
    }
   ]
  },
@@ -1907,6 +1925,24 @@
    {
     "n": 6,
     "text": "who “will pay back to everyone according to their works:”"
+   }
+  ]
+ },
+ "Romans 3:10": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "As it is written, “There is no one righteous; no, not one."
+   }
+  ]
+ },
+ "Romans 3:23": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 23,
+    "text": "for all have sinned, and fall short of the glory of God;"
    }
   ]
  },
