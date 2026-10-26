@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { neighbors } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { termById, type Term } from "@/lib/glossary";
@@ -16,7 +16,6 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
   const router = useRouter();
   const { done, toggle } = useProgress();
   const { prev, next } = neighbors(id);
-  const touch = useRef<{ x: number; y: number } | null>(null);
   const isDone = !!done[id];
   const [open, setOpen] = useState<Term | null>(null);
   const [verse, setVerse] = useState<string | null>(null);
@@ -100,26 +99,8 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
     if (t) setOpen(t);
   };
 
-  // Swipe on phones, ignoring swipes inside scrollable diagrams and tables
-  const onTouchStart = (e: React.TouchEvent) => {
-    if ((e.target as HTMLElement).closest(".diagram, .tablewrap, [role=dialog]")) {
-      touch.current = null;
-      return;
-    }
-    touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-  };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (!touch.current) return;
-    const dx = e.changedTouches[0].clientX - touch.current.x;
-    const dy = e.changedTouches[0].clientY - touch.current.y;
-    touch.current = null;
-    if (Math.abs(dx) < 70 || Math.abs(dy) > Math.abs(dx) * 0.6) return;
-    const target = dx < 0 ? next : prev;
-    if (target) router.push(`/journey/${target.id}`);
-  };
-
   return (
-    <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <div>
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} onKeyDown={onContentKey} dangerouslySetInnerHTML={{ __html: html }} />
       {findStation(id)?.reflect && <Reflect id={id} prompt={findStation(id)!.reflect} />}
       {verse && verses[verse] && <VerseSheet refKey={verse} entry={verses[verse]} onClose={close} />}
@@ -157,7 +138,6 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
           </Link>
         </div>
       </nav>
-      <p className="mt-2.5 text-center font-label text-[.78rem] text-muted lg:hidden">Swipe left or right to move along the journey</p>
     </div>
   );
 }

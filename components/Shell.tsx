@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NUMBERED, PARTS, STATIONS, findStation } from "@/lib/stations";
+import { NUMBERED, PARTS, STATIONS, findStation, neighbors } from "@/lib/stations";
 import { useEffect, useRef, useState } from "react";
 import { OutlineDrawer, OutlineList } from "./Outline";
 import { useProgress } from "./Providers";
-import { BackIcon, BookIcon, GlossaryIcon, HomeIcon, ListIcon, SlidersIcon } from "./Icons";
+import { BackIcon, BookIcon, ChevronIcon, GlossaryIcon, HomeIcon, ListIcon, SlidersIcon } from "./Icons";
 
 function useHeader(pathname: string) {
   if (pathname.startsWith("/journey/")) {
@@ -23,6 +23,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || "/";
   const { done } = useProgress();
   const header = useHeader(pathname);
+  const here = pathname.startsWith("/journey/") ? findStation(pathname.split("/")[2] ?? "") : undefined;
+  const nextStep = here ? neighbors(here.id).next : undefined;
   const count = STATIONS.filter((s) => done[s.id]).length;
   const pct = (count / STATIONS.length) * 100;
   const [outline, setOutline] = useState(false);
@@ -102,6 +104,16 @@ export function Shell({ children }: { children: React.ReactNode }) {
             >
               <ListIcon />
             </button>
+            {nextStep && (
+              <Link
+                href={`/journey/${nextStep.id}`}
+                aria-label={`Next step: ${nextStep.title}`}
+                className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft"
+              >
+                Next
+                <ChevronIcon />
+              </Link>
+            )}
           </div>
           <div className="h-[3px] bg-line" aria-hidden="true">
             <i className="block h-full bg-gradient-to-r from-gospel to-amber transition-[width] duration-500" style={{ width: `${pct}%` }} />
