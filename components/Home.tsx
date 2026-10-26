@@ -25,7 +25,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
     <div className="fade-in flex flex-col">
       <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
         <h1>The Gita and the Gospel</h1>
-        <p className="lede">A walk through the Bhagavad Gita and the Bible, side by side, for readers of every background.</p>
+        <p className="lede">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of rescue in Jesus Christ. For readers of every background.</p>
 
         <ul className="m-0 my-1 flex list-none flex-col gap-2 p-0" aria-label="The questions this guide explores">
           {["Who is God?", "Does He love us?", "What are we here for?"].map((q, i) => (

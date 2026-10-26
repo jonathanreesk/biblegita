@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "The Gita and the Gospel",
     short_name: "Gita and Gospel",
-    description: "A study guide for any reader: the Gita and the Bible side by side.",
+    description: "A study guide for any reader: the Hindu texts set beside the Bible.",
     start_url: "/",
     display: "standalone",
     background_color: "#fbf7f0",

@@ -1,6 +1,6 @@
 # The Gita and the Gospel
 
-An app-style study guide for any reader, whether Hindu, Christian or curious. It walks through the Bhagavad Gita and the Bible as a guided journey for any reader: why we are here, how each scripture is built, honest hard questions, the cross, the living hope of Christ, and an invitation to know God, find joy in his purposes and share it with others (Matthew 28:19-20).
+An app-style study guide for any reader, whether Hindu, Christian or curious. It walks through the Hindu texts, from the Vedas to the Gita, and sets each beside the Bible as a guided journey for any reader: why we are here, how each scripture is built, honest hard questions, the cross, the living hope of Christ, and an invitation to know God, find joy in his purposes and share it with others (Matthew 28:19-20).
 
 ## Stack
 
