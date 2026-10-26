@@ -144,6 +144,15 @@
    }
   ]
  },
+ "1 Corinthians 2:2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 2,
+    "text": "For I determined not to know anything among you except Jesus Christ and him crucified."
+   }
+  ]
+ },
  "1 John 1:1-3": {
   "t": "WEB",
   "v": [
@@ -167,6 +176,15 @@
    {
     "n": 5,
     "text": "This is the message which we have heard from him and announce to you, that God is light, and in him is no darkness at all."
+   }
+  ]
+ },
+ "1 John 1:7": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 7,
+    "text": "But if we walk in the light, as he is in the light, we have fellowship with one another, and the blood of Jesus Christ, his Son, cleanses us from all sin."
    }
   ]
  },
@@ -202,15 +220,6 @@
    {
     "n": 10,
     "text": "In this is love, not that we loved God, but that he loved us, and sent his Son as the atoning sacrifice for our sins."
-   }
-  ]
- },
- "1 John 5:12": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 12,
-    "text": "He who has the Son has the life. He who doesn’t have God’s Son doesn’t have the life."
    }
   ]
  },
@@ -277,6 +286,15 @@
    }
   ]
  },
+ "2 Corinthians 5:17": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 17,
+    "text": "Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new."
+   }
+  ]
+ },
  "2 Corinthians 5:19": {
   "t": "WEB",
   "v": [
@@ -301,6 +319,15 @@
    {
     "n": 2,
     "text": "for he says, “At an acceptable time I listened to you. In a day of salvation I helped you.” Behold, now is the acceptable time. Behold, now is the day of salvation."
+   }
+  ]
+ },
+ "2 Peter 1:16": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 16,
+    "text": "For we didn’t follow cunningly devised fables when we made known to you the power and coming of our Lord Jesus Christ, but we were eyewitnesses of his majesty."
    }
   ]
  },
@@ -438,6 +465,19 @@
    }
   ]
  },
+ "Acts 17:24-25": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 24,
+    "text": "The God who made the world and all things in it, he, being Lord of heaven and earth, doesn’t dwell in temples made with hands."
+   },
+   {
+    "n": 25,
+    "text": "He isn’t served by men’s hands, as though he needed anything, seeing he himself gives to all life and breath, and all things."
+   }
+  ]
+ },
  "Acts 17:24-26": {
   "t": "WEB",
   "v": [
@@ -470,6 +510,15 @@
    {
     "n": 8,
     "text": "But you will receive power when the Holy Spirit has come upon you. You will be witnesses to me in Jerusalem, in all Judea and Samaria, and to the uttermost parts of the earth.”"
+   }
+  ]
+ },
+ "Acts 26:26": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 26,
+    "text": "For the king knows of these things, to whom also I speak freely. For I am persuaded that none of these things is hidden from him, for this has not been done in a corner."
    }
   ]
  },
@@ -924,6 +973,15 @@
    }
   ]
  },
+ "Gita 4:8": {
+  "t": "Sivananda",
+  "v": [
+   {
+    "n": 8,
+    "text": "For the protection of the good, for the destruction of the wicked, and for the establishment of righteousness, I am born in every age."
+   }
+  ]
+ },
  "Gita 7:14": {
   "t": "Sivananda",
   "v": [
@@ -979,6 +1037,15 @@
    {
     "n": 32,
     "text": "For, taking refuge in Me, they who, O Arjuna, may be of a sinful birth—women, Vaisyas, and Sudras—attain the Supreme Goal."
+   }
+  ]
+ },
+ "Hebrews 10:10": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "by which will we have been sanctified through the offering of the body of Jesus Christ once for all."
    }
   ]
  },
@@ -1047,6 +1114,15 @@
    }
   ]
  },
+ "Hebrews 9:26": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 26,
+    "text": "or else he must have suffered often since the foundation of the world. But now once at the end of the ages, he has been revealed to put away sin by the sacrifice of himself."
+   }
+  ]
+ },
  "Hebrews 9:26-28": {
   "t": "WEB",
   "v": [
@@ -1070,6 +1146,24 @@
    {
     "n": 27,
     "text": "Inasmuch as it is appointed for men to die once, and after this, judgment,"
+   }
+  ]
+ },
+ "Isaiah 45:22": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 22,
+    "text": "“Look to me, and be saved, all the ends of the earth; for I am God, and there is no other."
+   }
+  ]
+ },
+ "Isaiah 45:5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 5,
+    "text": "I am Yahweh, and there is no one else. Besides me, there is no God. I will strengthen you, though you have not known me,"
    }
   ]
  },
@@ -1153,15 +1247,6 @@
    {
     "n": 25,
     "text": "But as for me, I know that my Redeemer lives. In the end, he will stand upon the earth."
-   }
-  ]
- },
- "John 10:11": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 11,
-    "text": "I am the good shepherd. The good shepherd lays down his life for the sheep."
    }
   ]
  },
@@ -1270,6 +1355,23 @@
    }
   ]
  },
+ "John 15:13-15": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 13,
+    "text": "Greater love has no one than this, that someone lay down his life for his friends."
+   },
+   {
+    "n": 14,
+    "text": "You are my friends, if you do whatever I command you."
+   },
+   {
+    "n": 15,
+    "text": "No longer do I call you servants, for the servant doesn’t know what his lord does. But I have called you friends, for everything that I heard from my Father, I have made known to you."
+   }
+  ]
+ },
  "John 15:15": {
   "t": "WEB",
   "v": [
@@ -1329,6 +1431,15 @@
    {
     "n": 1,
     "text": "In the beginning was the Word, and the Word was with God, and the Word was God."
+   }
+  ]
+ },
+ "John 1:12": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 12,
+    "text": "But as many as received him, to them he gave the right to become God’s children, to those who believe in his name:"
    }
   ]
  },
@@ -1430,6 +1541,19 @@
    }
   ]
  },
+ "John 8:10-11": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "Jesus, standing up, saw her and said, “Woman, where are your accusers? Did no one condemn you?”"
+   },
+   {
+    "n": 11,
+    "text": "She said, “No one, Lord.” Jesus said, “Neither do I condemn you. Go your way. From now on, sin no more.”"
+   }
+  ]
+ },
  "Luke 10:5-7": {
   "t": "WEB",
   "v": [
@@ -1444,6 +1568,15 @@
    {
     "n": 7,
     "text": "Remain in that same house, eating and drinking the things they give, for the laborer is worthy of his wages. Don’t go from house to house."
+   }
+  ]
+ },
+ "Luke 19:10": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "For the Son of Man came to seek and to save that which was lost.”"
    }
   ]
  },
@@ -1512,6 +1645,15 @@
    }
   ]
  },
+ "Malachi 3:6": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 6,
+    "text": "“For I, Yahweh, don’t change; therefore you, sons of Jacob, are not consumed."
+   }
+  ]
+ },
  "Mark 10:18": {
   "t": "WEB",
   "v": [
@@ -1531,6 +1673,15 @@
    {
     "n": 30,
     "text": "but he will receive one hundred times more now in this time: houses, brothers, sisters, mothers, children, and land, with persecutions; and in the age to come eternal life."
+   }
+  ]
+ },
+ "Mark 10:45": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 45,
+    "text": "For the Son of Man also came not to be served, but to serve, and to give his life as a ransom for many.”"
    }
   ]
  },
@@ -1995,6 +2146,15 @@
    }
   ]
  },
+ "Romans 1:16": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 16,
+    "text": "For I am not ashamed of the Good News of Christ, because it is the power of God for salvation for everyone who believes, for the Jew first, and also for the Greek."
+   }
+  ]
+ },
  "Romans 2:15": {
   "t": "WEB",
   "v": [
@@ -2047,6 +2207,15 @@
     "n": 25,
     "text": "whom God sent to be an atoning sacrifice, through faith in his blood, for a demonstration of his righteousness through the passing over of prior sins, in God’s forbearance;"
    },
+   {
+    "n": 26,
+    "text": "to demonstrate his righteousness at this present time; that he might himself be just, and the justifier of him who has faith in Jesus."
+   }
+  ]
+ },
+ "Romans 3:26": {
+  "t": "WEB",
+  "v": [
    {
     "n": 26,
     "text": "to demonstrate his righteousness at this present time; that he might himself be just, and the justifier of him who has faith in Jesus."
