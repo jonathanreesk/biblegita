@@ -161,6 +161,15 @@
    }
   ]
  },
+ "1 John 1:5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 5,
+    "text": "This is the message which we have heard from him and announce to you, that God is light, and in him is no darkness at all."
+   }
+  ]
+ },
  "1 John 4:19": {
   "t": "WEB",
   "v": [
@@ -193,6 +202,15 @@
    {
     "n": 10,
     "text": "In this is love, not that we loved God, but that he loved us, and sent his Son as the atoning sacrifice for our sins."
+   }
+  ]
+ },
+ "1 John 5:12": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 12,
+    "text": "He who has the Son has the life. He who doesn’t have God’s Son doesn’t have the life."
    }
   ]
  },
