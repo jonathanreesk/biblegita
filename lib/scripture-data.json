@@ -205,6 +205,15 @@
    }
   ]
  },
+ "1 Peter 2:22": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 22,
+    "text": "He committed no sin, neither was deceit found in his mouth."
+   }
+  ]
+ },
  "1 Peter 2:24": {
   "t": "ESV",
   "v": [
@@ -1039,6 +1048,15 @@
    {
     "n": 14,
     "text": "Since then the children have shared in flesh and blood, he also himself in the same way partook of the same, that through death he might bring to nothing him who had the power of death, that is, the devil,"
+   }
+  ]
+ },
+ "Hebrews 4:15": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 15,
+    "text": "For we don’t have a high priest who can’t be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin."
    }
   ]
  },
