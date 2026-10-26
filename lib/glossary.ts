@@ -351,6 +351,12 @@ export const GLOSSARY: Term[] = [
     plain: "A 17th-century Marathi poet-saint devoted to Vithoba, a form of Krishna." },
   { id: "circular", term: "Circular reasoning", side: "logic", match: ["circular reasoning", "petitio principii"],
     plain: "Using a claim to prove itself. For example: \"The Vedas are true because the Vedas say so.\"" },
+  { id: "dwaraka", term: "Dwaraka", say: "dwah-RUH-kah", side: "hindu", match: ["Dwaraka"],
+    plain: "Krishna's city on the west coast of India. At the end of the Mahabharata it sinks into the sea." },
+  { id: "lavakusha", term: "Lava and Kusha", say: "LUH-vuh, KOO-shuh", side: "hindu", match: ["Lava", "Kusha"],
+    plain: "The twin sons of Rama and Sita, born in Valmiki's hermitage after Sita was sent away." },
+  { id: "sarayu", term: "Sarayu", say: "SUH-ruh-yoo", side: "hindu", match: ["Sarayu"],
+    plain: "The river beside Ayodhya. At the end of the Ramayana, Lakshmana and then Rama walk into it and leave the world." },
 ];
 
 const BY_ID = new Map(GLOSSARY.map((t) => [t.id, t]));
