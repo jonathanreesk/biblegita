@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { NUMBERED, PARTS, STATIONS, findStation, neighbors } from "@/lib/stations";
 import { useEffect, useRef, useState } from "react";
 import { OutlineDrawer, OutlineList } from "./Outline";
@@ -21,6 +21,18 @@ function useHeader(pathname: string) {
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || "/";
+  const router = useRouter();
+  // Pages visited in this tab, so Back can return to the page the reader came from
+  const visited = useRef(0);
+  useEffect(() => {
+    visited.current += 1;
+  }, [pathname]);
+  const goBack = () => {
+    if (visited.current > 1) return router.back();
+    // Opened straight from a link: step back through the journey instead
+    const prev = neighbors(pathname.replace("/journey/", "")).prev;
+    router.push(prev ? `/journey/${prev.id}` : "/");
+  };
   const { done } = useProgress();
   const header = useHeader(pathname);
   const here = pathname.startsWith("/journey/") ? findStation(pathname.split("/")[2] ?? "") : undefined;
@@ -83,13 +95,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
             }}
           >
             {header.back && (
-              <Link
-                href="/"
-                aria-label="Back to home"
+              <button
+                type="button"
+                onClick={goBack}
+                aria-label="Back to the previous page"
                 className="grid h-10 w-10 flex-none place-items-center rounded-full border border-line bg-surface text-ink shadow-soft"
               >
                 <BackIcon />
-              </Link>
+              </button>
             )}
             <div className="flex min-w-0 flex-1 flex-col">
               <small className="truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
