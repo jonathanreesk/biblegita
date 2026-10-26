@@ -159,7 +159,7 @@ export const GLOSSARY: Term[] = [
     plain: "The fire god of the Vedas, who carries offerings to the other gods." },
   { id: "itihasa", term: "Itihasa", say: "ih-tee-HAH-suh", side: "hindu", match: ["itihasa"],
     plain: "\"So it was\": the name for the great epics, the Mahabharata and the Ramayana, which Hindus treat as history-like narrative." },
-  { id: "rta", term: "Rta", say: "RUH-tuh", side: "hindu", match: ["Rta"],
+  { id: "rta", term: "Rta", say: "RIH-tuh", side: "hindu", match: ["Rta"],
     plain: "The order of the cosmos in the Vedas, which the rituals are meant to keep in balance." },
   { id: "apaurusheya", term: "Apaurusheya", say: "uh-pow-ROO-shay-yuh", side: "hindu", match: ["apaurusheya"],
     plain: "\"Not made by any person\": the belief that the Vedas have no human author and are eternal." },
