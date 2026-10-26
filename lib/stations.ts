@@ -25,7 +25,7 @@ export const STATIONS: Station[] = [
     reflect: "Think of someone you could have an unhurried conversation with about these questions. What would you most like to ask them, or them you?" },
   { id: "story", n: 1, part: 1, title: "Two big stories", desc: "The Mahabharata and the Bible's one storyline",
     reflect: "If you had to say what each story is about in one sentence, what would you say? Which story do you find yourself in?" },
-  { id: "structure", n: 2, part: 1, title: "How the texts are built", desc: "An epic, a dialogue and one finished Bible",
+  { id: "structure", n: 2, part: 1, title: "How the texts are built", desc: "Where the Gita, the Mahabharata and the Bible come from",
     reflect: "How does it change your reading to know where a text came from, who wrote it and when? What do you usually expect from a sacred text?" },
   { id: "c1", n: 3, part: 2, title: "Monism and the personal God", desc: "Can love be ultimate?",
     reflect: "Do you long to be loved by someone, or to be absorbed into something? What does your heart say love needs?" },
@@ -53,7 +53,7 @@ export const STATIONS: Station[] = [
     reflect: "How much does it matter to you that a text has been carefully preserved? What would give you confidence in a sacred text?" },
   { id: "access", n: 15, part: 5, title: "Preserved, but who can understand?", desc: "The shape of each text and who it is for",
     reflect: "How did you first meet the sacred texts you know best: through a teacher, a story, a book or a family? What helped you understand them?" },
-  { id: "tensions", n: 16, part: 5, title: "Hard passages in both texts", desc: "Difficulties in the Gita, the epic and the Bible",
+  { id: "tensions", n: 16, part: 5, title: "Hard passages in both texts", desc: "Difficulties in the Gita, the Mahabharata and the Bible",
     reflect: "What is a hard passage in a text you love, and how have you learned to live with it? How might your friend feel about theirs?" },
 ];
 
