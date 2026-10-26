@@ -92,7 +92,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               </Link>
             )}
             <div className="flex min-w-0 flex-1 flex-col">
-              <small className="font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
+              <small className="truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>
             <button
