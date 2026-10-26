@@ -19,8 +19,9 @@ export const metadata: Metadata = {
     title: "The Gita and the Gospel",
     description: "Who is God, does He love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side.",
     url: "/",
+    images: [{ url: "/share.jpg", width: 1200, height: 630, alt: "The Gita and the Gospel: who is God, does He love us, and what are we here for?" }],
   },
-  twitter: { card: "summary_large_image", title: "The Gita and the Gospel", description: "Who is God, does He love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side." },
+  twitter: { card: "summary_large_image", images: ["/share.jpg"], title: "The Gita and the Gospel", description: "Who is God, does He love us, and what are we here for? A walk through the Bhagavad Gita and the Bible, side by side." },
   appleWebApp: { capable: true, title: "Gita and Gospel", statusBarStyle: "default" },
   icons: { icon: "/icon.svg" },
 };
