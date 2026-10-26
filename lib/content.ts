@@ -39,3 +39,13 @@ export function getTermStations(): Record<string, string[]> {
   }
   return map;
 }
+
+// Rough reading time per step, at a comfortable 230 words a minute (diagrams excluded).
+export function getReadMinutes(): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const s of STATIONS) {
+    const text = getStationHtml(s.id).replace(/<svg[\s\S]*?<\/svg>/g, " ").replace(/<[^>]+>/g, " ");
+    out[s.id] = Math.max(1, Math.ceil(text.split(/\s+/).filter(Boolean).length / 230));
+  }
+  return out;
+}

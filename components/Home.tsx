@@ -7,7 +7,15 @@ import { ChevronIcon } from "./Icons";
 
 const CIRC = 2 * Math.PI * 34;
 
-export function Home() {
+function totalPhrase(minutes: Record<string, number>) {
+  const total = Object.values(minutes).reduce((a, b) => a + b, 0);
+  if (total <= 50) return `${Math.round(total / 5) * 5} minutes`;
+  if (total <= 80) return "an hour";
+  if (total <= 105) return "an hour and a half";
+  return `${Math.round(total / 30) / 2} hours`;
+}
+
+export function Home({ minutes }: { minutes: Record<string, number> }) {
   const { done } = useProgress();
   const count = STATIONS.filter((s) => done[s.id]).length;
   const next = STATIONS.find((s) => !done[s.id]);
@@ -80,8 +88,8 @@ export function Home() {
 
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
-        <h2 className="text-[1.7rem]">{NUMBERED} short steps</h2>
-        <p className="text-[.95rem] text-muted">Each step takes a few minutes. Walk through them from the top, from why we are here to the glory ahead, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
+        <h2 className="text-[1.7rem]">{NUMBERED} steps, about {totalPhrase(minutes)}</h2>
+        <p className="text-[.95rem] text-muted">Most steps take two to four minutes, and a few longer ones take about ten. Walk through them from the top, from why we are here to the glory ahead, in one sitting or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
           <span className="chip g">Christian framework</span>
@@ -112,7 +120,7 @@ export function Home() {
                   </span>
                   <span className="flex min-w-0 flex-col gap-0.5">
                     <b className="font-display text-[1.08rem] font-normal leading-tight">{s.title}</b>
-                    <span className="text-[.84rem] text-muted">{s.desc}</span>
+                    <span className="text-[.84rem] text-muted">{s.desc} · {minutes[s.id] ?? 1} min</span>
                   </span>
                   <span className="ml-auto flex-none text-muted transition-transform group-hover:translate-x-0.5">
                     <ChevronIcon />
