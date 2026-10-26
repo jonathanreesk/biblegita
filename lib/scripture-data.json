@@ -1614,6 +1614,19 @@
    }
   ]
  },
+ "Philippians 2:10-11": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "that at the name of Jesus every knee should bow, of those in heaven, those on earth, and those under the earth,"
+   },
+   {
+    "n": 11,
+    "text": "and that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father."
+   }
+  ]
+ },
  "Philippians 2:9-11": {
   "t": "WEB",
   "v": [
@@ -1693,6 +1706,19 @@
    }
   ]
  },
+ "Revelation 21:22-23": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 22,
+    "text": "I saw no temple in it, for the Lord God, the Almighty, and the Lamb, are its temple."
+   },
+   {
+    "n": 23,
+    "text": "The city has no need for the sun or moon to shine, for the very glory of God illuminated it, and its lamp is the Lamb."
+   }
+  ]
+ },
  "Revelation 21:3-4": {
   "t": "WEB",
   "v": [
@@ -1706,12 +1732,34 @@
    }
   ]
  },
+ "Revelation 22:1-2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "He showed me a river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb,"
+   },
+   {
+    "n": 2,
+    "text": "in the middle of its street. On this side of the river and on that was the tree of life, bearing twelve kinds of fruits, yielding its fruit every month. The leaves of the tree were for the healing of the nations."
+   }
+  ]
+ },
  "Revelation 22:13": {
   "t": "WEB",
   "v": [
    {
     "n": 13,
     "text": "I am the Alpha and the Omega, the First and the Last, the Beginning and the End."
+   }
+  ]
+ },
+ "Revelation 22:17": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 17,
+    "text": "The Spirit and the bride say, “Come!” He who hears, let him say, “Come!” He who is thirsty, let him come. He who desires, let him take the water of life freely."
    }
   ]
  },
@@ -1724,12 +1772,38 @@
    }
   ]
  },
+ "Revelation 22:20-21": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 20,
+    "text": "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus."
+   },
+   {
+    "n": 21,
+    "text": "The grace of the Lord Jesus Christ be with all the saints. Amen."
+   }
+  ]
+ },
  "Revelation 22:3": {
   "t": "WEB",
   "v": [
    {
     "n": 3,
     "text": "There will be no curse any more. The throne of God and of the Lamb will be in it, and his servants will serve him."
+   }
+  ]
+ },
+ "Revelation 22:4-5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 4,
+    "text": "They will see his face, and his name will be on their foreheads."
+   },
+   {
+    "n": 5,
+    "text": "There will be no night, and they need no lamp light or sun light; for the Lord God will illuminate them. They will reign forever and ever."
    }
   ]
  },
@@ -1751,12 +1825,61 @@
    }
   ]
  },
+ "Revelation 5:13-14": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 13,
+    "text": "I heard every created thing which is in heaven, on the earth, under the earth, on the sea, and everything in them, saying, “To him who sits on the throne, and to the Lamb be the blessing, the honor, the glory, and the dominion, forever and ever! Amen!”"
+   },
+   {
+    "n": 14,
+    "text": "The four living creatures said, “Amen!” Then the elders fell down and worshiped."
+   }
+  ]
+ },
+ "Revelation 5:2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 2,
+    "text": "I saw a mighty angel proclaiming with a loud voice, “Who is worthy to open the book, and to break its seals?”"
+   }
+  ]
+ },
+ "Revelation 5:5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 5,
+    "text": "One of the elders said to me, “Don’t weep. Behold, the Lion who is of the tribe of Judah, the Root of David, has overcome: he who opens the book and its seven seals.”"
+   }
+  ]
+ },
+ "Revelation 5:6": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 6,
+    "text": "I saw in the middle of the throne and of the four living creatures, and in the middle of the elders, a Lamb standing, as though it had been slain, having seven horns and seven eyes, which are the seven Spirits of God, sent out into all the earth."
+   }
+  ]
+ },
  "Revelation 5:9": {
   "t": "WEB",
   "v": [
    {
     "n": 9,
     "text": "They sang a new song, saying, “You are worthy to take the book and to open its seals: for you were killed, and bought us for God with your blood out of every tribe, language, people, and nation,"
+   }
+  ]
+ },
+ "Revelation 7:10": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "They cried with a loud voice, saying, “Salvation be to our God, who sits on the throne, and to the Lamb!”"
    }
   ]
  },

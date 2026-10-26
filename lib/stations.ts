@@ -14,6 +14,7 @@ export const PARTS = [
   { title: "Can the texts be trusted?", desc: "How each was passed down, who can understand it, and the hard passages in both." },
   { title: "The cross", desc: "The Bible's one thread, and the heart of the difference: how sin is forgiven." },
   { title: "Hope and mission", desc: "The hope of Christ, and the joy of sharing it." },
+  { title: "The glory to come", desc: "Where the whole story ends: Christ on the throne, and every nation worshipping." },
 ];
 
 // Order matters: this is the journey sequence.
@@ -55,6 +56,8 @@ export const STATIONS: Station[] = [
     reflect: "How should we speak about serious things with great gentleness? What is the difference between warning and caring?" },
   { id: "disciples", n: 18, part: 5, title: "Go and make disciples", desc: "The Great Commission in practice",
     reflect: "Who has helped you know God better? Who could you walk alongside, simply by being a friend and listening?" },
+  { id: "glory", n: 19, part: 6, title: "Worthy is the Lamb", desc: "The glory of eternity with Christ",
+    reflect: "Which part of this scene moves you most? Who do you most long to see in that crowd, and who could you invite to come?" },
 ];
 
 // Shown instead of a label word: "Start here" or "8 of 12" within the journey.

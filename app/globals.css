@@ -230,3 +230,12 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .outline-panel{animation:panelIn .28s var(--ease-out) both}
 @keyframes panelIn{from{transform:translateX(30px);opacity:0}to{transform:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.outline-panel{animation:none}}
+
+/* The closing scenes: set apart, one at a time */
+.scene{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:24px;padding:20px 20px 18px;box-shadow:var(--shadow-sm)}
+.scene h3{font-size:1.45rem}
+.scene blockquote{margin:0;padding:2px 0 2px 16px;border-left:3px solid var(--gospel);font-family:var(--f-display);font-size:1.16rem;line-height:1.5;font-weight:500;color:var(--ink)}
+
+.diagram.fit svg{min-width:0;max-width:460px;margin:0 auto}
+.diagram.fit::after{display:none!important}
+.figcap{text-align:center;font-family:var(--f-label);font-weight:600;color:var(--gospel);font-size:.95rem;margin-top:6px}
