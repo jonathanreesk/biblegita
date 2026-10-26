@@ -4,7 +4,7 @@ import { BARE_RE, REF_RE, keyFromBare, keyFromMatch } from "./scriptureRef.mjs";
 import { SCRIPTURE } from "./scripture";
 
 const VOID = new Set(["br", "hr", "img", "input", "meta", "link", "path", "circle", "rect", "line", "ellipse"]);
-const SKIP_TAGS = new Set(["svg", "h1", "h2", "h3", "h4", "a", "button", "script", "style"]);
+const SKIP_TAGS = new Set(["svg", "h1", "h2", "h3", "h4", "a", "button", "script", "style", "summary"]);
 const SKIP_CLASS = /\bclass="[^"]*\b(label|ref|chip|head|who)\b/;
 
 const lookup = new Map<string, string>();
