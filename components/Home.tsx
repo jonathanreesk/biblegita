@@ -16,7 +16,6 @@ export function Home() {
   return (
     <div className="fade-in flex flex-col">
       <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
-        <span className="label">Apologetics, evangelism and discipleship</span>
         <h1>The Gita and the Gospel</h1>
         <p className="lede">A walk through the Bhagavad Gita and the Bible, side by side, for readers of every background.</p>
 

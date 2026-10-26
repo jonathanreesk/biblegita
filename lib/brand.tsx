@@ -19,8 +19,7 @@ export function shareImage() {
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 96px", background: "#fbf7f0", color: "#1f2a2e" }}>
-        <div style={{ display: "flex", fontSize: 28, letterSpacing: 6, textTransform: "uppercase", color: "#8a4a0f" }}>Apologetics, evangelism and discipleship</div>
-        <div style={{ display: "flex", fontSize: 108, fontWeight: 700, lineHeight: 1.05, marginTop: 28 }}>The Gita and the Gospel</div>
+        <div style={{ display: "flex", fontSize: 108, fontWeight: 700, lineHeight: 1.05, marginTop: 0 }}>The Gita and the Gospel</div>
         <div style={{ display: "flex", fontSize: 38, lineHeight: 1.4, color: "#56636a", marginTop: 32, maxWidth: 900 }}>
           Who is God, does He love us, and what are we here for? A walk through two sacred texts, side by side.
         </div>
