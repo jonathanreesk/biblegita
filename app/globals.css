@@ -196,3 +196,15 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .christ-card{display:flex;flex-direction:column;gap:8px;margin-top:6px;padding:22px 22px 20px;border-radius:24px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--amber);box-shadow:var(--shadow-md)}
 .christ-card .label{color:var(--dharma)}
 .christ-card p{font-family:var(--f-display);font-weight:500;font-size:1.18rem;line-height:1.45;max-width:none}
+
+/* Who is who: the two camps of the Mahabharata */
+.cast{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cast-side{display:flex;flex-direction:column;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px 16px 14px;box-shadow:var(--shadow-sm);min-width:0}
+.cast-side .who{font-family:var(--f-label);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.cast-side.pand{border-top:4px solid var(--dharma)}.cast-side.pand .who{color:var(--dharma)}
+.cast-side.kaur{border-top:4px solid var(--muted)}.cast-side.kaur .who{color:var(--muted)}
+.cast-side.mid{border-left:4px solid var(--amber)}.cast-side.mid .who{color:var(--ink)}
+.cast-note{font-size:.88rem;color:var(--muted)}
+.cast-side ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cast-side li b{display:block;font-weight:600}
+@media (max-width:640px){.cast{grid-template-columns:1fr}}
