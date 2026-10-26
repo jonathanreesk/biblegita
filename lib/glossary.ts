@@ -68,7 +68,11 @@ export const GLOSSARY: Term[] = [
   { id: "prapatti", term: "Prapatti", say: "pruh-PUH-tee", side: "hindu", match: ["prapatti"],
     plain: "Complete surrender to God, trusting him to save instead of trying to earn it." },
   { id: "yuga", term: "Yuga", say: "YOO-guh", side: "hindu", match: ["Yugas", "Yuga"],
-    plain: "One of four ages in a cosmic cycle that repeats forever. We are said to live in the last, the Kali Yuga." },
+    plain: "One of four ages in a cosmic cycle that repeats forever. Together they last about 4.32 million years, and we are said to live in the last, the Kali Yuga." },
+  { id: "treta", term: "Treta Yuga", say: "TRAY-tuh", side: "hindu", match: ["Treta"],
+    plain: "The second of the four ages, from the word for \"three\". Right living stands on three of its four legs. Tradition places Rama and the Ramayana here, and it lasts about 1,296,000 years." },
+  { id: "dvapara", term: "Dvapara Yuga", say: "DWAH-puh-ruh", side: "hindu", match: ["Dvapara"],
+    plain: "The third of the four ages, from the word for \"two\". Right living stands on two legs. It is the age of Krishna and the Mahabharata war, and lasts about 864,000 years." },
 
   // Texts and people
   { id: "pandavas", term: "Pandavas", say: "PAHN-duh-vuhs", side: "hindu", match: ["Pandavas"],
