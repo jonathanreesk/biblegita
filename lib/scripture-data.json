@@ -562,6 +562,15 @@
    }
   ]
  },
+ "Ephesians 1:7": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 7,
+    "text": "in whom we have our redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace,"
+   }
+  ]
+ },
  "Ephesians 2:8-10": {
   "t": "WEB",
   "v": [
@@ -610,15 +619,6 @@
    }
   ]
  },
- "Exodus 20:2": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 2,
-    "text": "“I am Yahweh your God, who brought you out of the land of Egypt, out of the house of bondage."
-   }
-  ]
- },
  "Exodus 20:3": {
   "t": "WEB",
   "v": [
@@ -664,34 +664,12 @@
    }
   ]
  },
- "Galatians 4:4": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 4,
-    "text": "But when the fullness of the time came, God sent out his Son, born to a woman, born under the law,"
-   }
-  ]
- },
  "Galatians 6:7": {
   "t": "WEB",
   "v": [
    {
     "n": 7,
     "text": "Don’t be deceived. God is not mocked, for whatever a man sows, that he will also reap."
-   }
-  ]
- },
- "Genesis 12:2-3": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 2,
-    "text": "I will make of you a great nation. I will bless you and make your name great. You will be a blessing."
-   },
-   {
-    "n": 3,
-    "text": "I will bless those who bless you, and I will curse him who treats you with contempt. All the families of the earth will be blessed through you.”"
    }
   ]
  },
@@ -1113,6 +1091,15 @@
    }
   ]
  },
+ "Isaiah 53:5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 5,
+    "text": "But he was pierced for our transgressions. He was crushed for our iniquities. The punishment that brought our peace was on him; and by his wounds we are healed."
+   }
+  ]
+ },
  "Isaiah 53:5-7": {
   "t": "WEB",
   "v": [
@@ -1482,6 +1469,15 @@
    }
   ]
  },
+ "Luke 24:44": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 44,
+    "text": "He said to them, “This is what I told you, while I was still with you, that all things which are written in the law of Moses, the prophets, and the psalms, concerning me must be fulfilled.”"
+   }
+  ]
+ },
  "Luke 24:5-6": {
   "t": "WEB",
   "v": [
@@ -1641,6 +1637,15 @@
    }
   ]
  },
+ "Micah 5:2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 2,
+    "text": "But you, Bethlehem Ephrathah, being small among the clans of Judah, out of you one will come out to me that is to be ruler in Israel; whose goings out are from of old, from ancient times."
+   }
+  ]
+ },
  "Nehemiah 8:8": {
   "t": "WEB",
   "v": [
@@ -1731,23 +1736,6 @@
    {
     "n": 14,
     "text": "Death and Hades were thrown into the lake of fire. This is the second death, the lake of fire."
-   }
-  ]
- },
- "Revelation 21:1-3": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 1,
-    "text": "I saw a new heaven and a new earth: for the first heaven and the first earth have passed away, and the sea is no more."
-   },
-   {
-    "n": 2,
-    "text": "I saw the holy city, New Jerusalem, coming down out of heaven from God, prepared like a bride adorned for her husband."
-   },
-   {
-    "n": 3,
-    "text": "I heard a loud voice out of heaven saying, “Behold, God’s dwelling is with people, and he will dwell with them, and they will be his people, and God himself will be with them as their God."
    }
   ]
  },
@@ -1992,15 +1980,6 @@
    {
     "n": 28,
     "text": "We maintain therefore that a man is justified by faith apart from the works of the law."
-   }
-  ]
- },
- "Romans 5:12": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 12,
-    "text": "Therefore as sin entered into the world through one man, and death through sin; so death passed to all men, because all sinned."
    }
   ]
  },

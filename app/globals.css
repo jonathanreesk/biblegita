@@ -256,3 +256,18 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .jump a.on{background:var(--gospel);border-color:var(--gospel);color:var(--surface)}
 .station h3[id]{scroll-margin-top:130px}
 @media (min-width:1024px){.jump{top:61px}}
+
+/* The story of redemption through the Bible, as a vertical path */
+.rpath{list-style:none;margin:0;padding:0 0 0 22px;position:relative;display:flex;flex-direction:column;gap:12px}
+.rpath::before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:3px;border-radius:2px;background:linear-gradient(var(--line),var(--gospel))}
+.rpath li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px 16px 12px;display:flex;flex-direction:column;gap:3px;box-shadow:var(--shadow-sm)}
+.rpath li::before{content:"";position:absolute;left:-22px;top:20px;width:15px;height:15px;border-radius:50%;background:var(--surface);border:3px solid var(--gospel)}
+.rpath .where{font-family:var(--f-label);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rpath b{font-family:var(--f-display);font-weight:500;font-size:1.2rem}
+.rpath li.ot b{color:var(--ink)}
+.rpath li p{max-width:none;font-size:.97rem}
+.rpath li.link{background:linear-gradient(135deg,var(--gospel),var(--gospel-deep));border-color:transparent;color:var(--surface);box-shadow:var(--shadow-md)}
+.rpath li.link::before{background:var(--gold);border-color:var(--surface);width:19px;height:19px;left:-24px}
+.rpath li.link .where{color:color-mix(in srgb,var(--surface) 78%,transparent)}
+.rpath li.link b{color:var(--surface);font-size:1.5rem}
+.rpath li.link .ref,.rpath li.link button.verse{color:var(--surface);border-color:color-mix(in srgb,var(--surface) 70%,transparent)}
