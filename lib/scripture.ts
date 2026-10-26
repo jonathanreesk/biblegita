@@ -3,14 +3,14 @@ import hindu from "./hindu-sources.json";
 
 export type Verse = { n: number; text: string };
 // "Summary" entries are Hindu texts: a plain-English summary, with the Sanskrit where we have it
-export type Entry = { t: "WEB" | "ESV" | "Sivananda" | "Summary"; v: Verse[]; book?: string; sa?: string; note?: string; src?: string };
+export type Entry = { t: "WEB" | "ESV" | "Sivananda" | "Summary"; v: Verse[]; book?: string; sa?: string; note?: string; src?: string; quote?: string; tr?: string };
 export type VerseMap = Record<string, Entry>;
 
-type Source = { book: string; summary: string; sa?: string; note?: string; src: string };
+type Source = { book: string; summary: string; sa?: string; note?: string; src: string; quote?: string; tr?: string };
 const HINDU: VerseMap = Object.fromEntries(
   Object.entries(hindu as Record<string, Source>).map(([k, e]) => [
     k,
-    { t: "Summary", v: [{ n: 1, text: e.summary }], book: e.book, sa: e.sa, note: e.note, src: e.src },
+    { t: "Summary", v: [{ n: 1, text: e.summary }], book: e.book, sa: e.sa, note: e.note, src: e.src, quote: e.quote, tr: e.tr },
   ]),
 );
 
@@ -25,7 +25,8 @@ const CREDIT = {
 
 export function sourceFor(key: string, entry: Entry): { book: string; credit: string; url: ((k: string) => string) | null } {
   const t = entry.t;
-  if (t === "Summary") return { book: entry.book ?? "Hindu texts", credit: `Summary written for this guide. To read the full text, see ${entry.src}.`, url: null };
+  if (t === "Summary")
+    return { book: entry.book ?? "Hindu texts", credit: entry.quote ? `Translation: ${entry.tr}.` : `Summary written for this guide. To read the full text, see ${entry.src}.`, url: null };
   return key.startsWith("Gita ")
     ? { book: "Bhagavad Gita", credit: CREDIT[t], url: (k: string) => gitaUrl(k) }
     : { book: "Bible", credit: CREDIT[t], url: (k: string) => bibleUrl(k) };

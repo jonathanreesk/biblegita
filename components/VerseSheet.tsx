@@ -48,8 +48,11 @@ export function VerseSheet({
       >
         <span className="label">{src.book}</span>
         <h3 className="text-[1.6rem]">{refKey.replace(/^Gita/, "Gita")}</h3>
+        {entry.quote && (
+          <blockquote className="m-0 whitespace-pre-line border-l-[3px] border-dharma pl-4 text-[1.05rem] leading-relaxed">{entry.quote}</blockquote>
+        )}
         {summary && <span className="font-label text-[.72rem] font-semibold uppercase tracking-[.1em] text-muted">In plain English</span>}
-        <blockquote className={`m-0 flex flex-col gap-2 border-l-[3px] pl-4 text-[1.05rem] leading-relaxed ${gita ? "border-dharma" : "border-gospel"}`}>
+        <blockquote className={`m-0 flex flex-col gap-2 border-l-[3px] pl-4 leading-relaxed ${entry.quote ? "border-line text-[.98rem] text-muted" : "text-[1.05rem]"} ${entry.quote ? "" : gita ? "border-dharma" : "border-gospel"}`}>
           {verses.map((v) => (
             <p key={v.n}>
               {verses.length > 1 && <sup className="mr-1.5 font-label text-[.7rem] font-semibold text-muted">{v.n}</sup>}

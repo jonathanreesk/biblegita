@@ -4,7 +4,9 @@
   "summary": "The sages call one reality by the names of many gods: Indra, Mitra, Varuna, Agni and others. \"Truth is one; the wise call it by many names.\"",
   "note": "Hindus often quote this to say that all religions lead to the same God. In the hymn itself, the names are all Vedic gods. It says nothing about other religions.",
   "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 1, Hymn 164, verse 46",
-  "sa": "इन्द्रं मित्रं वरुणमग्निमाहुरथो दिव्यः स सुपर्णो गरुत्मान् ।\nएकं सद् विप्रा बहुधा वदन्त्यग्निं यमं मातरिश्वानमाहुः ॥"
+  "sa": "इन्द्रं मित्रं वरुणमग्निमाहुरथो दिव्यः स सुपर्णो गरुत्मान् ।\nएकं सद् विप्रा बहुधा वदन्त्यग्निं यमं मातरिश्वानमाहुः ॥",
+  "quote": "They call him Indra, Mitra, Varuṇa, Agni, and he is heavenly nobly-winged Garutmān.\nTo what is One, sages give many a title: they call it Agni, Yama, Mātariśvan.",
+  "tr": "Ralph T. H. Griffith, The Hymns of the Rigveda (1896), public domain"
  },
  "Rig Veda 10.129": {
   "book": "Rig Veda",
@@ -35,7 +37,9 @@
  "Chandogya Upanishad 6.8.7": {
   "book": "Upanishads",
   "summary": "The sage Uddalaka teaches his son Shvetaketu that the hidden essence of everything is the Self, and ends: \"You are that\" (tat tvam asi). The line is repeated nine times in the chapter.",
-  "src": "Max Müller, The Upanishads, Part 1 (1879), Chandogya Upanishad 6.8.7"
+  "src": "Max Müller, The Upanishads, Part 1 (1879), Chandogya Upanishad 6.8.7",
+  "quote": "That which is that subtle essence, in it all that exists has its self. It is the True. It is the Self, and thou, O Śvetaketu, art it.",
+  "tr": "Max Müller, The Upanishads, Part 1 (1879), public domain"
  },
  "Brihadaranyaka Upanishad 1.4.10": {
   "book": "Upanishads",
@@ -60,12 +64,16 @@
  "Manusmriti 1.91": {
   "book": "Manusmriti",
   "summary": "The Lord gave the Shudra only one duty: to serve the three higher classes without complaint.",
-  "src": "Georg Bühler, The Laws of Manu (1886), chapter 1, verse 91"
+  "src": "Georg Bühler, The Laws of Manu (1886), chapter 1, verse 91",
+  "quote": "One occupation only the Lord prescribed to the Śūdra, to serve meekly even these (other) three castes.",
+  "tr": "Georg Bühler, The Laws of Manu (1886), public domain"
  },
  "Manusmriti 5.148": {
   "book": "Manusmriti",
   "summary": "As a child a woman is under her father, as a young woman under her husband, and as a widow under her sons. A woman must never be independent.",
-  "src": "Georg Bühler, The Laws of Manu (1886), chapter 5, verse 148"
+  "src": "Georg Bühler, The Laws of Manu (1886), chapter 5, verse 148",
+  "quote": "In childhood a female must be subject to her father, in youth to her husband, when her lord is dead to her sons; a woman must never be independent.",
+  "tr": "Georg Bühler, The Laws of Manu (1886), public domain"
  },
  "Brahma Sutra 2.1.35-36": {
   "book": "Brahma Sutras",
