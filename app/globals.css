@@ -248,3 +248,11 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .episode[open] summary::after{content:"\2212"}
 .episode p{margin:0 0 12px}
 .episode summary:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:8px}
+
+/* In-page tabs: quick jumps between the sections of a long step */
+.jump{position:sticky;top:61px;z-index:15;display:flex;gap:8px;overflow-x:auto;padding:10px 2px;margin:0 -2px;background:color-mix(in srgb,var(--bg) 97%,transparent);border-bottom:1px solid var(--line);scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump a{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-family:var(--f-label);font-weight:600;font-size:.88rem;text-decoration:none;box-shadow:var(--shadow-sm);white-space:nowrap}
+.jump a.on{background:var(--gospel);border-color:var(--gospel);color:var(--surface)}
+.station h3[id]{scroll-margin-top:130px}
+@media (min-width:1024px){.jump{top:61px}}

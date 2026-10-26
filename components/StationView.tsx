@@ -41,6 +41,29 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
     if (next) router.prefetch(`/journey/${next.id}`);
   }, [id, prev, next, router]);
 
+  // Highlight the in-page tab for the section being read. Elements are looked up on every
+  // scroll because the page content can be re-rendered after the first paint.
+  useEffect(() => {
+    const update = () => {
+      const links = Array.from(document.querySelectorAll<HTMLAnchorElement>(".jump a[href^='#']"));
+      if (!links.length) return;
+      const targets = links.map((l) => document.getElementById(l.hash.slice(1))).filter(Boolean) as HTMLElement[];
+      let current = targets[0];
+      for (const t of targets) if (t.getBoundingClientRect().top <= 150) current = t;
+      links.forEach((l) => l.classList.toggle("on", l.hash === `#${current?.id}`));
+      // keep the active tab visible in the scrolling tab bar
+      const active = links.find((l) => l.classList.contains("on"));
+      const bar = active?.parentElement;
+      if (active && bar) bar.scrollTo({ left: active.offsetLeft - bar.clientWidth / 2 + active.clientWidth / 2, behavior: "smooth" });
+    };
+    const first = window.setTimeout(update, 120);
+    window.addEventListener("scroll", update, { passive: true });
+    return () => {
+      window.clearTimeout(first);
+      window.removeEventListener("scroll", update);
+    };
+  }, [id]);
+
   // Arrow keys move along the journey on desktop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
