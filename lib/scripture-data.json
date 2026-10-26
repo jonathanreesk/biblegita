@@ -491,6 +491,15 @@
    }
   ]
  },
+ "Acts 3:19": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 19,
+    "text": "“Repent therefore, and turn again, that your sins may be blotted out, so that there may come times of refreshing from the presence of the Lord,"
+   }
+  ]
+ },
  "Acts 4:12": {
   "t": "WEB",
   "v": [
@@ -533,19 +542,6 @@
    {
     "n": 18,
     "text": "He is the head of the body, the assembly, who is the beginning, the firstborn from the dead, that in all things he might have the preeminence."
-   }
-  ]
- },
- "Colossians 1:19-20": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 19,
-    "text": "For all the fullness was pleased to dwell in him,"
-   },
-   {
-    "n": 20,
-    "text": "and through him to reconcile all things to himself by him, whether things on the earth or things in the heavens, having made peace through the blood of his cross."
    }
   ]
  },
@@ -655,15 +651,6 @@
    }
   ]
  },
- "Ezekiel 36:26": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 26,
-    "text": "I will also give you a new heart, and I will put a new spirit within you. I will take away the stony heart out of your flesh, and I will give you a heart of flesh."
-   }
-  ]
- },
  "Galatians 3:28": {
   "t": "WEB",
   "v": [
@@ -679,15 +666,6 @@
    {
     "n": 7,
     "text": "Don’t be deceived. God is not mocked, for whatever a man sows, that he will also reap."
-   }
-  ]
- },
- "Genesis 12:3": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 3,
-    "text": "I will bless those who bless you, and I will curse him who treats you with contempt. All the families of the earth will be blessed through you.”"
    }
   ]
  },
@@ -1038,12 +1016,16 @@
    }
   ]
  },
- "Hebrews 2:14": {
+ "Hebrews 1:1-2": {
   "t": "WEB",
   "v": [
    {
-    "n": 14,
-    "text": "Since then the children have shared in flesh and blood, he also himself in the same way partook of the same, that through death he might bring to nothing him who had the power of death, that is, the devil,"
+    "n": 1,
+    "text": "God, having in the past spoken to the fathers through the prophets at many times and in various ways,"
+   },
+   {
+    "n": 2,
+    "text": "has at the end of these days spoken to us by his Son, whom he appointed heir of all things, through whom also he made the worlds."
    }
   ]
  },
@@ -1091,15 +1073,6 @@
    }
   ]
  },
- "Isaiah 25:8": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 8,
-    "text": "He has swallowed up death forever! The Lord Yahweh will wipe away tears from off all faces. He will take the reproach of his people away from off all the earth, for Yahweh has spoken it."
-   }
-  ]
- },
  "Isaiah 53:5": {
   "t": "WEB",
   "v": [
@@ -1135,25 +1108,21 @@
    }
   ]
  },
- "Isaiah 9:6-7": {
-  "t": "WEB",
-  "v": [
-   {
-    "n": 6,
-    "text": "For a child is born to us. A son is given to us; and the government will be on his shoulders. His name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."
-   },
-   {
-    "n": 7,
-    "text": "Of the increase of his government and of peace there shall be no end, on David’s throne, and on his kingdom, to establish it, and to uphold it with justice and with righteousness from that time on, even forever. The zeal of Yahweh of Armies will perform this."
-   }
-  ]
- },
  "James 2:24": {
   "t": "WEB",
   "v": [
    {
     "n": 24,
     "text": "You see then that by works, a man is justified, and not only by faith."
+   }
+  ]
+ },
+ "Jeremiah 29:13": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 13,
+    "text": "You shall seek me, and find me, when you search for me with all your heart."
    }
   ]
  },
@@ -1729,6 +1698,19 @@
    }
   ]
  },
+ "Philippians 2:7-8": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 7,
+    "text": "but emptied himself, taking the form of a servant, being made in the likeness of men."
+   },
+   {
+    "n": 8,
+    "text": "And being found in human form, he humbled himself, becoming obedient to the point of death, yes, the death of the cross."
+   }
+  ]
+ },
  "Philippians 2:9-11": {
   "t": "WEB",
   "v": [
@@ -2001,6 +1983,15 @@
    {
     "n": 9,
     "text": "After these things I looked, and behold, a great multitude, which no man could count, out of every nation and of all tribes, peoples, and languages, standing before the throne and before the Lamb, dressed in white robes, with palm branches in their hands."
+   }
+  ]
+ },
+ "Romans 10:9": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 9,
+    "text": "that if you will confess with your mouth that Jesus is Lord, and believe in your heart that God raised him from the dead, you will be saved."
    }
   ]
  },

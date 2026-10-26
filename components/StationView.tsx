@@ -16,6 +16,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
   const router = useRouter();
   const { done, toggle } = useProgress();
   const { prev, next } = neighbors(id);
+  const station = findStation(id);
   const isDone = !!done[id];
   const [open, setOpen] = useState<Term | null>(null);
   const [verse, setVerse] = useState<string | null>(null);
@@ -102,7 +103,20 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
   return (
     <div>
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} onKeyDown={onContentKey} dangerouslySetInnerHTML={{ __html: html }} />
-      {findStation(id)?.reflect && <Reflect id={id} prompt={findStation(id)!.reflect} />}
+      {station && (
+        <section aria-labelledby={`recap-${id}`} className="mt-9 flex flex-col gap-3 rounded-[24px] border border-line bg-surface p-5 shadow-soft">
+          <span id={`recap-${id}`} className="label">In short</span>
+          <p className="text-[1.02rem] leading-relaxed">{station.recap}</p>
+          {next && station.lead && (
+            <Link href={`/journey/${next.id}`} className="group mt-1 flex flex-col gap-1 border-t border-line pt-3 text-ink no-underline">
+              <small className="font-label text-[.72rem] font-semibold uppercase tracking-[.1em] text-gospel">Why the next step follows</small>
+              <span className="text-[.98rem] leading-relaxed">{station.lead}</span>
+              <span className="font-label font-semibold text-gospel group-hover:underline">{next.title} →</span>
+            </Link>
+          )}
+        </section>
+      )}
+      {station?.reflect && <Reflect id={id} prompt={station.reflect} />}
       {verse && verses[verse] && <VerseSheet refKey={verse} entry={verses[verse]} onClose={close} />}
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 
