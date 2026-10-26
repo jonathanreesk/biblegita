@@ -13,7 +13,7 @@ function readAll(): Record<string, string> {
 }
 
 // A question to sit with, plus a private place to write. Notes never leave this device.
-export function Reflect({ id, prompt }: { id: string; prompt: string }) {
+export function Reflect({ id, prompt, seeker }: { id: string; prompt: string; seeker?: string }) {
   const [note, setNote] = useState("");
 
   useEffect(() => {
@@ -35,7 +35,14 @@ export function Reflect({ id, prompt }: { id: string; prompt: string }) {
   return (
     <section aria-labelledby={`reflect-${id}`} className="mt-9 flex flex-col gap-3 rounded-[24px] border border-line bg-sand p-5">
       <span id={`reflect-${id}`} className="label">Pause and reflect</span>
-      <p className="font-display text-[1.2rem] leading-snug">{prompt}</p>
+      {seeker ? (
+        <>
+          <p data-for="believer" className="font-display text-[1.2rem] leading-snug">{prompt}</p>
+          <p data-for="seeker" className="font-display text-[1.2rem] leading-snug">{seeker}</p>
+        </>
+      ) : (
+        <p className="font-display text-[1.2rem] leading-snug">{prompt}</p>
+      )}
       <label className="sr-only" htmlFor={`note-${id}`}>Your private note</label>
       <textarea
         id={`note-${id}`}

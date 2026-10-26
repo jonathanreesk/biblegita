@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NUMBERED, PARTS, STATIONS } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { ChevronIcon } from "./Icons";
+import { ReaderChoice } from "./ReaderChoice";
 
 const CIRC = 2 * Math.PI * 34;
 
@@ -16,7 +17,7 @@ function totalPhrase(minutes: Record<string, number>) {
 }
 
 export function Home({ minutes }: { minutes: Record<string, number> }) {
-  const { done } = useProgress();
+  const { done, prefs } = useProgress();
   const count = STATIONS.filter((s) => done[s.id]).length;
   const next = STATIONS.find((s) => !done[s.id]);
   const finished = !next;
@@ -41,6 +42,8 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
 
         <p className="note">Honest about the hard questions, warm toward every reader, and centered on Jesus Christ.</p>
 
+        <ReaderChoice />
+
         <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
           <svg className="h-[72px] w-[72px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
             <circle cx="42" cy="42" r="34" fill="none" strokeWidth="8" stroke="var(--line)" />
@@ -64,7 +67,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
             <span className="label">{finished ? "Journey complete" : count ? "Keep going" : "Your journey"}</span>
             <p className="leading-snug">
               {finished
-                ? "You have walked the whole journey. Now go and make disciples."
+                ? prefs.reader === "believer" ? "You have walked the whole journey. Now go and make disciples." : "You have walked the whole journey. The invitation of Jesus is still open: come and see."
                 : count
                   ? `Next up: ${next.title}.`
                   : "Start with the question beneath both texts: what are we here for?"}

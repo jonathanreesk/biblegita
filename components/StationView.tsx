@@ -8,6 +8,7 @@ import { useProgress } from "./Providers";
 import { termById, type Term } from "@/lib/glossary";
 import { findStation } from "@/lib/stations";
 import { Reflect } from "./Reflect";
+import { ReaderPrompt } from "./ReaderChoice";
 import type { VerseMap } from "@/lib/scripture";
 import { TermSheet } from "./TermSheet";
 import { VerseSheet } from "./VerseSheet";
@@ -102,6 +103,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
 
   return (
     <div>
+      <ReaderPrompt />
       <section key={id} id={id} className="station fade-in" onClick={onContentClick} onKeyDown={onContentKey} dangerouslySetInnerHTML={{ __html: html }} />
       {station && (
         <section aria-labelledby={`recap-${id}`} className="mt-9 flex flex-col gap-3 rounded-[24px] border border-line bg-surface p-5 shadow-soft">
@@ -116,7 +118,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
           )}
         </section>
       )}
-      {station?.reflect && <Reflect id={id} prompt={station.reflect} />}
+      {station?.reflect && <Reflect id={id} prompt={station.reflect} seeker={station.reflectSeeker} />}
       {verse && verses[verse] && <VerseSheet refKey={verse} entry={verses[verse]} onClose={close} />}
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 

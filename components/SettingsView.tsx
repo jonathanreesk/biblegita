@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useProgress, type Prefs } from "./Providers";
+import { useProgress, type Prefs, type Reader } from "./Providers";
 
 function Segmented<T extends string>({
   label,
@@ -42,6 +42,20 @@ export function SettingsView() {
     <div className="fade-in stack">
       <span className="label">Make it yours</span>
       <h2>Settings</h2>
+
+      <div className="flex flex-col gap-2.5 border-b border-line py-[18px]">
+        <span className="label">Reading as</span>
+        <Segmented<Reader>
+          label="Reading as"
+          value={prefs.reader ?? ("" as Reader)}
+          onChange={(reader) => setPrefs({ ...prefs, reader })}
+          options={[
+            { v: "believer", label: "A follower of Jesus" },
+            { v: "seeker", label: "Hindu, or exploring" },
+          ]}
+        />
+        <p className="note">The content is the same for both. This changes how the guide speaks to you.</p>
+      </div>
 
       <div className="flex flex-col gap-2.5 border-b border-line py-[18px]">
         <span className="label">Theme</span>

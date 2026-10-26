@@ -2,7 +2,9 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"};
+// Who is reading: a follower of Jesus, or a Hindu reader or seeker. Unset until they choose.
+export type Reader = "believer" | "seeker";
+export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"; reader?: Reader };
 
 const DEFAULT_PREFS: Prefs = { theme: "system", size: "default" };
 
@@ -58,6 +60,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
     else root.setAttribute("data-theme", prefs.theme);
     if (prefs.size === "large") root.setAttribute("data-size", "large");
     else root.removeAttribute("data-size");
+    if (prefs.reader) root.setAttribute("data-reader", prefs.reader);
+    else root.removeAttribute("data-reader");
     if (ready) write(PREFS_KEY, prefs);
   }, [prefs, ready]);
 

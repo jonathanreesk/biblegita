@@ -1488,6 +1488,15 @@
    }
   ]
  },
+ "John 1:46": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 46,
+    "text": "Nathanael said to him, “Can any good thing come out of Nazareth?” Philip said to him, “Come and see.”"
+   }
+  ]
+ },
  "John 20:16-18": {
   "t": "WEB",
   "v": [
@@ -1502,6 +1511,15 @@
    {
     "n": 18,
     "text": "Mary Magdalene came and told the disciples that she had seen the Lord, and that he had said these things to her."
+   }
+  ]
+ },
+ "John 20:27": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 27,
+    "text": "Then he said to Thomas, “Reach here your finger, and see my hands. Reach here your hand, and put it into my side. Don’t be unbelieving, but believing.”"
    }
   ]
  },

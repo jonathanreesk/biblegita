@@ -37,7 +37,7 @@ export const viewport: Viewport = {
 };
 
 // Applies saved theme and text size before first paint to avoid a flash.
-const prefsScript = `try{var p=JSON.parse(localStorage.getItem('gg-prefs')||'null');if(p){var r=document.documentElement;if(p.theme&&p.theme!=='system')r.setAttribute('data-theme',p.theme);if(p.size==='large')r.setAttribute('data-size','large')}}catch(e){}`;
+const prefsScript = `try{var p=JSON.parse(localStorage.getItem('gg-prefs')||'null');if(p){var r=document.documentElement;if(p.theme&&p.theme!=='system')r.setAttribute('data-theme',p.theme);if(p.size==='large')r.setAttribute('data-size','large');if(p.reader)r.setAttribute('data-reader',p.reader)}}catch(e){}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

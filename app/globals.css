@@ -48,6 +48,8 @@ p{margin:0}
 
 .station{display:flex;flex-direction:column;gap:18px}
 .station>*{min-width:0}
+/* A block written for one reader lays out like the rest of the step */
+.station>div[data-for]{display:contents}
 .head{display:flex;flex-direction:column;gap:6px}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow-sm)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
@@ -161,6 +163,8 @@ button.term:focus-visible,a.term:focus-visible{outline:3px solid var(--amber);ou
 /* Tap-to-read verses: inline references look like quiet links, chips keep their style */
 button.verse{all:unset;cursor:pointer;color:var(--gospel);font-weight:600;border-bottom:1.5px solid color-mix(in srgb,var(--gospel) 40%,transparent);border-radius:2px;transition:background .2s var(--ease)}
 button.verse:hover{background:var(--gospel-soft)}
+/* Content for one kind of reader. Until a reader chooses, the seeker version shows. */
+html[data-reader="believer"] [data-for="seeker"],html:not([data-reader="believer"]) [data-for="believer"]{display:none}
 button.verse.h{color:var(--dharma);border-bottom-color:color-mix(in srgb,var(--dharma) 40%,transparent)}
 button.verse.h:hover{background:var(--dharma-soft)}
 button.verse:focus-visible{outline:3px solid var(--amber);outline-offset:2px}

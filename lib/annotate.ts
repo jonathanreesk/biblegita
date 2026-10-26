@@ -28,7 +28,7 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
     refs.add(key);
     return `<button type="button" class="ref${kind} verse" data-ref="${key}" aria-haspopup="dialog">${text}</button>`;
   });
-  const out = prepared.split(/(<[^>]+>)/g).map((part) => {
+  const out = forReader(prepared).split(/(<[^>]+>)/g).map((part) => {
     if (part.startsWith("<")) {
       const m = /^<(\/?)([a-zA-Z0-9]+)/.exec(part);
       if (!m) return part;
@@ -94,4 +94,17 @@ function linkScripture(text: string, refs: Set<string>, rest: (t: string) => str
     last = f.end;
   }
   return out + rest(text.slice(last));
+}
+
+// The coaching labels read differently for a follower of Jesus and for a Hindu reader or seeker.
+const both = (believer: string, seeker: string) =>
+  `<span data-for="believer">${believer}</span><span data-for="seeker">${seeker}</span>`;
+const LABELS: [string, string, string][] = [
+  ["Expect this reply", "What your friend may say", "What Hindus often say"],
+  ["Expect these questions", "Questions your friend may ask", "Questions people often ask"],
+  ["Your strongest answer", "Your strongest answer", "How a Christian answers"],
+];
+function forReader(html: string) {
+  for (const [from, b, s] of LABELS) html = html.split(`<h4>${from}</h4>`).join(`<h4>${both(b, s)}</h4>`);
+  return html;
 }
