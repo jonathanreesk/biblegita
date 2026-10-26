@@ -1187,6 +1187,15 @@
    }
   ]
  },
+ "John 10:11": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 11,
+    "text": "I am the good shepherd. The good shepherd lays down his life for the sheep."
+   }
+  ]
+ },
  "John 10:18": {
   "t": "WEB",
   "v": [
@@ -1289,6 +1298,15 @@
    {
     "n": 11,
     "text": "I have spoken these things to you, that my joy may remain in you, and that your joy may be made full."
+   }
+  ]
+ },
+ "John 15:15": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 15,
+    "text": "No longer do I call you servants, for the servant doesn’t know what his lord does. But I have called you friends, for everything that I heard from my Father, I have made known to you."
    }
   ]
  },
@@ -1512,6 +1530,19 @@
    }
   ]
  },
+ "Luke 3:1-2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "Now in the fifteenth year of the reign of Tiberius Caesar, Pontius Pilate being governor of Judea, and Herod being tetrarch of Galilee, and his brother Philip tetrarch of the region of Ituraea and Trachonitis, and Lysanias tetrarch of Abilene,"
+   },
+   {
+    "n": 2,
+    "text": "in the high priesthood of Annas and Caiaphas, the word of God came to John, the son of Zacharias, in the wilderness."
+   }
+  ]
+ },
  "Mark 10:18": {
   "t": "WEB",
   "v": [
@@ -1649,6 +1680,15 @@
    }
   ]
  },
+ "Matthew 28:20": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 20,
+    "text": "teaching them to observe all things that I commanded you. Behold, I am with you always, even to the end of the age.” Amen."
+   }
+  ]
+ },
  "Matthew 5:44": {
   "t": "WEB",
   "v": [
@@ -1739,6 +1779,15 @@
    {
     "n": 9,
     "text": "The great dragon was thrown down, the old serpent, he who is called the devil and Satan, the deceiver of the whole world. He was thrown down to the earth, and his angels were thrown down with him."
+   }
+  ]
+ },
+ "Revelation 19:16": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 16,
+    "text": "He has on his garment and on his thigh a name written, “KING OF KINGS, AND LORD OF LORDS.”"
    }
   ]
  },

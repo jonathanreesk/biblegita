@@ -299,6 +299,10 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .tree-head small{color:var(--muted);font-size:.8rem}
 .tree-branch.shruti{--c:var(--dharma)}
 .tree-branch.smriti{--c:var(--muted)}
+.tree-branch.later{--c:var(--gospel)}
+.tree.three .tree-branches{grid-template-columns:repeat(3,1fr)}
+.tree.three .tree-branches::before{left:16.6%;right:16.6%}
+@media (max-width:900px){.tree.three .tree-branches{grid-template-columns:1fr}.tree.three .tree-branches::before{display:none}}
 .tree-leaves{display:flex;flex-direction:column;gap:8px}
 .leaf{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:16px;border:1px solid var(--line);border-left:4px solid var(--c);background:var(--surface)}
 .leaf b{font-family:var(--f-label);font-weight:700;font-size:.95rem}

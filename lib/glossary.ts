@@ -225,6 +225,20 @@ export const GLOSSARY: Term[] = [
     plain: "A gift you do not earn: God's kindness and forgiveness given freely." },
   { id: "righteous", term: "Righteous", side: "christian", match: ["righteous"],
     plain: "Right and good in God's sight, with nothing held against you." },
+  { id: "valmiki", term: "Valmiki", say: "vahl-MEE-kee", side: "hindu", match: ["Valmiki"],
+    plain: "The sage traditionally credited with composing the Ramayana." },
+  { id: "ravana", term: "Ravana", say: "RAH-vuh-nuh", side: "hindu", match: ["Ravana"],
+    plain: "The ten-headed king of Lanka who kidnaps Sita. He is the villain of the Ramayana." },
+  { id: "hanuman", term: "Hanuman", say: "HUH-noo-mahn", side: "hindu", match: ["Hanuman"],
+    plain: "The faithful monkey who serves Rama. He is loved across India as the model of devotion." },
+  { id: "harivamsa", term: "Harivamsa", say: "HUH-ri-vum-shuh", side: "hindu", match: ["Harivamsa"],
+    plain: "A later appendix to the Mahabharata that tells the life of Krishna and his family. It links the epic to the Puranas." },
+  { id: "manusmriti", term: "Manusmriti", say: "MUH-noo-smri-tee", side: "hindu", match: ["Manusmriti"],
+    plain: "The best known Hindu law book. It sets out duties for each person and class, and is one of the most debated Hindu texts today." },
+  { id: "darshanas", term: "Darshanas (the six schools)", say: "DUR-shuh-nuhs", side: "hindu", match: ["darshanas", "darshana"],
+    plain: "Six classical schools of Hindu philosophy: Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa and Vedanta. The name means \"viewpoint\"." },
+  { id: "agamas", term: "Agamas and Tantras", say: "AH-guh-muhs", side: "hindu", match: ["Agamas", "Tantras"],
+    plain: "Manuals for temple building, image making and daily worship, and related texts on ritual. Most temple worship follows them." },
 ];
 
 const BY_ID = new Map(GLOSSARY.map((t) => [t.id, t]));
