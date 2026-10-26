@@ -64,6 +64,20 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
     };
   }, [id]);
 
+  // Wide diagrams open scrolled to the part that matters (data-focus is a fraction of the width)
+  useEffect(() => {
+    const focus = () =>
+      document.querySelectorAll<HTMLElement>(".diagram[data-focus]").forEach((d) => {
+        if (d.scrollWidth > d.clientWidth) d.scrollLeft = Number(d.dataset.focus) * d.scrollWidth - d.clientWidth / 2;
+      });
+    const t1 = window.setTimeout(focus, 150);
+    const t2 = window.setTimeout(focus, 700);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, [id]);
+
   // Arrow keys move along the journey on desktop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
