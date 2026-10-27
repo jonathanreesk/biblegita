@@ -1,14 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { useProgress } from "./Providers";
 
 type Status = "idle" | "open" | "sending" | "sent" | "error";
 
 // "Have a question?" card. Sends the question with the step it was asked on.
-export function AskQuestion({ step, path }: { step?: string; path?: string }) {
+export function AskQuestion({
+  step,
+  path,
+  startOpen = false,
+  onClose,
+  card = true,
+}: {
+  step?: string;
+  path?: string;
+  startOpen?: boolean;
+  onClose?: () => void;
+  card?: boolean;
+}) {
   const { prefs } = useProgress();
-  const [status, setStatus] = useState<Status>("idle");
+  const uid = useId().replace(/:/g, "");
+  const [status, setStatus] = useState<Status>(startOpen ? "open" : "idle");
   const [question, setQuestion] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -50,14 +63,21 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
   const input = "w-full rounded-2xl border border-line bg-page px-4 py-3 text-base text-ink placeholder:text-muted";
 
   return (
-    <section aria-labelledby="ask-q" className="mt-6 flex flex-col gap-3 rounded-[24px] border border-line bg-surface p-5 shadow-soft">
-      <span id="ask-q" className="label">Have a question?</span>
+    <section id={card ? "ask-card" : undefined} aria-labelledby={`ask-q-${uid}`} className={card ? "mt-6 flex flex-col gap-3 rounded-[24px] border border-line bg-surface p-5 shadow-soft" : "flex flex-col gap-3"}>
+      <span id={`ask-q-${uid}`} className="label">Have a question?</span>
       {status === "sent" ? (
         <>
           <p className="leading-relaxed">Thank you{name.trim() ? `, ${name.trim().split(" ")[0]}` : ""}. Your question has been sent, and we will reply to you.</p>
-          <button type="button" onClick={() => setStatus("open")} className="self-start font-label font-semibold text-gospel">
-            Ask another question
-          </button>
+          <div className="flex flex-wrap gap-4">
+            <button type="button" onClick={() => setStatus("open")} className="font-label font-semibold text-gospel">
+              Ask another question
+            </button>
+            {onClose && (
+              <button type="button" onClick={onClose} className="font-label font-semibold text-muted">
+                Close
+              </button>
+            )}
+          </div>
         </>
       ) : status === "idle" ? (
         <>
@@ -75,9 +95,9 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
       ) : (
         <form onSubmit={send} className="flex flex-col gap-3">
           {step && <p className="text-[.9rem] text-muted">About: <b className="font-semibold text-ink">{step}</b></p>}
-          <label className="sr-only" htmlFor="ask-text">Your question</label>
+          <label className="sr-only" htmlFor={`ask-text-${uid}`}>Your question</label>
           <textarea
-            id="ask-text"
+            id={`ask-text-${uid}`}
             required
             minLength={3}
             maxLength={2000}
@@ -87,13 +107,13 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
             placeholder="Your question"
             className={input}
           />
-          <label className="sr-only" htmlFor="ask-name">Your name</label>
-          <input id="ask-name" required maxLength={100} value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" autoComplete="name" className={input} />
+          <label className="sr-only" htmlFor={`ask-name-${uid}`}>Your name</label>
+          <input id={`ask-name-${uid}`} required maxLength={100} value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" autoComplete="name" className={input} />
           <div className="grid gap-3 sm:grid-cols-2">
-            <label className="sr-only" htmlFor="ask-email">Email</label>
-            <input id="ask-email" type="email" maxLength={200} value={email} onChange={(e) => { setEmail(e.target.value); setProblem(""); }} placeholder="Email" autoComplete="email" className={input} />
-            <label className="sr-only" htmlFor="ask-phone">Phone or WhatsApp</label>
-            <input id="ask-phone" type="tel" maxLength={40} value={phone} onChange={(e) => { setPhone(e.target.value); setProblem(""); }} placeholder="Phone or WhatsApp" autoComplete="tel" className={input} />
+            <label className="sr-only" htmlFor={`ask-email-${uid}`}>Email</label>
+            <input id={`ask-email-${uid}`} type="email" maxLength={200} value={email} onChange={(e) => { setEmail(e.target.value); setProblem(""); }} placeholder="Email" autoComplete="email" className={input} />
+            <label className="sr-only" htmlFor={`ask-phone-${uid}`}>Phone or WhatsApp</label>
+            <input id={`ask-phone-${uid}`} type="tel" maxLength={40} value={phone} onChange={(e) => { setPhone(e.target.value); setProblem(""); }} placeholder="Phone or WhatsApp" autoComplete="tel" className={input} />
           </div>
           <input
             type="text"
@@ -116,7 +136,7 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
             >
               {status === "sending" ? "Sending…" : "Send question"}
             </button>
-            <button type="button" onClick={() => setStatus("idle")} className="min-h-12 rounded-full px-4 py-3 font-label font-semibold text-muted">
+            <button type="button" onClick={() => (onClose ? onClose() : setStatus("idle"))} className="min-h-12 rounded-full px-4 py-3 font-label font-semibold text-muted">
               Cancel
             </button>
           </div>

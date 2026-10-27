@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { NUMBERED, PARTS, STATIONS, findStation, neighbors } from "@/lib/stations";
 import { useEffect, useRef, useState } from "react";
 import { OutlineDrawer, OutlineList } from "./Outline";
+import { ThemeToggle } from "./ThemeToggle";
 import { useProgress } from "./Providers";
 import { BackIcon, BookIcon, ChevronIcon, GlossaryIcon, HomeIcon, ListIcon, SlidersIcon } from "./Icons";
 
@@ -108,6 +109,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <small className="truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>
+            <ThemeToggle />
             <button
               type="button"
               onClick={() => setOutline(true)}
@@ -121,9 +123,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <Link
                 href={`/journey/${nextStep.id}`}
                 aria-label={`Next step: ${nextStep.title}`}
-                className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft"
+                className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft max-[359px]:w-10 max-[359px]:justify-center max-[359px]:px-0"
               >
-                Next
+                <span className="max-[359px]:hidden">Next</span>
                 <ChevronIcon />
               </Link>
             )}
