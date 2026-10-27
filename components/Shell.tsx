@@ -120,7 +120,7 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
                 <BackIcon />
               </button>
             )}
-            <div className="flex min-w-0 flex-1 flex-col">
+            <div className={`flex min-w-0 flex-1 flex-col ${pathname === "/" ? "lg:invisible" : ""}`}>
               <small className="truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>

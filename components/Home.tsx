@@ -77,13 +77,13 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
           )}
           <Link
             href={`/journey/${finished ? "method" : next.id}`}
-            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98]"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98] lg:w-auto lg:px-12"
           >
             {finished ? "Walk it again" : count ? "Continue" : "Begin the journey"}
           </Link>
           <a
             href="#steps"
-            className="mx-auto inline-flex min-h-10 items-center gap-1.5 font-label text-[.9rem] font-semibold text-gospel no-underline"
+            className="mx-auto inline-flex min-h-10 items-center gap-1.5 font-label text-[.9rem] font-semibold text-gospel no-underline lg:mx-0"
           >
             Or browse the whole guide <span aria-hidden="true" className="nudge">↓</span>
           </a>
