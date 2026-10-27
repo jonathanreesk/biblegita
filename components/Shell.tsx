@@ -110,7 +110,7 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
 
       <div className="min-w-0">
         {/* Top bar */}
-        <header className="frost sticky z-20 border-b border-line" style={{ top: "env(safe-area-inset-top, 0px)" }}>
+        <header className={`frost sticky z-20 border-b border-line ${pathname === "/" ? "lg:hidden" : ""}`} style={{ top: "env(safe-area-inset-top, 0px)" }}>
           <div
             className="mx-auto flex min-h-14 max-w-[860px] items-center gap-2.5"
             style={{
@@ -161,7 +161,7 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
         </header>
 
         <main
-          className="mx-auto max-w-[860px] pb-32 pt-5 lg:pb-16 lg:pt-7"
+          className={`mx-auto max-w-[860px] pb-32 pt-5 lg:pb-16 lg:pt-7 ${pathname === "/" ? "lg:max-w-[1120px] lg:pt-12" : ""}`}
           style={{
             paddingLeft: "max(16px, env(safe-area-inset-left, 0px))",
             paddingRight: "max(16px, env(safe-area-inset-right, 0px))",

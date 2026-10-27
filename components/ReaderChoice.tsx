@@ -10,10 +10,12 @@ const OPTIONS: { v: Reader; title: string; text: string }[] = [
 // Asks who is reading. The same content shows for both; the framing around it adapts.
 export function ReaderChoice({
   compact = false,
+  stacked = false,
   nudge = false,
   onChosen,
 }: {
   compact?: boolean;
+  stacked?: boolean; // one option per row on desktop, for a narrow column
   nudge?: boolean; // asked to choose before going on
   onChosen?: (reader: Reader) => void;
 }) {
@@ -32,7 +34,7 @@ export function ReaderChoice({
           First, tell us who is reading. Then we will begin.
         </p>
       )}
-      <div role="group" aria-labelledby="reader-q" className="grid grid-cols-2 gap-2.5">
+      <div role="group" aria-labelledby="reader-q" className={`grid grid-cols-2 gap-2.5 ${stacked ? "lg:grid-cols-1" : ""}`}>
         {OPTIONS.map((o) => {
           const on = prefs.reader === o.v;
           return (
