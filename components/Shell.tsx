@@ -15,11 +15,15 @@ function useHeader(pathname: string) {
     const s = findStation(pathname.split("/")[2] ?? "");
     if (s) return { eyebrow: `${PARTS[s.part].title} · ${s.n} of ${NUMBERED}`, title: s.title, back: true };
   }
-  if (pathname === "/scripture") return { eyebrow: "Reference", title: "Verse index", back: false };
-  if (pathname === "/glossary") return { eyebrow: "Reference", title: "Glossary", back: false };
-  if (pathname === "/settings") return { eyebrow: "Preferences", title: "Settings", back: false };
+  if (pathname === "/scripture") return { eyebrow: "Reference", title: "Verse index", back: true };
+  if (pathname === "/glossary") return { eyebrow: "Reference", title: "Glossary", back: true };
+  if (pathname === "/settings") return { eyebrow: "Preferences", title: "Settings", back: true };
   return { eyebrow: "Your journey", title: "The Gita and the Gospel", back: false };
 }
+
+type Place = { path: string; y: number; title: string };
+const PLACE = "gg-place";
+const RESTORE = "gg-restore";
 
 export function Shell({ children, ask = false, minutes }: { children: React.ReactNode; ask?: boolean; minutes?: Record<string, number> }) {
   const pathname = usePathname() || "/";
@@ -29,7 +33,16 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
   useEffect(() => {
     visited.current += 1;
   }, [pathname]);
+  // Where the reader was in the journey, so a tap on Glossary, Verses or Settings never loses their place
+  const [place, setPlace] = useState<Place | null>(null);
+  const backToPlace = (p: Place) => {
+    try {
+      sessionStorage.setItem(RESTORE, JSON.stringify(p));
+    } catch {}
+    router.push(p.path);
+  };
   const goBack = () => {
+    if (!pathname.startsWith("/journey/") && place) return backToPlace(place);
     if (visited.current > 1) return router.back();
     // Opened straight from a link: step back through the journey instead
     const prev = neighbors(pathname.replace("/journey/", "")).prev;
@@ -64,6 +77,36 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
   }, [pathname]);
   const askStep = here ? `${here.n}. ${here.title}` : undefined;
   const closeAsk = useCallback(() => setAsking(false), []);
+  useEffect(() => {
+    if (here) {
+      // Returning to a step: put the reader back where they were
+      try {
+        const r = JSON.parse(sessionStorage.getItem(RESTORE) || "null") as Place | null;
+        if (r?.path === pathname) {
+          sessionStorage.removeItem(RESTORE);
+          setTimeout(() => window.scrollTo({ top: r.y }), 80);
+        }
+      } catch {}
+      let t: ReturnType<typeof setTimeout>;
+      const save = () => {
+        clearTimeout(t);
+        t = setTimeout(() => {
+          try {
+            sessionStorage.setItem(PLACE, JSON.stringify({ path: pathname, y: Math.round(window.scrollY), title: `${here.n}. ${here.title}` }));
+          } catch {}
+        }, 200);
+      };
+      save();
+      window.addEventListener("scroll", save, { passive: true });
+      return () => {
+        clearTimeout(t);
+        window.removeEventListener("scroll", save);
+      };
+    }
+    try {
+      setPlace(JSON.parse(sessionStorage.getItem(PLACE) || "null"));
+    } catch {}
+  }, [pathname, here]);
   const aside = useRef<HTMLElement>(null);
 
   // The outline closes when you move to another page, and the sidebar keeps the current step in view
@@ -168,6 +211,19 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
             paddingRight: "max(16px, env(safe-area-inset-right, 0px))",
           }}
         >
+          {place && header.back && !here && (
+            <button
+              type="button"
+              onClick={() => backToPlace(place)}
+              className="mb-5 flex w-full items-center gap-2.5 rounded-[18px] border border-gospel bg-gospel-soft px-4 py-3 text-left font-label text-[.92rem] font-semibold text-gospel shadow-soft"
+            >
+              <BackIcon />
+              <span className="min-w-0 flex-1">
+                <small className="block text-[.72rem] font-semibold uppercase tracking-[.08em] opacity-80">Back to where you were</small>
+                <span className="block truncate text-ink">{place.title}</span>
+              </span>
+            </button>
+          )}
           {children}
         </main>
       </div>
