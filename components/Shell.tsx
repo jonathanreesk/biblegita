@@ -43,6 +43,14 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
   const pct = (count / STATIONS.length) * 100;
   const [outline, setOutline] = useState(false);
   const [asking, setAsking] = useState(false);
+  // On phones the top bar compacts once the reader scrolls, so the whole title fits
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   // The desktop Ask button steps aside while a step's own question card is on screen
   const [cardVisible, setCardVisible] = useState(false);
   useEffect(() => {
@@ -121,8 +129,8 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
               </button>
             )}
             <div className={`flex min-w-0 flex-1 flex-col ${pathname === "/" ? "lg:invisible" : ""}`}>
-              <small className="truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
-              <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
+              <small className={`truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted ${scrolled ? "max-lg:hidden" : ""}`}>{header.eyebrow}</small>
+              <strong className={`font-display font-normal ${scrolled ? "line-clamp-2 text-[1.15rem] leading-tight max-lg:text-[1rem]" : "truncate text-[1.15rem]"}`}>{header.title}</strong>
             </div>
             <div className="hidden lg:block">
               <ThemeToggle />
