@@ -36,7 +36,7 @@ const SIZES = {
   normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "max-sm:relative max-sm:overflow-hidden max-sm:flex-col max-sm:items-start max-sm:gap-0.5", title: "", text: "", icon: "wm h-9 w-9" },
   stacked: {
     head: "lg:font-display lg:text-[1.75rem] lg:font-medium lg:normal-case lg:tracking-[-.01em] lg:text-ink lg:before:hidden",
-    sub: "text-[.86rem] lg:text-[.95rem]",
+    sub: "hidden",
     grid: "grid-cols-2 lg:grid-cols-1",
     btn: "max-sm:relative max-sm:overflow-hidden max-sm:min-h-[clamp(6.5rem,13svh,8.5rem)] max-sm:flex-col max-sm:items-start max-sm:justify-center max-sm:gap-0.5 lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
     title: "max-sm:text-[clamp(1.05rem,2.5svh,1.25rem)] lg:text-[1.4rem]",
@@ -78,7 +78,7 @@ export function ReaderChoice({
       <span id="reader-q" className={big ? z.head : `label ${z.head}`}>
         Who is reading?
       </span>
-      <p className={`-mt-1 text-muted ${z.sub} ${prefs.reader && !big ? "max-lg:hidden" : ""}`}>Choose one, and the guide will speak to you as you read.</p>
+      <p className={`-mt-1 text-muted ${z.sub}`}>Choose one, and the guide will speak to you as you read.</p>
       {nudge && (
         <p role="status" className="text-[.92rem] font-semibold text-gospel">
           First, tell us who is reading. Then we will begin.
