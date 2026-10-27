@@ -40,20 +40,20 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
   return (
     <div className="fade-in flex flex-col">
       {/* Desktop: the welcome on the left, and everything needed to start in one card on the right */}
-      <div className="relative flex min-h-[calc(100svh-7.5rem)] flex-col justify-between gap-4 pb-6 pt-0 lg:grid lg:min-h-[calc(100svh-3rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12 lg:pb-12 lg:pt-14">
+      <div className="relative flex min-h-[calc(100svh-7.5rem)] flex-col justify-center gap-[clamp(1rem,4.5svh,2.75rem)] pb-6 pt-0 lg:grid lg:min-h-[calc(100svh-3rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12 lg:pb-12 lg:pt-14">
         <div className="absolute right-0 top-0 hidden lg:block">
           <ThemeToggle />
         </div>
-        <div className="flex flex-col gap-3 lg:gap-5">
-        <h1 className="lg:text-[3.6rem]">The Gita and the Gospel</h1>
-        <p className="lede max-lg:text-[1.04rem] max-lg:leading-[1.6] lg:text-[1.15rem] [@media(max-height:620px)_and_(max-width:1023px)]:hidden">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of redemption (mukti) in Jesus Christ.</p>
+        <div className="flex flex-col gap-[clamp(.75rem,2.2svh,1.4rem)] lg:gap-5">
+        <h1 className="max-lg:text-[clamp(2rem,5svh,2.6rem)] lg:text-[3.6rem]">The Gita and the Gospel</h1>
+        <p className="lede max-lg:text-[clamp(1.02rem,2.35svh,1.16rem)] max-lg:leading-[1.6] lg:text-[1.15rem] [@media(max-height:620px)_and_(max-width:1023px)]:hidden">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of redemption (mukti) in Jesus Christ.</p>
 
         <ul className="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0 lg:flex-col lg:gap-2" aria-label="The questions this guide explores">
           {["Who is God?", "Does He love us?", "What are we here for?"].map((q, i) => (
             <li
               key={q}
               style={{ ["--i" as string]: i }}
-              className="rise flex items-center gap-3 border-l-[3px] border-amber py-0.5 pl-3 font-display text-[1.24rem] leading-tight text-ink lg:pl-3.5 lg:text-[1.45rem]"
+              className="rise flex items-center gap-3 border-l-[3px] border-amber py-0.5 pl-3 font-display text-[clamp(1.2rem,2.8svh,1.45rem)] leading-tight text-ink lg:pl-3.5 lg:text-[1.45rem]"
             >
               {q}
             </li>
@@ -61,7 +61,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         </ul>
         </div>
 
-        <div className="flex flex-col gap-3 lg:gap-6 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-9 lg:shadow-lift">
+        <div className="flex flex-col gap-[clamp(.75rem,2.2svh,1.4rem)] lg:gap-6 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-9 lg:shadow-lift">
         <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && go()} />
 
 
