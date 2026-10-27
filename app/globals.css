@@ -582,3 +582,15 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 @media (max-width:760px){.lenses{grid-template-columns:1fr}}
 .problems-table tbody tr.g th,.problems-table tbody tr.g td{background:var(--gospel-soft);color:var(--ink)}
 .problems-table tbody th{width:24%}
+/* Does it hold for everyone? each side's universal claim, tested */
+.holds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hold{display:flex;flex-direction:column;gap:10px;border-radius:20px;padding:18px}
+.hold.d{background:var(--dharma-soft)}
+.hold.g{background:var(--gospel-soft)}
+.hold.g .label{color:var(--gospel)}
+.hold blockquote{margin:0;font-family:var(--f-display);font-size:1.08rem;line-height:1.45;color:var(--ink)}
+.hold p{margin:0;font-size:.93rem;line-height:1.5}
+.verdict{align-self:flex-start;margin-top:auto;border-radius:999px;padding:6px 12px;font-family:var(--f-label);font-weight:600;font-size:.82rem;background:var(--surface)}
+.verdict.no{color:var(--warn)}
+.verdict.ok{color:var(--gospel)}
+@media (max-width:760px){.holds{grid-template-columns:1fr}}
