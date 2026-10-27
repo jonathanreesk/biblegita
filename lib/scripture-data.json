@@ -59,19 +59,6 @@
    }
   ]
  },
- "1 Corinthians 15:25-26": {
-  "t": "ESV",
-  "v": [
-   {
-    "n": 25,
-    "text": "For he must reign until he has put all his enemies under his feet."
-   },
-   {
-    "n": 26,
-    "text": "The last enemy to be destroyed is death."
-   }
-  ]
- },
  "1 Corinthians 15:3": {
   "t": "ESV",
   "v": [
@@ -861,6 +848,15 @@
    }
   ]
  },
+ "Genesis 3:13": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 13,
+    "text": "Then the LORD God said to the woman, \"What is this that you have done?\" The woman said, \"The serpent deceived me, and I ate.\""
+   }
+  ]
+ },
  "Genesis 3:15": {
   "t": "ESV",
   "v": [
@@ -870,12 +866,39 @@
    }
   ]
  },
+ "Genesis 3:17": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 17,
+    "text": "And to Adam he said, \"Because you have listened to the voice of your wife and have eaten of the tree of which I commanded you, You shall not eat of it,\" cursed is the ground because of you; in pain you shall eat of it all the days of your life;"
+   }
+  ]
+ },
+ "Genesis 3:19": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 19,
+    "text": "By the sweat of your face you shall eat bread, till you return to the ground, for out of it you were taken; for you are dust, and to dust you shall return.\""
+   }
+  ]
+ },
  "Genesis 3:24": {
   "t": "ESV",
   "v": [
    {
     "n": 24,
     "text": "He drove out the man, and at the east of the garden of Eden he placed the cherubim and a flaming sword that turned every way to guard the way to the tree of life."
+   }
+  ]
+ },
+ "Genesis 3:8": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 8,
+    "text": "And they heard the sound of the LORD God walking in the garden in the cool of the day, and the man and his wife hid themselves from the presence of the LORD God among the trees of the garden."
    }
   ]
  },
@@ -2373,6 +2396,15 @@
    {
     "n": 14,
     "text": "Then Death and Hades were thrown into the lake of fire. This is the second death, the lake of fire."
+   }
+  ]
+ },
+ "Revelation 20:2": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 2,
+    "text": "And he seized the dragon, that ancient serpent, who is the devil and Satan, and bound him for a thousand years,"
    }
   ]
  },

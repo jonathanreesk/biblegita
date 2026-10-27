@@ -650,3 +650,4 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 .ayn-then .meter i{width:0}
 .ayn-then .meter{border-color:var(--gospel);background:var(--gospel-soft)}
 @media (max-width:640px){.ayn ol{grid-template-columns:1fr;gap:16px}.ayn li+li::before{content:"↓";left:0;top:-15px}}
+.cmp.was{--c:var(--muted)}
