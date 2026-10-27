@@ -594,3 +594,11 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 .verdict.no{color:var(--warn)}
 .verdict.ok{color:var(--gospel)}
 @media (max-width:760px){.holds{grid-template-columns:1fr}}
+/* Applying the two tests: a short recap, then numbered test headings */
+.tests-recap{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;counter-reset:tr}
+.tests-recap li{counter-increment:tr;display:grid;grid-template-columns:auto 1fr;column-gap:10px;max-width:none;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:.88rem;line-height:1.4;color:var(--muted)}
+.tests-recap li::before{content:counter(tr);grid-row:span 2;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gospel);color:var(--surface);font-family:var(--f-label);font-weight:700;font-size:.85rem}
+.tests-recap b{font-family:var(--f-display);font-weight:500;font-size:1rem;color:var(--ink)}
+@media (max-width:560px){.tests-recap{grid-template-columns:1fr}}
+.test-h{margin:6px 0 0;font-family:var(--f-display);font-weight:500;font-size:1.25rem;color:var(--ink);text-transform:none;letter-spacing:0}
+.test-h span{display:block;font-family:var(--f-label);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gospel);margin-bottom:2px}
