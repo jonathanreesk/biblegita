@@ -4,6 +4,7 @@ import { StationView } from "@/components/StationView";
 import { annotate } from "@/lib/annotate";
 import { getStationHtml } from "@/lib/content";
 import { SCRIPTURE } from "@/lib/scripture";
+import { askConfigured } from "@/lib/ask";
 import { STATIONS, findStation } from "@/lib/stations";
 
 type Params = { params: Promise<{ id: string }> };
@@ -25,5 +26,5 @@ export default async function StationPage({ params }: Params) {
   if (!findStation(id)) notFound();
   const { html, refs } = annotate(getStationHtml(id));
   const verses = Object.fromEntries(refs.map((k) => [k, SCRIPTURE[k]]));
-  return <StationView id={id} html={html} verses={verses} />;
+  return <StationView id={id} html={html} verses={verses} ask={askConfigured()} />;
 }

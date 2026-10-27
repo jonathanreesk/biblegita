@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useProgress, type Prefs, type Reader } from "./Providers";
+import { AskQuestion } from "./AskQuestion";
 
 function Segmented<T extends string>({
   label,
@@ -33,7 +34,7 @@ function Segmented<T extends string>({
   );
 }
 
-export function SettingsView() {
+export function SettingsView({ ask = false }: { ask?: boolean }) {
   const { prefs, setPrefs, reset } = useProgress();
   const [confirming, setConfirming] = useState(false);
   const [cleared, setCleared] = useState(false);
@@ -127,6 +128,8 @@ export function SettingsView() {
           )}
         </div>
       </div>
+
+      {ask && <AskQuestion />}
 
       <div className="flex flex-col gap-2.5 py-[18px]">
         <span className="label">About this guide</span>

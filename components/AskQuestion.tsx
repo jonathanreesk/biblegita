@@ -1,0 +1,124 @@
+"use client";
+
+import { useState } from "react";
+import { useProgress } from "./Providers";
+
+type Status = "idle" | "open" | "sending" | "sent" | "error";
+
+// "Have a question?" card. Sends the question with the step it was asked on.
+export function AskQuestion({ step, path }: { step?: string; path?: string }) {
+  const { prefs } = useProgress();
+  const [status, setStatus] = useState<Status>("idle");
+  const [question, setQuestion] = useState("");
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [website, setWebsite] = useState("");
+
+  const send = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (question.trim().length < 3) return;
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/question", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question,
+          name,
+          contact,
+          website,
+          step: step ?? "General question",
+          page: typeof window !== "undefined" ? window.location.origin + (path ?? window.location.pathname) : path,
+          reader: prefs.reader === "believer" ? "Follower of Jesus" : prefs.reader === "seeker" ? "Hindu or exploring" : "",
+        }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setStatus("sent");
+      setQuestion("");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const input = "w-full rounded-2xl border border-line bg-page px-4 py-3 text-base text-ink placeholder:text-muted";
+
+  return (
+    <section aria-labelledby="ask-q" className="mt-6 flex flex-col gap-3 rounded-[24px] border border-line bg-surface p-5 shadow-soft">
+      <span id="ask-q" className="label">Have a question?</span>
+      {status === "sent" ? (
+        <>
+          <p className="leading-relaxed">Thank you. Your question has been sent{contact.trim() ? ", and we will reply to you" : ""}.</p>
+          <button type="button" onClick={() => setStatus("open")} className="self-start font-label font-semibold text-gospel">
+            Ask another question
+          </button>
+        </>
+      ) : status === "idle" ? (
+        <>
+          <p className="leading-relaxed text-muted">
+            {step ? "Something here unclear, or worth talking about? Ask, and a real person will read it." : "Ask anything about the guide, and a real person will read it."}
+          </p>
+          <button
+            type="button"
+            onClick={() => setStatus("open")}
+            className="min-h-12 self-start rounded-full border border-gospel bg-gospel px-6 py-3 font-label font-semibold text-surface shadow-soft active:scale-[.98]"
+          >
+            Ask a question
+          </button>
+        </>
+      ) : (
+        <form onSubmit={send} className="flex flex-col gap-3">
+          {step && <p className="text-[.9rem] text-muted">About: <b className="font-semibold text-ink">{step}</b></p>}
+          <label className="sr-only" htmlFor="ask-text">Your question</label>
+          <textarea
+            id="ask-text"
+            required
+            minLength={3}
+            maxLength={2000}
+            rows={4}
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="Your question"
+            className={input}
+          />
+          <div className="grid gap-3 sm:grid-cols-2">
+            <label className="sr-only" htmlFor="ask-name">Your name (optional)</label>
+            <input id="ask-name" maxLength={100} value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name (optional)" className={input} />
+            <label className="sr-only" htmlFor="ask-contact">Email or WhatsApp, if you would like a reply</label>
+            <input
+              id="ask-contact"
+              maxLength={200}
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+              placeholder="Email or WhatsApp, for a reply"
+              className={input}
+            />
+          </div>
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            className="absolute -left-[9999px] h-0 w-0 opacity-0"
+            name="website"
+          />
+          <p className="text-[.82rem] leading-snug text-muted">We only use your details to answer you. Leave them blank to ask anonymously.</p>
+          {status === "error" && <p className="text-[.9rem] text-warn">Sorry, that did not send. Please try again in a moment.</p>}
+          <div className="flex flex-wrap items-center gap-2.5">
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="min-h-12 rounded-full border border-gospel bg-gospel px-6 py-3 font-label font-semibold text-surface shadow-soft disabled:opacity-60"
+            >
+              {status === "sending" ? "Sending…" : "Send question"}
+            </button>
+            <button type="button" onClick={() => setStatus("idle")} className="min-h-12 rounded-full px-4 py-3 font-label font-semibold text-muted">
+              Cancel
+            </button>
+          </div>
+        </form>
+      )}
+    </section>
+  );
+}

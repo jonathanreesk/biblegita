@@ -60,3 +60,10 @@ lib/content.ts          Reads station content and builds the Scripture index at 
 3. Every push to `main` redeploys.
 
 The site is open to search engines (see `app/robots.ts` and `app/sitemap.ts`). The canonical domain is set in `app/layout.tsx`, `app/robots.ts` and `app/sitemap.ts`; update it if the domain changes. After launch, submit `https://<your domain>/sitemap.xml` in Google Search Console.
+
+## Reader questions
+
+Each step has an "Ask a question" card, and Settings has a general one. A question is sent with the step it was asked on, the page link and whether the reader chose "follower of Jesus" or "Hindu or exploring". The card stays hidden until delivery is set up. In Vercel, under Project Settings and then Environment Variables, add one of these and redeploy:
+
+- `QUESTIONS_FORMSPREE_ID`: the id of a free [Formspree](https://formspree.io) form (the part after `/f/` in its URL). Formspree emails each question to the address on that form.
+- Or `RESEND_API_KEY` and `QUESTIONS_EMAIL_TO` (and optionally `QUESTIONS_EMAIL_FROM`, from a domain verified in [Resend](https://resend.com)).

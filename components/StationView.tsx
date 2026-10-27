@@ -9,11 +9,12 @@ import { termById, type Term } from "@/lib/glossary";
 import { findStation } from "@/lib/stations";
 import { Reflect } from "./Reflect";
 import { ReaderPrompt } from "./ReaderChoice";
+import { AskQuestion } from "./AskQuestion";
 import type { VerseMap } from "@/lib/scripture";
 import { TermSheet } from "./TermSheet";
 import { VerseSheet } from "./VerseSheet";
 
-export function StationView({ id, html, verses }: { id: string; html: string; verses: VerseMap }) {
+export function StationView({ id, html, verses, ask = false }: { id: string; html: string; verses: VerseMap; ask?: boolean }) {
   const router = useRouter();
   const { done, toggle } = useProgress();
   const { prev, next } = neighbors(id);
@@ -119,6 +120,7 @@ export function StationView({ id, html, verses }: { id: string; html: string; ve
         </section>
       )}
       {station?.reflect && <Reflect id={id} prompt={station.reflect} seeker={station.reflectSeeker} />}
+      {ask && station && <AskQuestion step={`${station.n}. ${station.title}`} path={`/journey/${id}`} />}
       {verse && verses[verse] && <VerseSheet refKey={verse} entry={verses[verse]} onClose={close} />}
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 
