@@ -61,6 +61,8 @@ export const GLOSSARY: Term[] = [
     plain: "\"Freedom, being set free\": a word Christians across India use for salvation and redemption. In the Bible, mukti is freedom from sin and death, bought by Jesus on the cross: \"So if the Son sets you free, you will be free indeed\" (John 8:36). It is not escape from rebirth, but a forgiven person brought home to God." },
   { id: "uddhar", term: "Uddhar (salvation)", say: "OOD-dhaar", side: "christian", match: ["uddhar", "Uddhar", "Uddharkarta"],
     plain: "\"Lifting up, deliverance\": the word Hindi Bibles use for salvation. Jesus is called the Uddharkarta, the Savior. Krishna uses the same root in the Gita, calling himself the samuddharta, the one who lifts people out of the ocean of rebirth (Gita 12:7)." },
+  { id: "redemption", term: "Redemption", say: "rih-DEMP-shun", side: "christian", match: ["redemption", "Redemption"],
+    plain: "Being bought back and set free by a price paid. \"In him we have redemption through his blood, the forgiveness of our trespasses\" (Ephesians 1:7). Jesus came \"to give his life as a ransom for many\" (Mark 10:45), and \"you were ransomed... not with perishable things such as silver or gold, but with the precious blood of Christ\" (1 Peter 1:18-19). Its Hindi word is mukti." },
   { id: "chhutkara", term: "Chhutkara (redemption)", say: "CHHOOT-kaa-raa", side: "christian", match: ["chhutkara", "Chhutkara"],
     plain: "\"Release, being set free\": a word Hindi Bibles use for redemption, as in Romans 3:24. In the Bible, a price is paid to set someone free, and Jesus paid it." },
   { id: "prayaschitta", term: "Prayaschitta (atonement)", say: "pruh-YAHSH-chit-tuh", side: "hindu", match: ["prayaschitta", "Prayaschitta"],

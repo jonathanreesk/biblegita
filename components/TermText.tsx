@@ -5,7 +5,7 @@ import { termById, type Term } from "@/lib/glossary";
 import { TermSheet } from "./TermSheet";
 
 // Words that are explained wherever they appear, even outside the chapter text
-const WORDS = /\b(mukti|Mukti)\b/g;
+const WORDS = /\b(mukti|Mukti|redemption|Redemption)\b/g;
 
 // Plain text with those words made tappable, opening the same meaning card as in the chapters.
 export function TermText({ text }: { text: string }) {

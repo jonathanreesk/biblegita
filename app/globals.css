@@ -624,3 +624,14 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 /* Test 1: the Bible's one problem, named plainly */
 .problems-table .sin-word{display:block;font-family:var(--f-display);font-weight:600;font-size:1.6rem;line-height:1.1;color:var(--warn);letter-spacing:.01em}
 .problems-table .sin-sub{display:block;margin:2px 0 4px;color:var(--ink)}
+/* Sixty-six writings, one story */
+.sixtysix{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:14px 14px 16px;box-shadow:var(--shadow-sm)}
+.sixtysix svg{display:block;width:100%;height:auto}
+.ss-glow{transform-origin:320px 168px;animation:gl-breathe 4s ease-in-out infinite}
+.ss-stats{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.ss-stats li{max-width:none;display:flex;flex-direction:column;border-radius:14px;background:var(--bg);padding:8px 4px}
+.ss-stats b{font-family:var(--f-display);font-weight:500;font-size:1.4rem;color:var(--ink);line-height:1.1}
+.ss-stats li:last-child{background:var(--gospel-soft)}
+.ss-stats li:last-child b{color:var(--gospel)}
+.ss-stats span{font-family:var(--f-label);font-size:.74rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+@media (prefers-reduced-motion:reduce){.ss-glow{animation:none}}

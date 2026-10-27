@@ -56,11 +56,12 @@ export function annotate(html: string): { html: string; used: string[]; refs: st
           }),
         svgWrap,
       );
-    // Mukti is explained wherever it appears, headings included
-    if (skips.length && skips.every((s) => /^(h[1-4]|div|span)$/.test(s.name)) && /\b[Mm]ukti\b/.test(part))
-      return part.replace(/\b([Mm]ukti)\b/g, (w) => {
-        used.add("mukti");
-        return `<button type="button" class="term" data-term="mukti" aria-haspopup="dialog">${w}</button>`;
+    // Mukti and redemption are explained wherever they appear, headings included
+    if (skips.length && skips.every((s) => /^(h[1-4]|div|span)$/.test(s.name)) && /\b([Mm]ukti|[Rr]edemption)\b/.test(part))
+      return part.replace(/\b([Mm]ukti|[Rr]edemption)\b/g, (w) => {
+        const id = w.toLowerCase();
+        used.add(id);
+        return `<button type="button" class="term" data-term="${id}" aria-haspopup="dialog">${w}</button>`;
       });
     if (skips.length) return part;
     return linkScripture(part, refs, (text) =>
