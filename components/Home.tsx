@@ -24,27 +24,27 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
 
   return (
     <div className="fade-in flex flex-col">
-      <div className="relative flex flex-col gap-3.5 pb-2 pt-3">
+      <div className="relative flex flex-col gap-3 pb-2 pt-1">
         <h1>The Gita and the Gospel</h1>
-        <p className="lede">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of rescue in Jesus Christ. For readers of every background.</p>
+        <p className="lede">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of rescue in Jesus Christ.</p>
 
-        <ul className="m-0 my-1 flex list-none flex-col gap-2 p-0" aria-label="The questions this guide explores">
+        <ul className="m-0 flex list-none flex-col gap-1 p-0" aria-label="The questions this guide explores">
           {["Who is God?", "Does He love us?", "What are we here for?"].map((q, i) => (
             <li
               key={q}
               style={{ ["--i" as string]: i }}
-              className="rise flex items-center gap-3 border-l-[3px] border-amber py-1 pl-4 font-display text-[1.55rem] leading-tight text-ink"
+              className="rise flex items-center gap-3 border-l-[3px] border-amber py-0.5 pl-3.5 font-display text-[1.2rem] leading-tight text-ink"
             >
               {q}
             </li>
           ))}
         </ul>
 
-        <p className="note">Honest about the hard questions, warm toward every reader, and centered on Jesus Christ.</p>
-
         <ReaderChoice />
 
-        <div className="flex flex-wrap items-center gap-x-[18px] gap-y-4 rounded-[28px] border border-line bg-surface p-5 shadow-lift">
+        <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift ${count > 0 ? "gap-y-4 p-5" : "gap-y-2 p-4"}`}>
+          {count > 0 && (
+            <>
           <svg className="h-[72px] w-[72px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
             <circle cx="42" cy="42" r="34" fill="none" strokeWidth="8" stroke="var(--line)" />
             <circle
@@ -73,6 +73,8 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
                   : "Start with the question beneath both texts: what are we here for?"}
             </p>
           </div>
+            </>
+          )}
           <Link
             href={`/journey/${finished ? "method" : next.id}`}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98]"
