@@ -44,7 +44,7 @@ export const STATIONS: Station[] = [
     lead: "Next, the Ramayana, and why Rama is not like Jesus." },
   { id: "ramayana", n: 5, part: 1, title: "The Ramayana", desc: "Why Rama is not like Jesus",
     reflect: "Rama defeats his enemies, but Jesus died for His. What does it mean to you that Christ died for you while you were still His enemy (Romans 5:10)?",
-    recap: "There is no evidence Rama lived, he falls short himself, and as an avatar he comes to destroy the wicked. Jesus is real, sinless, and came once to die for the wicked and rise again.",
+    recap: "There is no evidence Rama lived, he falls short himself, and as an avatar he comes to protect the good and destroy the wicked. Jesus is real, sinless, and came once to die for the wicked and rise again.",
     lead: "Next, the Puranas, where the gods compete for the top place." },
   { id: "puranas", n: 6, part: 1, title: "The Puranas and the gods", desc: "Rival gods, and sins washed away",
     reflect: "The gods of the Puranas are like us. The God of the Bible is holy, and yet He came near. How does Jesus show you both God's holiness and His love?",
