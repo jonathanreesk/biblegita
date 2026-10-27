@@ -211,6 +211,15 @@
    }
   ]
  },
+ "1 John 1:9": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 9,
+    "text": "If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness."
+   }
+  ]
+ },
  "1 John 3:2": {
   "t": "ESV",
   "v": [
@@ -2793,6 +2802,15 @@
    {
     "n": 1,
     "text": "There is therefore now no condemnation for those who are in Christ Jesus."
+   }
+  ]
+ },
+ "Romans 8:13": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 13,
+    "text": "For if you live according to the flesh you will die, but if by the Spirit you put to death the deeds of the body, you will live."
    }
   ]
  },
