@@ -40,20 +40,20 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
   return (
     <div className="fade-in flex flex-col">
       {/* Desktop: the welcome on the left, and everything needed to start in one card on the right */}
-      <div className="relative flex flex-col gap-3 pb-2 pt-1 lg:grid lg:min-h-[calc(100svh-3rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12 lg:pb-12 lg:pt-14">
+      <div className="relative flex flex-col gap-3 pb-2 pt-0 lg:grid lg:min-h-[calc(100svh-3rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12 lg:pb-12 lg:pt-14">
         <div className="absolute right-0 top-0 hidden lg:block">
           <ThemeToggle />
         </div>
-        <div className="flex flex-col gap-3 lg:gap-5">
+        <div className="flex flex-col gap-2.5 lg:gap-5">
         <h1 className="lg:text-[3.6rem]">The Gita and the Gospel</h1>
-        <p className="lede lg:text-[1.15rem]">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of redemption (mukti) in Jesus Christ.</p>
+        <p className="lede max-lg:text-[1rem] max-lg:leading-snug lg:text-[1.15rem] [@media(max-height:620px)_and_(max-width:1023px)]:hidden">The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of redemption (mukti) in Jesus Christ.</p>
 
-        <ul className="m-0 flex list-none flex-col gap-1 p-0 lg:gap-2" aria-label="The questions this guide explores">
+        <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 lg:flex-col lg:gap-2" aria-label="The questions this guide explores">
           {["Who is God?", "Does He love us?", "What are we here for?"].map((q, i) => (
             <li
               key={q}
               style={{ ["--i" as string]: i }}
-              className="rise flex items-center gap-3 border-l-[3px] border-amber py-0.5 pl-3.5 font-display text-[1.2rem] leading-tight text-ink lg:text-[1.45rem]"
+              className="rise flex items-center gap-3 border-l-[3px] border-amber py-0.5 pl-2.5 font-display text-[1.05rem] leading-tight text-ink lg:pl-3.5 lg:text-[1.45rem]"
             >
               {q}
             </li>
@@ -65,10 +65,10 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && go()} />
 
 
-        <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${count > 0 ? "gap-y-4 p-5" : "gap-y-2 p-4"}`}>
+        <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${count > 0 ? "gap-y-3 p-4 lg:gap-y-4 lg:p-5" : "gap-y-2 p-4"}`}>
           {count > 0 && (
             <>
-          <svg className="h-[72px] w-[72px] flex-none" viewBox="0 0 84 84" aria-hidden="true">
+          <svg className="h-14 w-14 flex-none lg:h-[72px] lg:w-[72px]" viewBox="0 0 84 84" aria-hidden="true">
             <circle cx="42" cy="42" r="34" fill="none" strokeWidth="8" stroke="var(--line)" />
             <circle
               cx="42"
@@ -87,7 +87,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
             </text>
           </svg>
           <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-            <span className="label">{finished ? "Journey complete" : count ? "Keep going" : "Your journey"}</span>
+            <span className="label max-lg:hidden">{finished ? "Journey complete" : count ? "Keep going" : "Your journey"}</span>
             <p className="leading-snug">
               {finished
                 ? prefs.reader === "believer" ? "You have walked the whole journey. Now go and make disciples." : "You have walked the whole journey. The invitation of Jesus is still open: come and see."
