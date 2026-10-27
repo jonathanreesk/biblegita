@@ -54,14 +54,14 @@ export function SettleIn({ total, onReady, onClose }: { total: string; onReady: 
           This guide sets the Hindu texts beside the Bible, one step at a time, and asks the same honest questions of both. Pour a cup of chai or coffee, find a quiet spot, and take your time.
         </p>
 
-        <ul className="m-0 grid list-none grid-cols-2 gap-2.5 p-0 text-left">
-          <li className="rounded-[18px] bg-sand px-4 py-3">
-            <b className="block font-display text-[1.15rem] font-normal leading-tight text-ink">About {total}</b>
-            <span className="text-[.84rem] leading-snug text-muted">in all, a few minutes a step</span>
+        <ul className="m-0 flex list-none flex-wrap items-center justify-center gap-x-4 gap-y-1 p-0">
+          <li className="inline-flex items-center gap-1.5 whitespace-nowrap font-label text-[.86rem] font-semibold text-ink">
+            <svg viewBox="0 0 24 24" className="h-4 w-4 text-dharma" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" /><path d="M12 7v5l3 2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+            About {total}
           </li>
-          <li className="rounded-[18px] bg-sand px-4 py-3">
-            <b className="block font-display text-[1.15rem] font-normal leading-tight text-ink">Come back anytime</b>
-            <span className="text-[.84rem] leading-snug text-muted">pick any step from the list</span>
+          <li className="inline-flex items-center gap-1.5 whitespace-nowrap font-label text-[.86rem] font-semibold text-ink">
+            <svg viewBox="0 0 24 24" className="h-4 w-4 text-dharma" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            Come back anytime
           </li>
         </ul>
 
