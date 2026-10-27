@@ -26,7 +26,7 @@ export const PARTS = [
 export const STATIONS: Station[] = [
   { id: "made", n: 1, part: 0, title: "Before you begin", desc: "How this guide works, and what we were made for",
     reflect: "When have you most sensed that you were loved, or known, or made for something? What did that feel like?",
-    recap: "We all ask the same questions, and beneath them is a longing to belong, to be known and loved by someone greater than ourselves. The Upanishads and the Psalms both voice it. Jesus says He is the answer, and the Hindu texts give answers of their own. The next steps put both to the same two tests.",
+    recap: "We all ask the same questions, and beneath them is a longing to belong, to be known and loved by someone greater than ourselves. The Upanishads and the Psalms both voice it. Jesus says He is the answer, and the Hindu texts give answers of their own. The next chapters put both to the same two tests.",
     lead: "Ideas only make sense inside their story. First, a map of all the Hindu texts, set against the one Bible." },
   { id: "hindutexts", n: 2, part: 1, title: "All the Hindu texts, and how they fit", desc: "The map of the Hindu texts, and a fair test",
     reflect: "A God who speaks would not contradict Himself. Where have you seen the Bible's one story stay consistent where other texts contradict each other, and who could you show that to?",

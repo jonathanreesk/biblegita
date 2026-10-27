@@ -124,8 +124,8 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
 
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
-        <h2 className="text-[1.7rem]">{NUMBERED} steps. Takes about {totalPhrase(minutes)}.</h2>
-        <p className="text-[.95rem] text-muted">Each step allows time to read and to stop and think, so most take three to eight minutes. Walk through them from the top, from why we are here to the glory ahead, over a few sittings or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
+        <h2 className="text-[1.7rem]">{NUMBERED} chapters. Takes about {totalPhrase(minutes)}.</h2>
+        <p className="text-[.95rem] text-muted">Each chapter allows time to read and to stop and think, so most take three to eight minutes. Walk through them from the top, from why we are here to the glory ahead, over a few sittings or a chapter at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
           <span className="chip g">Christian framework</span>

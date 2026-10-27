@@ -51,7 +51,7 @@ export function SettleIn({ total, onReady, onClose }: { total: string; onReady: 
 
         <h2 id="settle-title" className="text-[1.9rem]">Settle in</h2>
         <p className="text-[1rem] leading-relaxed text-muted">
-          This guide sets the Hindu texts beside the Bible, one step at a time, and asks the same honest questions of both. Pour a cup of chai or coffee, find a quiet spot, and take your time.
+          This guide sets the Hindu texts beside the Bible, one chapter at a time, and asks the same honest questions of both. Pour a cup of chai or coffee, find a quiet spot, and take your time.
         </p>
 
         <ul className="m-0 flex list-none flex-wrap items-center justify-center gap-x-4 gap-y-1 p-0">

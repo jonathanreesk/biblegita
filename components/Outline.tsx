@@ -82,7 +82,7 @@ export function OutlineDrawer({ open, onClose, pathname, done, minutes }: { open
           <div className="flex flex-col">
             <strong className="font-display text-[1.25rem] font-normal">Outline</strong>
             <span className="font-label text-[.8rem] text-muted">
-              {count} of {STATIONS.length} steps done
+              {count} of {STATIONS.length} chapters done
             </span>
           </div>
           <button

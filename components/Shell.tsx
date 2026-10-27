@@ -191,7 +191,7 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
               <Link
                 href={`/journey/${nextStep.id}`}
                 onClick={() => here && complete(here.id)}
-                aria-label={`Next step: ${nextStep.title}`}
+                aria-label={`Next chapter: ${nextStep.title}`}
                 className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft max-sm:w-10 max-sm:justify-center max-sm:px-0"
               >
                 <span className="max-sm:hidden">Next</span>
@@ -273,7 +273,7 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
           type="button"
           onClick={() => setAsking(true)}
           aria-haspopup="dialog"
-          aria-label={askStep ? "Ask a question about this step" : "Ask a question"}
+          aria-label={askStep ? "Ask a question about this chapter" : "Ask a question"}
           className={`fixed bottom-6 right-8 z-30 hidden h-12 items-center gap-2 rounded-full border border-gospel bg-gospel px-5 font-label text-[.92rem] font-semibold text-surface shadow-lift transition-[opacity,transform] duration-300 lg:inline-flex ${
             cardVisible || asking ? "pointer-events-none translate-y-3 opacity-0" : "opacity-100"
           }`}
