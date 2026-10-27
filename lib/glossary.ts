@@ -359,6 +359,8 @@ export const GLOSSARY: Term[] = [
     plain: "The river beside Ayodhya. At the end of the Ramayana, Lakshmana and then Rama walk into it and leave the world." },
   { id: "jnana", term: "Jnana", say: "GYAH-nuh", side: "hindu", match: ["jnana"],
     plain: "\"Knowledge\": the road of spiritual knowledge, realizing that your true self is one with Brahman." },
+  { id: "threeschools", term: "The three schools of Vedanta", side: "hindu", match: ["three main Hindu schools", "three schools", "Three main schools"],
+    plain: "Three ways of reading the Upanishads and the Gita. Advaita (Shankara): all is one, and the self is Brahman. Vishishtadvaita (Ramanuja): God is personal, and souls are real parts of Him. Dvaita (Madhva): God and souls are always two, and God is supreme. They disagree on the most basic question: are God and the soul one or two?" },
 ];
 
 const BY_ID = new Map(GLOSSARY.map((t) => [t.id, t]));
