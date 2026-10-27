@@ -671,3 +671,8 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 .way.no{background:var(--bg);border:1px dashed var(--line)}.way.no small{color:var(--warn)}
 .fork-only{margin:0;border-left:3px solid var(--gospel);padding:4px 0 4px 12px;font-size:.95rem;line-height:1.5}
 @media (max-width:560px){.fork-ways{grid-template-columns:1fr}.fork-ways::before,.fork-ways::after{display:none}.fork-ways{padding-top:0}}
+/* The path of redemption: the last stage is still to come */
+.rpath li.future{border:2px dashed var(--gospel);background:linear-gradient(135deg,var(--surface),var(--gospel-soft));box-shadow:none}
+.rpath li.future::before{background:var(--gospel-soft);border-style:dashed}
+.rpath li.future .soon{align-self:flex-start;margin-bottom:4px;border-radius:999px;background:var(--gold);color:var(--ink);font-family:var(--f-label);font-weight:700;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;animation:gl-breathe 3.5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.rpath li.future .soon{animation:none}}
