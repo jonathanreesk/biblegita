@@ -565,3 +565,20 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 .td.maybe .td-icon{background:var(--sand);color:var(--dharma)}
 .td.no .td-icon{background:color-mix(in srgb,var(--warn) 14%,transparent);color:var(--warn)}
 @media (max-width:640px){.truth-dirs{grid-template-columns:1fr}}
+/* Before you begin: the two tests side by side */
+.lenses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lens{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow-sm)}
+.lens .label{color:var(--gospel)}
+.lens-q{margin:0;font-family:var(--f-display);font-size:1.02rem;line-height:1.4;color:var(--ink)}
+.pipeline.mini{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pipeline.mini li{box-shadow:none;padding:10px;display:flex;align-items:center;gap:8px}
+.pipeline.mini li::before{margin:0;flex:none;width:24px;height:24px;font-size:.78rem}
+.pipeline.mini li+li::after{display:none}
+.pipeline.mini b{margin:0;font-size:.95rem}
+.truth-dirs.mini{grid-template-columns:1fr;gap:8px}
+.truth-dirs.mini .td{display:grid;grid-template-columns:auto 1fr;column-gap:10px;box-shadow:none;padding:10px 12px;font-size:.84rem}
+.truth-dirs.mini .td-icon{grid-row:span 2;width:28px;height:28px;font-size:.95rem}
+.truth-dirs.mini b{margin:0;font-size:.95rem}
+@media (max-width:760px){.lenses{grid-template-columns:1fr}}
+.problems-table tbody tr.g th,.problems-table tbody tr.g td{background:var(--gospel-soft);color:var(--ink)}
+.problems-table tbody th{width:24%}
