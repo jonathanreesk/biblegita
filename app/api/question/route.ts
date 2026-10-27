@@ -22,12 +22,14 @@ export async function POST(req: Request) {
   const q = {
     question: clip(body.question, 2000),
     name: clip(body.name, 100),
-    contact: clip(body.contact, 200),
+    email: clip(body.email, 200),
+    phone: clip(body.phone, 40),
     step: clip(body.step, 200),
     page: clip(body.page, 300),
     reader: clip(body.reader, 40),
   };
   if (q.question.length < 3) return NextResponse.json({ ok: false, error: "empty" }, { status: 400 });
+  if (!q.name || (!q.email && !q.phone)) return NextResponse.json({ ok: false, error: "contact" }, { status: 400 });
 
   const subject = `Question on "${q.step || "the guide"}"`;
   const text = [
@@ -36,8 +38,9 @@ export async function POST(req: Request) {
     `Step: ${q.step || "(general)"}`,
     `Page: ${q.page || "(none)"}`,
     `Reading as: ${q.reader || "(not chosen)"}`,
-    `Name: ${q.name || "(not given)"}`,
-    `Contact: ${q.contact || "(not given)"}`,
+    `Name: ${q.name}`,
+    `Email: ${q.email || "(not given)"}`,
+    `Phone: ${q.phone || "(not given)"}`,
   ].join("\n");
 
   try {
@@ -46,7 +49,7 @@ export async function POST(req: Request) {
       ? await fetch(`https://formspree.io/f/${encodeURIComponent(formspree)}`, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ _subject: subject, ...q, email: q.contact.includes("@") ? q.contact : undefined }),
+          body: JSON.stringify({ _subject: `${subject} from ${q.name}`, ...q, _replyto: q.email || undefined }),
         })
       : await fetch("https://api.resend.com/emails", {
           method: "POST",
@@ -56,7 +59,7 @@ export async function POST(req: Request) {
             to: process.env.QUESTIONS_EMAIL_TO,
             subject,
             text,
-            reply_to: q.contact.includes("@") ? q.contact : undefined,
+            reply_to: q.email || undefined,
           }),
         });
     if (!res.ok) throw new Error(String(res.status));

@@ -11,12 +11,18 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [question, setQuestion] = useState("");
   const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [problem, setProblem] = useState("");
   const [website, setWebsite] = useState("");
 
   const send = async (e: React.FormEvent) => {
     e.preventDefault();
     if (question.trim().length < 3) return;
+    if (!email.trim() && !phone.trim()) return setProblem("Please give an email or a phone number, so we can reply.");
+    if (email.trim() && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) return setProblem("That email address does not look right.");
+    if (phone.trim() && phone.replace(/\D/g, "").length < 7) return setProblem("That phone number looks too short.");
+    setProblem("");
     setStatus("sending");
     try {
       const res = await fetch("/api/question", {
@@ -25,7 +31,8 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
         body: JSON.stringify({
           question,
           name,
-          contact,
+          email,
+          phone,
           website,
           step: step ?? "General question",
           page: typeof window !== "undefined" ? window.location.origin + (path ?? window.location.pathname) : path,
@@ -47,7 +54,7 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
       <span id="ask-q" className="label">Have a question?</span>
       {status === "sent" ? (
         <>
-          <p className="leading-relaxed">Thank you. Your question has been sent{contact.trim() ? ", and we will reply to you" : ""}.</p>
+          <p className="leading-relaxed">Thank you{name.trim() ? `, ${name.trim().split(" ")[0]}` : ""}. Your question has been sent, and we will reply to you.</p>
           <button type="button" onClick={() => setStatus("open")} className="self-start font-label font-semibold text-gospel">
             Ask another question
           </button>
@@ -80,18 +87,13 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
             placeholder="Your question"
             className={input}
           />
+          <label className="sr-only" htmlFor="ask-name">Your name</label>
+          <input id="ask-name" required maxLength={100} value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" autoComplete="name" className={input} />
           <div className="grid gap-3 sm:grid-cols-2">
-            <label className="sr-only" htmlFor="ask-name">Your name (optional)</label>
-            <input id="ask-name" maxLength={100} value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name (optional)" className={input} />
-            <label className="sr-only" htmlFor="ask-contact">Email or WhatsApp, if you would like a reply</label>
-            <input
-              id="ask-contact"
-              maxLength={200}
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
-              placeholder="Email or WhatsApp, for a reply"
-              className={input}
-            />
+            <label className="sr-only" htmlFor="ask-email">Email</label>
+            <input id="ask-email" type="email" maxLength={200} value={email} onChange={(e) => { setEmail(e.target.value); setProblem(""); }} placeholder="Email" autoComplete="email" className={input} />
+            <label className="sr-only" htmlFor="ask-phone">Phone or WhatsApp</label>
+            <input id="ask-phone" type="tel" maxLength={40} value={phone} onChange={(e) => { setPhone(e.target.value); setProblem(""); }} placeholder="Phone or WhatsApp" autoComplete="tel" className={input} />
           </div>
           <input
             type="text"
@@ -103,7 +105,8 @@ export function AskQuestion({ step, path }: { step?: string; path?: string }) {
             className="absolute -left-[9999px] h-0 w-0 opacity-0"
             name="website"
           />
-          <p className="text-[.82rem] leading-snug text-muted">We only use your details to answer you. Leave them blank to ask anonymously.</p>
+          <p className="text-[.82rem] leading-snug text-muted">Give an email or a phone number (or both) so we can reply. We only use your details to answer you.</p>
+          {problem && <p className="text-[.9rem] text-warn">{problem}</p>}
           {status === "error" && <p className="text-[.9rem] text-warn">Sorry, that did not send. Please try again in a moment.</p>}
           <div className="flex flex-wrap items-center gap-2.5">
             <button
