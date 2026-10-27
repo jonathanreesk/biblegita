@@ -357,6 +357,8 @@ export const GLOSSARY: Term[] = [
     plain: "The twin sons of Rama and Sita, born in Valmiki's hermitage after Sita was sent away." },
   { id: "sarayu", term: "Sarayu", say: "SUH-ruh-yoo", side: "hindu", match: ["Sarayu"],
     plain: "The river beside Ayodhya. At the end of the Ramayana, Lakshmana and then Rama walk into it and leave the world." },
+  { id: "jnana", term: "Jnana", say: "GYAH-nuh", side: "hindu", match: ["jnana"],
+    plain: "\"Knowledge\": the road of spiritual knowledge, realizing that your true self is one with Brahman." },
 ];
 
 const BY_ID = new Map(GLOSSARY.map((t) => [t.id, t]));

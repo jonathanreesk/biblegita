@@ -363,3 +363,8 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .spokes-one b{display:block;margin-bottom:2px;font-family:var(--f-label);font-weight:700;font-size:.8rem;letter-spacing:.04em;color:var(--gospel)}
 .people.texts .person i{color:var(--dharma)}
 .tree-branch.pand{--c:var(--dharma)}.tree-branch.kaur{--c:var(--muted)}.tree-branch.mid{--c:var(--amber)}
+ol.method.road li::before{content:"Road " counter(m)}
+.road-goal{text-align:center;font-family:var(--f-label);font-weight:600;padding:10px 14px;border-radius:999px;background:var(--dharma-soft);align-self:center;max-width:none}
+ol.method.road{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none}
+ol.method.road>li:last-child:nth-child(odd){grid-column:auto}
+@media (max-width:620px){ol.method.road{grid-template-columns:1fr}}
