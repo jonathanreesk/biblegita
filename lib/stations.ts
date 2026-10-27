@@ -24,7 +24,7 @@ export const PARTS = [
 // Order matters: this is the journey sequence.
 // Each id matches a file in content/stations/<id>.html
 export const STATIONS: Station[] = [
-  { id: "made", n: 1, part: 0, title: "Made to know and be known", desc: "What we are here for, and how to read this guide",
+  { id: "made", n: 1, part: 0, title: "Before you begin", desc: "How this guide works, and what we were made for",
     reflect: "When have you most sensed that you were loved, or known, or made for something? What did that feel like?",
     recap: "We were made to know God and to be loved by Him. Something has broken that relationship, and God's answer is a person, Jesus. Each step that follows shows what the Hindu texts teach, puts them to a fair test, and points to Christ.",
     lead: "Ideas only make sense inside their story. First, a map of all the Hindu texts, set against the one Bible." },

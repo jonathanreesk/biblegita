@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { NUMBERED, PARTS, STATIONS } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { ChevronIcon } from "./Icons";
 import { ReaderChoice } from "./ReaderChoice";
 import { ThemeToggle } from "./ThemeToggle";
+import { SettleIn } from "./SettleIn";
 
 const CIRC = 2 * Math.PI * 34;
 
@@ -30,6 +31,11 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
   const count = STATIONS.filter((s) => done[s.id]).length;
   const next = STATIONS.find((s) => !done[s.id]);
   const finished = !next;
+  const href = `/journey/${finished ? "made" : next.id}`;
+  // First time in: a moment to settle in before the first step
+  const [settle, setSettle] = useState(false);
+  const closeSettle = useCallback(() => setSettle(false), []);
+  const go = () => (count === 0 ? setSettle(true) : router.push(href));
 
   return (
     <div className="fade-in flex flex-col">
@@ -56,26 +62,8 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         </div>
 
         <div className="flex flex-col gap-3 lg:gap-6 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-9 lg:shadow-lift">
-        <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && router.push(`/journey/${finished ? "made" : next!.id}`)} />
+        <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && go()} />
 
-        {count === 0 && (
-          <div className="flex items-center gap-3.5 rounded-[22px] bg-sand px-4 py-3.5 lg:px-5">
-            <svg className="cup h-14 w-14 flex-none" viewBox="6 6 54 54" aria-hidden="true">
-              <g className="steam" fill="none" stroke="var(--dharma)" strokeWidth="2.6" strokeLinecap="round">
-                <path d="M24 24c-3-4 3-6 0-11" />
-                <path d="M32 24c-3-4 3-6 0-11" />
-                <path d="M40 24c-3-4 3-6 0-11" />
-              </g>
-              <path d="M14 30h34v8a17 17 0 0 1-34 0z" fill="var(--amber)" />
-              <path d="M17 33h28" stroke="var(--surface)" strokeOpacity=".45" strokeWidth="2" strokeLinecap="round" />
-              <path d="M48 33h3a6 6 0 0 1 0 12h-4" fill="none" stroke="var(--amber)" strokeWidth="3.2" strokeLinecap="round" />
-              <path d="M9 56h44" stroke="var(--dharma)" strokeWidth="3" strokeLinecap="round" />
-            </svg>
-            <p className="text-[.9rem] leading-snug text-muted lg:text-[.95rem]">
-              <b className="font-display text-[1.08rem] font-normal text-ink">Settle in.</b> Pour a cup of chai or coffee and take your time. This is a thorough look at both. Stop whenever you like, and come back to any step from the list of steps.
-            </p>
-          </div>
-        )}
 
         <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${count > 0 ? "gap-y-4 p-5" : "gap-y-2 p-4"}`}>
           {count > 0 && (
@@ -111,16 +99,17 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
             </>
           )}
           <Link
-            href={`/journey/${finished ? "made" : next.id}`}
+            href={href}
             onClick={(e) => {
-              if (prefs.reader) return;
+              if (prefs.reader && count > 0) return;
               e.preventDefault();
+              if (prefs.reader) return setSettle(true);
               setNudge(true);
               document.getElementById("reader-choice")?.scrollIntoView({ behavior: "smooth", block: "center" });
             }}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98] lg:min-h-14 lg:text-[1.05rem]"
           >
-            {finished ? "Walk it again" : count ? "Continue" : "I'm ready. Begin the journey"}
+            {finished ? "Walk it again" : count ? "Continue" : "Begin the journey"}
           </Link>
           <a
             href="#steps"
@@ -178,6 +167,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
           </div>
         </div>
       ))}
+      {settle && <SettleIn total={totalPhrase(minutes)} onReady={() => router.push(href)} onClose={closeSettle} />}
     </div>
   );
 }

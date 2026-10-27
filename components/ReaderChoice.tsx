@@ -3,30 +3,53 @@
 import { useEffect, useRef } from "react";
 import { useProgress, type Reader } from "./Providers";
 
-const OPTIONS: { v: Reader; title: string; text: string }[] = [
-  { v: "seeker", title: "I'm Hindu, or exploring", text: "and curious how the texts compare" },
-  { v: "believer", title: "I follow Jesus", text: "and want to share Him with Hindu friends" },
+const OPTIONS: { v: Reader; title: string; text: string; icon: React.ReactNode }[] = [
+  {
+    v: "seeker",
+    title: "I'm Hindu, or exploring",
+    text: "and curious how the texts compare",
+    // a compass: finding the way
+    icon: (
+      <>
+        <circle cx="24" cy="24" r="13" fill="none" stroke="currentColor" strokeWidth="2.4" />
+        <path d="M29.5 18.5l-3.6 7.4-7.4 3.6 3.6-7.4z" fill="currentColor" />
+      </>
+    ),
+  },
+  {
+    v: "believer",
+    title: "I follow Jesus",
+    text: "and want to share Him with Hindu friends",
+    // the cross
+    icon: (
+      <>
+        <path d="M24 10v28M15 19h18" stroke="currentColor" strokeWidth="3.6" strokeLinecap="round" />
+      </>
+    ),
+  },
 ];
 
 // Asks who is reading. The same content shows for both; the framing around it adapts.
 // "stacked" enlarges it on desktop; "big" enlarges it at every size.
 const SIZES = {
-  normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "", title: "", text: "" },
+  normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "", title: "", text: "", icon: "h-9 w-9 max-sm:hidden" },
   stacked: {
     head: "lg:font-display lg:text-[1.75rem] lg:font-medium lg:normal-case lg:tracking-[-.01em] lg:text-ink lg:before:hidden",
     sub: "hidden lg:block",
     grid: "grid-cols-2 lg:grid-cols-1",
-    btn: "lg:min-h-[92px] lg:justify-center lg:gap-1 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
+    btn: "lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
     title: "lg:text-[1.4rem]",
     text: "lg:text-[.95rem]",
+    icon: "h-9 w-9 max-sm:hidden lg:h-14 lg:w-14",
   },
   big: {
     head: "font-display text-[1.6rem] font-medium leading-tight tracking-[-.01em] text-ink",
     sub: "",
     grid: "grid-cols-1",
-    btn: "min-h-[84px] justify-center gap-1 border-2 px-5 py-4 hover:-translate-y-0.5 hover:shadow-soft",
+    btn: "min-h-[84px] gap-4 border-2 px-5 py-4 hover:-translate-y-0.5 hover:shadow-soft",
     title: "text-[1.3rem]",
     text: "text-[.92rem]",
+    icon: "h-12 w-12",
   },
 };
 
@@ -69,15 +92,18 @@ export function ReaderChoice({
               type="button"
               aria-pressed={on}
               onClick={() => choose(o.v)}
-              className={`flex min-h-14 flex-col items-start gap-0.5 rounded-[20px] border px-3.5 py-3 text-left transition active:scale-[.98] ${z.btn} ${
+              className={`flex min-h-14 items-center gap-3 rounded-[20px] border px-3.5 py-3 text-left transition active:scale-[.98] ${z.btn} ${
                 on ? "border-gospel bg-gospel-soft" : "border-line bg-page hover:border-gospel"
               }`}
             >
-              <b className={`font-display text-[1.05rem] font-normal leading-tight ${z.title}`}>
-                {on && <span aria-hidden="true">✓ </span>}
-                {o.title}
-              </b>
-              <span className={`text-[.8rem] leading-snug text-muted ${z.text}`}>{o.text}</span>
+              <span className={`reader-icon ${o.v} ${z.icon}`} aria-hidden="true">
+                <svg viewBox="0 0 48 48">{o.icon}</svg>
+                {on && <i>✓</i>}
+              </span>
+              <span className="flex min-w-0 flex-col gap-0.5">
+                <b className={`font-display text-[1.05rem] font-normal leading-tight ${z.title}`}>{o.title}</b>
+                <span className={`text-[.8rem] leading-snug text-muted ${z.text}`}>{o.text}</span>
+              </span>
             </button>
           );
         })}

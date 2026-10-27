@@ -35,7 +35,7 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
     const prev = neighbors(pathname.replace("/journey/", "")).prev;
     router.push(prev ? `/journey/${prev.id}` : "/");
   };
-  const { done } = useProgress();
+  const { done, complete } = useProgress();
   const header = useHeader(pathname);
   const here = pathname.startsWith("/journey/") ? findStation(pathname.split("/")[2] ?? "") : undefined;
   const nextStep = here ? neighbors(here.id).next : undefined;
@@ -147,6 +147,7 @@ export function Shell({ children, ask = false, minutes }: { children: React.Reac
             {nextStep && (
               <Link
                 href={`/journey/${nextStep.id}`}
+                onClick={() => here && complete(here.id)}
                 aria-label={`Next step: ${nextStep.title}`}
                 className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft max-sm:w-10 max-sm:justify-center max-sm:px-0"
               >

@@ -12,6 +12,7 @@ const DEFAULT_PREFS: Prefs = { theme: "light", size: "default", v: 2 };
 type Ctx = {
   done: Record<string, boolean>;
   toggle: (id: string) => void;
+  complete: (id: string) => void;
   reset: () => void;
   prefs: Prefs;
   setPrefs: (p: Prefs) => void;
@@ -69,10 +70,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }, [prefs, ready]);
 
   const toggle = useCallback((id: string) => setDone((d) => ({ ...d, [id]: !d[id] })), []);
+  const complete = useCallback((id: string) => setDone((d) => (d[id] ? d : { ...d, [id]: true })), []);
   const reset = useCallback(() => setDone({}), []);
 
   return (
-    <ProgressContext.Provider value={{ done, toggle, reset, prefs, setPrefs: setPrefsState, ready }}>
+    <ProgressContext.Provider value={{ done, toggle, complete, reset, prefs, setPrefs: setPrefsState, ready }}>
       {children}
     </ProgressContext.Provider>
   );

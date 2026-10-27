@@ -16,10 +16,9 @@ import { VerseSheet } from "./VerseSheet";
 
 export function StationView({ id, html, verses, ask = false }: { id: string; html: string; verses: VerseMap; ask?: boolean }) {
   const router = useRouter();
-  const { done, toggle } = useProgress();
+  const { complete } = useProgress();
   const { prev, next } = neighbors(id);
   const station = findStation(id);
-  const isDone = !!done[id];
   const [open, setOpen] = useState<Term | null>(null);
   const [verse, setVerse] = useState<string | null>(null);
   const close = useCallback(() => {
@@ -110,13 +109,6 @@ export function StationView({ id, html, verses, ask = false }: { id: string; htm
         <section aria-labelledby={`recap-${id}`} className="mt-9 flex flex-col gap-3 rounded-[24px] border border-line bg-surface p-5 shadow-soft">
           <span id={`recap-${id}`} className="label">In short</span>
           <p className="text-[1.02rem] leading-relaxed">{station.recap}</p>
-          {next && station.lead && (
-            <Link href={`/journey/${next.id}`} className="group mt-1 flex flex-col gap-1 border-t border-line pt-3 text-ink no-underline">
-              <small className="font-label text-[.72rem] font-semibold uppercase tracking-[.1em] text-gospel">Why the next step follows</small>
-              <span className="text-[.98rem] leading-relaxed">{station.lead}</span>
-              <span className="font-label font-semibold text-gospel group-hover:underline">{next.title} →</span>
-            </Link>
-          )}
         </section>
       )}
       {station?.reflect && <Reflect id={id} prompt={station.reflect} seeker={station.reflectSeeker} />}
@@ -125,16 +117,6 @@ export function StationView({ id, html, verses, ask = false }: { id: string; htm
       {open && <TermSheet term={open} onClose={close} onOpen={setOpen} />}
 
       <nav aria-label="Journey navigation" className="mt-9 flex flex-col gap-3 border-t border-line pt-5">
-        <button
-          type="button"
-          onClick={() => toggle(id)}
-          aria-pressed={isDone}
-          className={`min-h-12 self-center rounded-full border px-7 py-3 font-label font-semibold transition hover:-translate-y-0.5 active:scale-[.98] ${
-            isDone ? "border-gospel bg-gospel-soft text-gospel" : "border-line bg-surface text-ink shadow-soft"
-          }`}
-        >
-          {isDone ? "Completed ✓" : "Mark complete"}
-        </button>
         <div className="grid grid-cols-2 gap-2.5">
           {prev ? (
             <Link
@@ -149,6 +131,7 @@ export function StationView({ id, html, verses, ask = false }: { id: string; htm
           )}
           <Link
             href={next ? `/journey/${next.id}` : "/"}
+            onClick={() => complete(id)}
             className="flex min-h-14 min-w-0 flex-col items-end justify-center rounded-[20px] border border-gospel bg-gospel px-4 py-2.5 text-right font-label font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5"
           >
             <small className="text-[.7rem] uppercase tracking-[.08em] opacity-80">{next ? "Next →" : "Finished"}</small>

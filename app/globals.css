@@ -485,3 +485,13 @@ svg text[fill="var(--surface)"] tspan.verse{fill:var(--surface);text-decoration-
 .mini-table td .ref,.mini-table td .verse{margin-top:4px;font-size:.78rem}
 .grid2>*{min-width:0}
 .mini-table{min-width:0}
+
+/* Who is reading: a small picture for each reader */
+.reader-icon{position:relative;flex:none;display:grid;place-items:center;border-radius:50%;background:var(--sand)}
+.reader-icon svg{width:62%;height:62%}
+.reader-icon.seeker{color:var(--dharma);background:var(--dharma-soft)}
+.reader-icon.believer{color:var(--gospel);background:var(--gospel-soft)}
+.reader-icon i{position:absolute;right:-3px;bottom:-3px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:.7rem;font-weight:700;background:var(--gospel);color:var(--surface);border:2px solid var(--surface)}
+button[aria-pressed="true"] .reader-icon.seeker svg{animation:reader-spin 1.2s ease}
+@keyframes reader-spin{40%{transform:rotate(-25deg)}100%{transform:rotate(0)}}
+@media (prefers-reduced-motion:reduce){button[aria-pressed="true"] .reader-icon svg{animation:none}}
