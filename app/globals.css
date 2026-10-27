@@ -409,3 +409,8 @@ ol.method.path>li:last-child:nth-child(odd){grid-column:auto}
     mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40'%3E%3Cpath d='M10 0 Q1 10 10 20 T10 40' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-y center top/20px 40px}
 }
 svg text[fill="var(--surface)"] tspan.verse{fill:var(--surface);text-decoration-color:currentColor}
+
+/* A gentle glow around the reader choice when Begin is tapped first */
+.nudge-ring{box-shadow:0 0 0 3px var(--gospel-soft),0 0 0 5px color-mix(in srgb,var(--gospel) 45%,transparent);padding:10px;margin:-10px;animation:nudge-pulse 1.6s ease-in-out 2}
+@keyframes nudge-pulse{50%{box-shadow:0 0 0 3px var(--gospel-soft),0 0 0 9px color-mix(in srgb,var(--gospel) 20%,transparent)}}
+@media (prefers-reduced-motion:reduce){.nudge-ring{animation:none}}

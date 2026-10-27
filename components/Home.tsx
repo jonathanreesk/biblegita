@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { NUMBERED, PARTS, STATIONS } from "@/lib/stations";
 import { useProgress } from "./Providers";
 import { ChevronIcon } from "./Icons";
@@ -18,6 +20,9 @@ function totalPhrase(minutes: Record<string, number>) {
 
 export function Home({ minutes }: { minutes: Record<string, number> }) {
   const { done, prefs } = useProgress();
+  const router = useRouter();
+  // Begin asks gently for the reader choice first, then carries on once it is made
+  const [nudge, setNudge] = useState(false);
   const count = STATIONS.filter((s) => done[s.id]).length;
   const next = STATIONS.find((s) => !done[s.id]);
   const finished = !next;
@@ -40,7 +45,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
           ))}
         </ul>
 
-        <ReaderChoice />
+        <ReaderChoice nudge={nudge} onChosen={() => nudge && router.push(`/journey/${finished ? "method" : next!.id}`)} />
 
         <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift ${count > 0 ? "gap-y-4 p-5" : "gap-y-2 p-4"}`}>
           {count > 0 && (
@@ -77,6 +82,12 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
           )}
           <Link
             href={`/journey/${finished ? "method" : next.id}`}
+            onClick={(e) => {
+              if (prefs.reader) return;
+              e.preventDefault();
+              setNudge(true);
+              document.getElementById("reader-choice")?.scrollIntoView({ behavior: "smooth", block: "center" });
+            }}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98] lg:w-auto lg:px-12"
           >
             {finished ? "Walk it again" : count ? "Continue" : "Begin the journey"}

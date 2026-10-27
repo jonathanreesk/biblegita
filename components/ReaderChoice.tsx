@@ -8,14 +8,30 @@ const OPTIONS: { v: Reader; title: string; text: string }[] = [
 ];
 
 // Asks who is reading. The same content shows for both; the framing around it adapts.
-export function ReaderChoice({ compact = false }: { compact?: boolean }) {
+export function ReaderChoice({
+  compact = false,
+  nudge = false,
+  onChosen,
+}: {
+  compact?: boolean;
+  nudge?: boolean; // asked to choose before going on
+  onChosen?: (reader: Reader) => void;
+}) {
   const { prefs, setPrefs, ready } = useProgress();
   if (!ready) return null;
-  const choose = (reader: Reader) => setPrefs({ ...prefs, reader });
+  const choose = (reader: Reader) => {
+    setPrefs({ ...prefs, reader });
+    onChosen?.(reader);
+  };
 
   return (
-    <section aria-labelledby="reader-q" className="flex flex-col gap-2.5">
+    <section id="reader-choice" aria-labelledby="reader-q" className={`flex scroll-mt-24 flex-col gap-2.5 rounded-[24px] transition-shadow ${nudge ? "nudge-ring" : ""}`}>
       <span id="reader-q" className="label">Who is reading?</span>
+      {nudge && (
+        <p role="status" className="text-[.92rem] font-semibold text-gospel">
+          First, tell us who is reading. Then we will begin.
+        </p>
+      )}
       <div role="group" aria-labelledby="reader-q" className="grid grid-cols-2 gap-2.5">
         {OPTIONS.map((o) => {
           const on = prefs.reader === o.v;
