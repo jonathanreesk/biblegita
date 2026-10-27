@@ -393,3 +393,18 @@ ol.method.path>li:last-child:nth-child(odd){grid-column:auto}
 .minis{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:8px}
 .minis li{max-width:none;border:1px solid var(--line);border-top:3px solid var(--dharma);border-radius:14px;background:var(--surface);padding:8px 10px;font-size:.86rem;line-height:1.4;color:var(--muted)}
 .minis li b{display:block;font-family:var(--f-display);font-weight:500;font-size:1.02rem;color:var(--ink);margin-bottom:1px}
+
+/* The Bible's thread: one wavy line running through every stage */
+.stages.thread{position:relative;isolation:isolate}
+.stages.thread .stage:not(:last-child)::after{display:none}
+.stages.thread .stage svg{position:relative;z-index:1;background:var(--surface);border-radius:50%}
+.stages.thread::before{content:"";position:absolute;z-index:0;left:10%;right:10%;top:44px;height:20px;
+  background:linear-gradient(90deg,var(--gospel) 0%,var(--warn) 25%,var(--dharma) 50%,var(--gospel) 75%,var(--gospel) 100%);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cpath d='M0 10 Q10 1 20 10 T40 10' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-x left center/40px 20px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cpath d='M0 10 Q10 1 20 10 T40 10' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-x left center/40px 20px}
+@media (max-width:640px){
+  .stages.thread::before{left:36px;right:auto;top:30px;bottom:30px;width:20px;height:auto;
+    background:linear-gradient(180deg,var(--gospel) 0%,var(--warn) 25%,var(--dharma) 50%,var(--gospel) 75%,var(--gospel) 100%);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40'%3E%3Cpath d='M10 0 Q1 10 10 20 T10 40' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-y center top/20px 40px;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40'%3E%3Cpath d='M10 0 Q1 10 10 20 T10 40' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-y center top/20px 40px}
+}

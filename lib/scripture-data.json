@@ -1150,6 +1150,15 @@
    }
   ]
  },
+ "Hebrews 2:14": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 14,
+    "text": "Since then the children have shared in flesh and blood, he also himself in the same way partook of the same, that through death he might bring to nothing him who had the power of death, that is, the devil,"
+   }
+  ]
+ },
  "Hebrews 4:15": {
   "t": "WEB",
   "v": [
@@ -1346,6 +1355,23 @@
    {
     "n": 32,
     "text": "And I, if I am lifted up from the earth, will draw all people to myself.”"
+   }
+  ]
+ },
+ "John 14:1-3": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "“Don’t let your heart be troubled. Believe in God. Believe also in me."
+   },
+   {
+    "n": 2,
+    "text": "In my Father’s house are many homes. If it weren’t so, I would have told you. I am going to prepare a place for you."
+   },
+   {
+    "n": 3,
+    "text": "If I go and prepare a place for you, I will come again, and will receive you to myself; that where I am, you may be there also."
    }
   ]
  },
@@ -1560,6 +1586,24 @@
    }
   ]
  },
+ "John 20:1": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "Now on the first day of the week, Mary Magdalene went early, while it was still dark, to the tomb, and saw the stone taken away from the tomb."
+   }
+  ]
+ },
+ "John 20:12": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 12,
+    "text": "and she saw two angels in white sitting, one at the head, and one at the feet, where the body of Jesus had lain."
+   }
+  ]
+ },
  "John 20:16-18": {
   "t": "WEB",
   "v": [
@@ -1718,12 +1762,30 @@
    }
   ]
  },
+ "Luke 24:10": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 10,
+    "text": "Now they were Mary Magdalene, Joanna, and Mary the mother of James. The other women with them told these things to the apostles."
+   }
+  ]
+ },
  "Luke 24:27": {
   "t": "WEB",
   "v": [
    {
     "n": 27,
     "text": "Beginning from Moses and from all the prophets, he explained to them in all the Scriptures the things concerning himself."
+   }
+  ]
+ },
+ "Luke 24:4": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 4,
+    "text": "While they were greatly perplexed about this, behold, two men stood by them in dazzling clothing."
    }
   ]
  },
@@ -1817,6 +1879,24 @@
    {
     "n": 45,
     "text": "For the Son of Man also came not to be served, but to serve, and to give his life as a ransom for many.”"
+   }
+  ]
+ },
+ "Mark 16:1": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "When the Sabbath was past, Mary Magdalene, and Mary the mother of James, and Salome, bought spices, that they might come and anoint him."
+   }
+  ]
+ },
+ "Mark 16:5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 5,
+    "text": "Entering into the tomb, they saw a young man sitting on the right side, dressed in a white robe, and they were amazed."
    }
   ]
  },
@@ -1927,6 +2007,15 @@
    }
   ]
  },
+ "Matthew 28:1": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 1,
+    "text": "Now after the Sabbath, as it began to dawn on the first day of the week, Mary Magdalene and the other Mary came to see the tomb."
+   }
+  ]
+ },
  "Matthew 28:18": {
   "t": "WEB",
   "v": [
@@ -1950,6 +2039,28 @@
    {
     "n": 20,
     "text": "teaching them to observe all things that I commanded you. Behold, I am with you always, even to the end of the age.” Amen."
+   }
+  ]
+ },
+ "Matthew 28:19-20": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 19,
+    "text": "Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,"
+   },
+   {
+    "n": 20,
+    "text": "teaching them to observe all things that I commanded you. Behold, I am with you always, even to the end of the age.” Amen."
+   }
+  ]
+ },
+ "Matthew 28:2": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 2,
+    "text": "Behold, there was a great earthquake, for an angel of the Lord descended from the sky, and came and rolled away the stone from the door, and sat on it."
    }
   ]
  },
@@ -2148,6 +2259,15 @@
    }
   ]
  },
+ "Revelation 21:5": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 5,
+    "text": "He who sits on the throne said, “Behold, I am making all things new.” He said, “Write, for these words of God are faithful and true.”"
+   }
+  ]
+ },
  "Revelation 22:1-2": {
   "t": "WEB",
   "v": [
@@ -2229,6 +2349,15 @@
    {
     "n": 5,
     "text": "There will be no night, and they need no lamp light or sun light; for the Lord God will illuminate them. They will reign forever and ever."
+   }
+  ]
+ },
+ "Revelation 5:11": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 11,
+    "text": "I saw, and I heard something like a voice of many angels around the throne, the living creatures, and the elders. The number of them was ten thousands of ten thousands, and thousands of thousands;"
    }
   ]
  },
