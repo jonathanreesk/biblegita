@@ -119,5 +119,20 @@
   "book": "Upanishads",
   "summary": "As a person acts and behaves, so he becomes: doing good makes him good, doing evil makes him evil. Desire shapes the will, the will shapes action, and action shapes what he becomes, in this life and the next.",
   "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 4.4.5"
+ },
+ "Mahabharata, Mausala Parva": {
+  "book": "Mahabharata",
+  "summary": "Book 16. Thirty-six years after the war, Krishna's clan, the Yadavas, turn on each other in a drunken brawl and are destroyed, as Gandhari's curse foretold. Krishna is killed by a hunter's arrow while resting in the forest, and his city, Dwaraka, is swallowed by the sea.",
+  "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 16"
+ },
+ "Mahabharata, Mahaprasthanika Parva": {
+  "book": "Mahabharata",
+  "summary": "Book 17. The Pandavas and Draupadi set out for the Himalayas to reach heaven. One by one they fall, each for a fault, until only Yudhishthira and a dog remain.",
+  "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 17"
+ },
+ "Mahabharata, Svargarohana Parva": {
+  "book": "Mahabharata",
+  "summary": "Book 18. In heaven Yudhishthira finds Duryodhana honored, while his own brothers seem to suffer in hell. It turns out to be an illusion and a test. In the end the warriors of both sides are said to reach heaven.",
+  "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 18"
  }
 }

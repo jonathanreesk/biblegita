@@ -408,3 +408,4 @@ ol.method.path>li:last-child:nth-child(odd){grid-column:auto}
     -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40'%3E%3Cpath d='M10 0 Q1 10 10 20 T10 40' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-y center top/20px 40px;
     mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='40'%3E%3Cpath d='M10 0 Q1 10 10 20 T10 40' fill='none' stroke='%23000' stroke-width='3.5'/%3E%3C/svg%3E") repeat-y center top/20px 40px}
 }
+svg text[fill="var(--surface)"] tspan.verse{fill:var(--surface);text-decoration-color:currentColor}
