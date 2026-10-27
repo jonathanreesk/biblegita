@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { PARTS, STATIONS } from "@/lib/stations";
+import { TermText } from "./TermText";
 
 type Props = { pathname: string; done: Record<string, boolean>; onNavigate?: () => void; showDesc?: boolean; minutes?: Record<string, number> };
 
@@ -13,7 +14,7 @@ export function OutlineList({ pathname, done, onNavigate, showDesc, minutes }: P
       {PARTS.map((p, pi) => (
         <div key={p.title} className="flex flex-col gap-0.5">
           <h5 className="mx-2.5 mb-1 mt-3.5 font-label text-[.72rem] font-semibold uppercase tracking-[.09em] text-muted">{p.title}</h5>
-          {showDesc && <p className="mx-2.5 mb-1 text-[.8rem] leading-snug text-muted">{p.desc}</p>}
+          {showDesc && <p className="mx-2.5 mb-1 text-[.8rem] leading-snug text-muted"><TermText text={p.desc} /></p>}
           {STATIONS.filter((s) => s.part === pi).map((s) => {
             const current = pathname === `/journey/${s.id}`;
             const isDone = !!done[s.id];
