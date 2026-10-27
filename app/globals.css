@@ -323,3 +323,42 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .cmp-row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .cmp.e{--c:var(--amber)}
 @media (max-width:760px){.cmp-row.three{grid-template-columns:1fr}}
+
+/* Scorecard: one question per row, a verdict for each side, one line of evidence */
+.score{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:4px 16px;box-shadow:var(--shadow-sm)}
+.score-head,.score-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px 14px}
+.score-head{padding:12px 0 10px;border-bottom:1px solid var(--line);font-family:var(--f-label);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.score-head .blank{display:none}
+.score-head .d{color:var(--dharma)}.score-head .g{color:var(--gospel)}
+.score-row{padding:12px 0;border-bottom:1px solid var(--line)}
+.score-row:last-child{border-bottom:0}
+.score-q{grid-column:1/-1;font-family:var(--f-label);font-weight:700;font-size:.86rem}
+.score-a{display:block;min-width:0;font-size:.9rem;line-height:1.45;color:var(--muted)}
+.score-a b{display:block;padding-left:1.25em;text-indent:-1.25em;margin-bottom:3px;color:var(--ink);font-weight:600;font-size:.95rem;line-height:1.3}
+.score-a b::before{display:inline-block;width:1.25em;text-indent:0;font-weight:700}
+.score-a.no b::before{content:"✕";color:var(--warn)}
+.score-a.yes b::before{content:"✓";color:var(--gospel)}
+@media (min-width:760px){.score-head,.score-row{grid-template-columns:minmax(0,.7fr) minmax(0,1fr) minmax(0,1fr)}.score-head .blank{display:block}.score-q{grid-column:auto}}
+
+/* Line-up: who fell short, and the one who did not */
+.lineup{display:flex;flex-direction:column;gap:12px}
+.lineup-side{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:10px}
+.lineup-side>.who{font-family:var(--f-label);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.lineup-side.d{--c:var(--dharma)}.lineup-side.g{--c:var(--gospel)}
+.people{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.person{flex:1 1 150px;border:1px solid var(--line);border-radius:16px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;background:var(--bg);min-width:0}
+.person b{font-family:var(--f-display);font-weight:500;font-size:1.05rem}
+.person span{display:block;font-size:.85rem;line-height:1.35;color:var(--muted)}
+.person i{font-style:normal;font-family:var(--f-label);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--warn)}
+.person.good{flex-basis:100%;max-width:none;border:2px solid var(--gospel);background:var(--gospel-soft)}
+.person.good i{color:var(--gospel)}
+
+/* One question, many answers */
+.spokes{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:12px}
+.spokes-q{font-family:var(--f-display);font-size:1.25rem;line-height:1.25;text-align:center}
+.spokes ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px}
+.spokes li{border:1px solid var(--line);border-left:4px solid var(--dharma);border-radius:14px;padding:8px 10px;display:block;font-size:.88rem;line-height:1.4;color:var(--muted);min-width:0}
+.spokes li b{display:block;margin-bottom:2px;color:var(--ink);font-family:var(--f-label);font-weight:700;font-size:.8rem;letter-spacing:.04em}
+.spokes-one{border:2px solid var(--gospel);background:var(--gospel-soft);border-radius:16px;padding:10px 12px;display:block;line-height:1.45}
+.spokes-one b{display:block;margin-bottom:2px;font-family:var(--f-label);font-weight:700;font-size:.8rem;letter-spacing:.04em;color:var(--gospel)}
+.people.texts .person i{color:var(--dharma)}
