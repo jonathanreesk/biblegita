@@ -524,3 +524,10 @@ button[aria-pressed="true"] .reader-icon.seeker svg{animation:reader-spin 1.2s e
 .answered b{color:var(--gospel);font-weight:600}
 .answered .ask b{color:var(--dharma)}
 @media (max-width:560px){.answered li{grid-template-columns:1fr}.answered li::before{content:"↓";width:auto;height:24px}.answered .ask{border-radius:16px 16px 0 0}.answered .ans{border-radius:0 0 16px 16px}}
+/* Phones: the reader icon becomes a soft watermark in the corner of its card */
+@media (max-width:639px){
+  .reader-icon.wm{position:absolute;right:-16px;bottom:-18px;width:88px;height:88px;background:none}
+  .reader-icon.wm svg{width:100%;height:100%;opacity:.14}
+  .reader-icon.wm i{display:none}
+  button[aria-pressed="true"] .reader-icon.wm svg{opacity:.22}
+}

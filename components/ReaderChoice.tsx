@@ -33,15 +33,15 @@ const OPTIONS: { v: Reader; title: string; text: string; icon: React.ReactNode }
 // Asks who is reading. The same content shows for both; the framing around it adapts.
 // "stacked" enlarges it on desktop; "big" enlarges it at every size.
 const SIZES = {
-  normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "max-sm:relative max-sm:flex-col max-sm:items-start max-sm:gap-0.5 max-sm:pr-11", title: "", text: "", icon: "h-9 w-9 max-sm:absolute max-sm:right-2.5 max-sm:top-2.5 max-sm:h-7 max-sm:w-7" },
+  normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "max-sm:relative max-sm:overflow-hidden max-sm:flex-col max-sm:items-start max-sm:gap-0.5", title: "", text: "", icon: "wm h-9 w-9" },
   stacked: {
     head: "lg:font-display lg:text-[1.75rem] lg:font-medium lg:normal-case lg:tracking-[-.01em] lg:text-ink lg:before:hidden",
     sub: "text-[.86rem] lg:text-[.95rem]",
     grid: "grid-cols-2 lg:grid-cols-1",
-    btn: "max-sm:relative max-sm:flex-col max-sm:items-start max-sm:gap-0.5 max-sm:pr-11 lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
+    btn: "max-sm:relative max-sm:overflow-hidden max-sm:flex-col max-sm:items-start max-sm:gap-0.5 lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
     title: "lg:text-[1.4rem]",
     text: "lg:text-[.95rem]",
-    icon: "h-9 w-9 max-sm:absolute max-sm:right-2.5 max-sm:top-2.5 max-sm:h-7 max-sm:w-7 lg:h-14 lg:w-14",
+    icon: "wm h-9 w-9 lg:h-14 lg:w-14",
   },
   big: {
     head: "font-display text-[1.6rem] font-medium leading-tight tracking-[-.01em] text-ink",
@@ -101,8 +101,11 @@ export function ReaderChoice({
                 <svg viewBox="0 0 48 48">{o.icon}</svg>
                 {on && <i>✓</i>}
               </span>
-              <span className="flex min-w-0 flex-col gap-0.5">
-                <b className={`font-display text-[1.05rem] font-normal leading-tight ${z.title}`}>{o.title}</b>
+              <span className="relative flex min-w-0 flex-col gap-0.5">
+                <b className={`font-display text-[1.05rem] font-normal leading-tight ${z.title}`}>
+                  {on && <span aria-hidden="true" className="text-gospel sm:hidden">✓ </span>}
+                  {o.title}
+                </b>
                 <span className={`text-[.8rem] leading-snug text-muted ${z.text}`}>{o.text}</span>
               </span>
             </button>
