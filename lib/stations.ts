@@ -31,7 +31,7 @@ export const STATIONS: Station[] = [
   { id: "hindutexts", n: 2, part: 1, title: "All the Hindu texts, and how they fit", desc: "The map of the Hindu texts, and a fair test",
     reflect: "A God who speaks would not contradict Himself. Where have you seen the Bible's one story stay consistent where other texts contradict each other, and who could you show that to?",
     reflectSeeker: "Which of these texts did you grow up with? Have you ever noticed them disagreeing about who God is?",
-    recap: "The Hindu texts are many, written over about 3,000 years, with no single story and no closed list. Only the Gita and a few sections sit inside the Mahabharata.",
+    recap: "The Hindu texts are many, written over about 3,000 years, with no single story and no closed list. The Gita is not a separate book: it is a conversation inside the Mahabharata, though many who honor it have never been told so.",
     lead: "Next, each group in turn, starting with the oldest: the Vedas and the Upanishads." },
   { id: "vedas", n: 3, part: 1, title: "The Vedas and the Upanishads", desc: "Ritual and philosophy, put to the test",
     reflect: "The Upanishads say your deepest problem is ignorance. The Bible says it is sin. Why does that difference matter, and how would you explain it to a Hindu friend?",
