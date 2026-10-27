@@ -495,3 +495,7 @@ svg text[fill="var(--surface)"] tspan.verse{fill:var(--surface);text-decoration-
 button[aria-pressed="true"] .reader-icon.seeker svg{animation:reader-spin 1.2s ease}
 @keyframes reader-spin{40%{transform:rotate(-25deg)}100%{transform:rotate(0)}}
 @media (prefers-reduced-motion:reduce){button[aria-pressed="true"] .reader-icon svg{animation:none}}
+.asks-heart{width:200px}
+.asks-heart .beat{transform-origin:80px 60px;animation:heart-beat 2.6s ease-in-out infinite}
+@keyframes heart-beat{0%,60%,100%{transform:scale(1)}10%{transform:scale(1.07)}20%{transform:scale(.98)}30%{transform:scale(1.05)}}
+@media (prefers-reduced-motion:reduce){.asks-heart .beat{animation:none}}
