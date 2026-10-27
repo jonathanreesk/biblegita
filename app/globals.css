@@ -621,3 +621,6 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 @media (max-width:640px){.size-sum{grid-template-columns:1fr}.ss-vs br{display:none}.ss-vs b{font-size:1.3rem;margin:0 4px}}
 /* Verse chips on the dark gospel cards: light text so they stay visible */
 .gospel-card .ref,.gospel-card button.verse{color:var(--surface)!important;border-color:color-mix(in srgb,var(--surface) 65%,transparent)!important;background:color-mix(in srgb,var(--surface) 12%,transparent)!important}
+/* Test 1: the Bible's one problem, named plainly */
+.problems-table .sin-word{display:block;font-family:var(--f-display);font-weight:600;font-size:1.6rem;line-height:1.1;color:var(--warn);letter-spacing:.01em}
+.problems-table .sin-sub{display:block;margin:2px 0 4px;color:var(--ink)}
