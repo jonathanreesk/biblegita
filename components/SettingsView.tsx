@@ -65,9 +65,9 @@ export function SettingsView({ ask = false }: { ask?: boolean }) {
           value={prefs.theme}
           onChange={(theme) => setPrefs({ ...prefs, theme })}
           options={[
-            { v: "system", label: "System" },
             { v: "light", label: "Light" },
             { v: "dark", label: "Dark" },
+            { v: "system", label: "Match my device" },
           ]}
         />
       </div>

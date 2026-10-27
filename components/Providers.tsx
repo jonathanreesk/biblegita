@@ -4,9 +4,10 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 
 // Who is reading: a follower of Jesus, or a Hindu reader or seeker. Unset until they choose.
 export type Reader = "believer" | "seeker";
-export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"; reader?: Reader };
+// v marks prefs saved since light became the default, so an old saved "system" is not mistaken for a choice
+export type Prefs = { theme: "system" | "light" | "dark"; size: "default" | "large"; reader?: Reader; v?: number };
 
-const DEFAULT_PREFS: Prefs = { theme: "system", size: "default" };
+const DEFAULT_PREFS: Prefs = { theme: "light", size: "default", v: 2 };
 
 type Ctx = {
   done: Record<string, boolean>;
@@ -46,7 +47,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setDone(read(DONE_KEY, {}));
-    setPrefsState({ ...DEFAULT_PREFS, ...read<Partial<Prefs>>(PREFS_KEY, {}) });
+    const saved = read<Partial<Prefs>>(PREFS_KEY, {});
+    if (!saved.v && saved.theme === "system") delete saved.theme;
+    setPrefsState({ ...DEFAULT_PREFS, ...saved, v: 2 });
     setReady(true);
   }, []);
 
