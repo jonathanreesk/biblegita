@@ -1360,6 +1360,15 @@
    }
   ]
  },
+ "Hebrews 7:26": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 26,
+    "text": "For it was indeed fitting that we should have such a high priest, holy, innocent, unstained, separated from sinners, and exalted above the heavens."
+   }
+  ]
+ },
  "Hebrews 9:22": {
   "t": "ESV",
   "v": [
@@ -1463,6 +1472,15 @@
    {
     "n": 2,
     "text": "but your iniquities have made a separation between you and your God, and your sins have hidden his face from you so that he does not hear."
+   }
+  ]
+ },
+ "Isaiah 6:3": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 3,
+    "text": "And one called to another and said: \"Holy, holy, holy is the LORD of hosts; the whole earth is full of his glory!\""
    }
   ]
  },
@@ -2232,6 +2250,15 @@
    {
     "n": 20,
     "text": "teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.\""
+   }
+  ]
+ },
+ "Matthew 28:19": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 19,
+    "text": "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,"
    }
   ]
  },
