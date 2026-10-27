@@ -45,8 +45,8 @@ export function getReadMinutes(): Record<string, number> {
   const out: Record<string, number> = {};
   for (const s of STATIONS) {
     const text = getStationHtml(s.id).replace(/<svg[\s\S]*?<\/svg>/g, " ").replace(/<[^>]+>/g, " ");
-    // Unhurried reading, with time to open the verses, plus a few minutes to think and talk
-    out[s.id] = Math.ceil(text.split(/\s+/).filter(Boolean).length / 160) + 3;
+    // Steady reading, plus a minute or two to stop and think
+    out[s.id] = Math.ceil(text.split(/\s+/).filter(Boolean).length / 230) + 1;
   }
   return out;
 }

@@ -58,6 +58,25 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         <div className="flex flex-col gap-3 lg:gap-6 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-9 lg:shadow-lift">
         <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && router.push(`/journey/${finished ? "method" : next!.id}`)} />
 
+        {count === 0 && (
+          <div className="flex items-center gap-3.5 rounded-[22px] bg-sand px-4 py-3.5 lg:px-5">
+            <svg className="cup h-14 w-14 flex-none" viewBox="6 6 54 54" aria-hidden="true">
+              <g className="steam" fill="none" stroke="var(--dharma)" strokeWidth="2.6" strokeLinecap="round">
+                <path d="M24 24c-3-4 3-6 0-11" />
+                <path d="M32 24c-3-4 3-6 0-11" />
+                <path d="M40 24c-3-4 3-6 0-11" />
+              </g>
+              <path d="M14 30h34v8a17 17 0 0 1-34 0z" fill="var(--amber)" />
+              <path d="M17 33h28" stroke="var(--surface)" strokeOpacity=".45" strokeWidth="2" strokeLinecap="round" />
+              <path d="M48 33h3a6 6 0 0 1 0 12h-4" fill="none" stroke="var(--amber)" strokeWidth="3.2" strokeLinecap="round" />
+              <path d="M9 56h44" stroke="var(--dharma)" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+            <p className="text-[.9rem] leading-snug text-muted lg:text-[.95rem]">
+              <b className="font-display text-[1.08rem] font-normal text-ink">Settle in.</b> Pour a cup of chai or coffee and take your time. This is a thorough look at both, and your place is saved, so you can stop anytime and pick up right where you left off.
+            </p>
+          </div>
+        )}
+
         <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${count > 0 ? "gap-y-4 p-5" : "gap-y-2 p-4"}`}>
           {count > 0 && (
             <>
@@ -101,7 +120,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
             }}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-gospel bg-gospel px-6 py-3 text-center font-label text-[.95rem] font-semibold text-surface no-underline shadow-soft transition hover:-translate-y-0.5 hover:bg-gospel-deep active:scale-[.98] lg:min-h-14 lg:text-[1.05rem]"
           >
-            {finished ? "Walk it again" : count ? "Continue" : "Begin the journey"}
+            {finished ? "Walk it again" : count ? "Continue" : "I'm ready. Begin the journey"}
           </Link>
           <a
             href="#steps"
@@ -117,7 +136,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
         <h2 className="text-[1.7rem]">{NUMBERED} steps. Takes about {totalPhrase(minutes)}.</h2>
-        <p className="text-[.95rem] text-muted">Each step allows time to read, open the verses, and stop to think and talk, so most take six to twelve minutes. Walk through them from the top, from why we are here to the glory ahead, over a few sittings or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
+        <p className="text-[.95rem] text-muted">Each step allows time to read and to stop and think, so most take three to eight minutes. Walk through them from the top, from why we are here to the glory ahead, over a few sittings or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
           <span className="chip g">Christian framework</span>
