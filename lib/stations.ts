@@ -38,7 +38,7 @@ export const STATIONS: Station[] = [
     reflectSeeker: "The Upanishads say your deepest problem is ignorance. The Bible says it is sin. Which do you think is true of you?",
     recap: "The Vedas offer ritual and the Upanishads offer knowledge. No one vouches for them, they contradict themselves, and they never deal with sin. The Bible announces a God who came to save.",
     lead: "Next, the Mahabharata, the epic that holds the Gita." },
-  { id: "mahabharata", n: 4, part: 1, title: "The Mahabharata and the Gita", desc: "The family war, and whether anyone in it is good",
+  { id: "mahabharata", n: 4, part: 1, title: "The Mahabharata and the Bhagavad Gita", desc: "The family war, and whether anyone in it is good",
     reflect: "The Mahabharata ends in grief, with no one fully good. Where do you see that same brokenness in your own heart, and why do you need someone who never fell short?",
     recap: "The Gita is one conversation inside the Mahabharata, a family war with no clean victory. Its heroes win by deceit and no one in it is good. The Bible names one who never fell short: Jesus.",
     lead: "Next, the Ramayana, and why Rama is not like Jesus." },
