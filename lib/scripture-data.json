@@ -344,6 +344,15 @@
    }
   ]
  },
+ "1 Timothy 2:6": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 6,
+    "text": "who gave himself as a ransom for all, which is the testimony given at the proper time."
+   }
+  ]
+ },
  "2 Corinthians 1:20": {
   "t": "ESV",
   "v": [
@@ -2533,6 +2542,15 @@
    {
     "n": 5,
     "text": "And night will be no more. They will need no light of lamp or sun, for the Lord God will be their light, and they will reign forever and ever."
+   }
+  ]
+ },
+ "Revelation 3:20": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 20,
+    "text": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me."
    }
   ]
  },

@@ -651,3 +651,23 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 .ayn-then .meter{border-color:var(--gospel);background:var(--gospel-soft)}
 @media (max-width:640px){.ayn ol{grid-template-columns:1fr;gap:16px}.ayn li+li::before{content:"↓";left:0;top:-15px}}
 .cmp.was{--c:var(--muted)}
+/* Redemption: offered to all, received by faith, only through Jesus */
+.fork{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow-sm)}
+.fork .label{color:var(--gospel)}
+.fork-top{display:flex;gap:12px;align-items:center}
+.fork-top p{margin:0;font-size:.95rem;line-height:1.5}
+.fork-cross{flex:none;width:44px;height:44px;border-radius:50%;background:var(--gospel);position:relative}
+.fork-cross::before,.fork-cross::after{content:"";position:absolute;background:var(--surface);border-radius:2px}
+.fork-cross::before{left:20px;top:10px;width:4px;height:24px}
+.fork-cross::after{left:13px;top:17px;width:18px;height:4px}
+.fork-ways{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-top:22px}
+.fork-ways::before{content:"";position:absolute;top:0;left:25%;right:25%;height:18px;border:2px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0}
+.fork-ways::after{content:"";position:absolute;top:-10px;left:50%;width:2px;height:10px;background:var(--line)}
+.way{display:flex;flex-direction:column;gap:3px;border-radius:16px;padding:12px 14px;font-size:.9rem;line-height:1.45}
+.way p{margin:0;color:var(--muted)}
+.way small{font-family:var(--f-label);font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.way b{font-family:var(--f-display);font-weight:500;font-size:1.08rem;color:var(--ink)}
+.way.yes{background:var(--gospel-soft)}.way.yes small{color:var(--gospel)}
+.way.no{background:var(--bg);border:1px dashed var(--line)}.way.no small{color:var(--warn)}
+.fork-only{margin:0;border-left:3px solid var(--gospel);padding:4px 0 4px 12px;font-size:.95rem;line-height:1.5}
+@media (max-width:560px){.fork-ways{grid-template-columns:1fr}.fork-ways::before,.fork-ways::after{display:none}.fork-ways{padding-top:0}}
