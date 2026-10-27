@@ -362,6 +362,15 @@
    }
   ]
  },
+ "2 Corinthians 3:18": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 18,
+    "text": "And we all, with unveiled face, beholding the glory of the Lord, are being transformed into the same image from one degree of glory to another. For this comes from the Lord who is the Spirit."
+   }
+  ]
+ },
  "2 Corinthians 5:17": {
   "t": "ESV",
   "v": [
@@ -791,6 +800,15 @@
    {
     "n": 28,
     "text": "There is neither Jew nor Greek, there is neither slave nor free, there is no male and female, for you are all one in Christ Jesus."
+   }
+  ]
+ },
+ "Galatians 5:16": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 16,
+    "text": "But I say, walk by the Spirit, and you will not gratify the desires of the flesh."
    }
   ]
  },
@@ -2324,6 +2342,15 @@
    {
     "n": 12,
     "text": "as far as the east is from the west, so far does he remove our transgressions from us."
+   }
+  ]
+ },
+ "Psalm 119:11": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 11,
+    "text": "I have stored up your word in my heart, that I might not sin against you."
    }
   ]
  },
