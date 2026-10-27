@@ -33,19 +33,19 @@ const OPTIONS: { v: Reader; title: string; text: string; icon: React.ReactNode }
 // Asks who is reading. The same content shows for both; the framing around it adapts.
 // "stacked" enlarges it on desktop; "big" enlarges it at every size.
 const SIZES = {
-  normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "", title: "", text: "", icon: "h-9 w-9 max-sm:hidden" },
+  normal: { head: "", sub: "hidden", grid: "grid-cols-2", btn: "max-sm:flex-col max-sm:items-start max-sm:gap-2", title: "", text: "", icon: "h-9 w-9" },
   stacked: {
     head: "lg:font-display lg:text-[1.75rem] lg:font-medium lg:normal-case lg:tracking-[-.01em] lg:text-ink lg:before:hidden",
-    sub: "hidden lg:block",
+    sub: "text-[.86rem] lg:text-[.95rem]",
     grid: "grid-cols-2 lg:grid-cols-1",
-    btn: "lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
+    btn: "max-sm:flex-col max-sm:items-start max-sm:gap-2 lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
     title: "lg:text-[1.4rem]",
     text: "lg:text-[.95rem]",
-    icon: "h-9 w-9 max-sm:hidden lg:h-14 lg:w-14",
+    icon: "h-9 w-9 lg:h-14 lg:w-14",
   },
   big: {
     head: "font-display text-[1.6rem] font-medium leading-tight tracking-[-.01em] text-ink",
-    sub: "",
+    sub: "text-[.95rem]",
     grid: "grid-cols-1",
     btn: "min-h-[84px] gap-4 border-2 px-5 py-4 hover:-translate-y-0.5 hover:shadow-soft",
     title: "text-[1.3rem]",
@@ -78,7 +78,7 @@ export function ReaderChoice({
       <span id="reader-q" className={big ? z.head : `label ${z.head}`}>
         Who is reading?
       </span>
-      <p className={`-mt-1 text-[.95rem] text-muted ${z.sub}`}>Choose one, and the guide will speak to you as you read.</p>
+      <p className={`-mt-1 text-muted ${z.sub}`}>Choose one, and the guide will speak to you as you read.</p>
       {nudge && (
         <p role="status" className="text-[.92rem] font-semibold text-gospel">
           First, tell us who is reading. Then we will begin.
