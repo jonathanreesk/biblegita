@@ -602,3 +602,10 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 @media (max-width:560px){.tests-recap{grid-template-columns:1fr}}
 .test-h{margin:6px 0 0;font-family:var(--f-display);font-weight:500;font-size:1.25rem;color:var(--ink);text-transform:none;letter-spacing:0}
 .test-h span{display:block;font-family:var(--f-label);font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gospel);margin-bottom:2px}
+/* One problem, or many? grouped: the Hindu texts, then the Bible */
+.problems-table .grp-h th{width:auto;font-family:var(--f-label);font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:9px 10px}
+.problems-table .grp.d .grp-h th{background:var(--dharma-soft);color:var(--dharma)}
+.problems-table .grp.g .grp-h th{background:var(--gospel);color:var(--surface)}
+.problems-table .grp.d tr:not(.grp-h) th{border-left:3px solid var(--dharma)}
+.problems-table .grp.g tr:not(.grp-h) th{border-left:3px solid var(--gospel)}
+.problems-table tbody.grp.d tr:last-child th,.problems-table tbody.grp.d tr:last-child td{border-bottom:1px solid var(--line)}
