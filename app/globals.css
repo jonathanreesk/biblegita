@@ -98,7 +98,7 @@ td b{display:block;font-weight:600}
 .flow.d{--c:var(--dharma)} .flow.g{--c:var(--gospel)}
 
 /* challenge station */
-.station .tag{display:inline-flex;align-self:flex-start;font-family:var(--f-label);font-size:.78rem;font-weight:600;color:var(--warn);border:1px solid currentColor;border-radius:4px;padding:1px 8px}
+.station .tag{display:block;align-self:flex-start;max-width:100%;line-height:1.45;font-family:var(--f-label);font-size:.78rem;font-weight:600;color:var(--warn);border:1px solid currentColor;border-radius:4px;padding:1px 8px}
 .diagram{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:var(--shadow-sm);overflow-x:auto}
 .diagram svg{display:block;width:100%;min-width:520px;height:auto}
 .diagram::after,.tablewrap::after{content:"Swipe sideways to see the whole diagram";display:none;position:sticky;left:0;margin-top:6px;font-family:var(--f-label);font-size:.72rem;color:var(--muted);text-align:center}
@@ -152,7 +152,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .nudge{display:inline-block;animation:nudge 1.8s ease-in-out infinite}
 @keyframes nudge{50%{transform:translateY(3px)}}
 html{scroll-behavior:smooth}
-.station .tag{border-radius:999px;padding:3px 12px;gap:.3em}
+.station .tag{border-radius:14px;padding:4px 12px}
 .ref{border-radius:999px;padding:3px 11px}
 
 /* Tap-to-define words */
