@@ -26,7 +26,7 @@ export const PARTS = [
 export const STATIONS: Station[] = [
   { id: "made", n: 1, part: 0, title: "Before you begin", desc: "How this guide works, and what we were made for",
     reflect: "When have you most sensed that you were loved, or known, or made for something? What did that feel like?",
-    recap: "We were made to know God and to be loved by Him. Something has broken that relationship, and God's answer is a person, Jesus. Each step that follows shows what the Hindu texts teach, puts them to a fair test, and points to Christ.",
+    recap: "We all ask the same questions, and beneath them is a longing to be loved by someone greater than ourselves. The Upanishads and the Psalms both voice it. The question is who answers it, and this guide puts that question to the Hindu texts and to the Bible.",
     lead: "Ideas only make sense inside their story. First, a map of all the Hindu texts, set against the one Bible." },
   { id: "hindutexts", n: 2, part: 1, title: "All the Hindu texts, and how they fit", desc: "The map of the Hindu texts, and a fair test",
     reflect: "A God who speaks would not contradict Himself. Where have you seen the Bible's one story hold together where other texts fall apart, and who could you show that to?",

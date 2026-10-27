@@ -499,3 +499,16 @@ button[aria-pressed="true"] .reader-icon.seeker svg{animation:reader-spin 1.2s e
 .asks-heart .beat{transform-origin:80px 60px;animation:heart-beat 2.6s ease-in-out infinite}
 @keyframes heart-beat{0%,60%,100%{transform:scale(1)}10%{transform:scale(1.07)}20%{transform:scale(.98)}30%{transform:scale(1.05)}}
 @media (prefers-reduced-motion:reduce){.asks-heart .beat{animation:none}}
+
+/* Before you begin: two prayers that voice the same longing, then the handoff */
+.prayer{margin:0;display:flex;flex-direction:column;gap:8px;border-radius:20px;padding:18px 18px 16px}
+.prayer.d{background:var(--dharma-soft)}
+.prayer.g{background:var(--gospel-soft)}
+.prayer .label{font-size:.7rem}
+.prayer.g .label{color:var(--gospel)}
+.prayer blockquote{margin:0;font-family:var(--f-display);font-size:1.12rem;line-height:1.45;color:var(--ink)}
+.prayer figcaption{display:block}
+.handoff{display:flex;flex-direction:column;gap:4px;text-align:center;align-items:center;padding:6px 8px}
+.handoff b{font-family:var(--f-display);font-weight:500;font-size:1.35rem;color:var(--ink)}
+.handoff p{color:var(--muted);max-width:44ch!important}
+.handoff::after{content:"↓";font-size:1.2rem;color:var(--gospel);animation:nudge 1.8s ease-in-out infinite}

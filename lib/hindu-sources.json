@@ -1,138 +1,146 @@
 {
- "Rig Veda 1.164.46": {
-  "book": "Rig Veda",
-  "summary": "The sages call one reality by the names of many gods: Indra, Mitra, Varuna, Agni and others. \"Truth is one; the wise call it by many names.\"",
-  "note": "Hindus often quote this to say that all religions lead to the same God. In the hymn itself, the names are all Vedic gods. It says nothing about other religions.",
-  "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 1, Hymn 164, verse 46",
-  "sa": "इन्द्रं मित्रं वरुणमग्निमाहुरथो दिव्यः स सुपर्णो गरुत्मान् ।\nएकं सद् विप्रा बहुधा वदन्त्यग्निं यमं मातरिश्वानमाहुः ॥",
-  "quote": "They call him Indra, Mitra, Varuṇa, Agni, and he is heavenly nobly-winged Garutmān.\nTo what is One, sages give many a title: they call it Agni, Yama, Mātariśvan.",
-  "tr": "Ralph T. H. Griffith, The Hymns of the Rigveda (1896), public domain"
- },
- "Rig Veda 10.129": {
-  "book": "Rig Veda",
-  "summary": "The hymn of creation pictures a time before there was being or non-being, death or immortality, night or day, when only \"the One\" breathed by its own power. It then asks who really knows how the world began, and ends by wondering whether even the one who watches over it from the highest heaven knows, \"or perhaps he does not know.\"",
-  "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 10, Hymn 129, verses 6 and 7",
-  "sa": "को अद्धा वेद क इह प्र वोचत्कुत आजाता कुत इयं विसृष्टिः ।\nअर्वाग्देवा अस्य विसर्जनेनाऽथा को वेद यत आबभूव ॥\nइयं विसृष्टिर्यत आबभूव यदि वा दधे यदि वा न ।\nयो अस्याध्यक्षः परमे व्योमन्त्सो अङ्ग वेद यदि वा न वेद ॥"
- },
- "Rig Veda 10.121": {
-  "book": "Rig Veda",
-  "summary": "In the beginning a golden womb or germ (Hiranyagarbha) arose, the one lord of all that was born, who holds up earth and sky. Each verse ends with the same question: to which god shall we offer our sacrifice?",
-  "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 10, Hymn 121, verse 1",
-  "sa": "हिरण्यगर्भः समवर्तताग्रे भूतस्य जातः पतिरेक आसीत् ।\nस दाधार पृथिवीं द्यामुतेमां कस्मै देवाय हविषा विधेम ॥"
- },
- "Rig Veda 10.90": {
-  "book": "Rig Veda",
-  "summary": "The gods sacrifice a cosmic Person (Purusha), and the world is made from his body. Verse 12 says the Brahmin came from his mouth, the warrior from his arms, the Vaishya from his thighs and the Shudra from his feet.",
-  "note": "This verse is the oldest root of the four classes, which later hardened into caste. The sacrifice makes the world and its ranks. It does not take away sin.",
-  "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 10, Hymn 90, verse 12",
-  "sa": "ब्राह्मणोऽस्य मुखमासीद्बाहू राजन्य: कृतः ।\nऊरू तदस्य यद्वैश्य: पद्भ्यां शूद्रो अजायत ॥"
- },
- "Yajurveda 40.9": {
-  "book": "Yajur Veda",
-  "summary": "\"Into blind darkness enter those who worship asambhuti; into still greater darkness those who delight in sambhuti.\" The two words are usually taken to mean the unmanifest and the manifest.",
-  "note": "Some Hindu groups, such as the Arya Samaj, read it as a warning against worshipping created things and images. Others do not. The same verse is verse 12 of the Isha Upanishad.",
-  "src": "Ralph Griffith, The Texts of the White Yajurveda (1899), chapter 40",
-  "sa": "अन्धं तम: प्रविशन्ति येऽसंभूतिमुपासते ।\nततो भूय इव ते तमो य उ सम्भूत्या रताः ॥"
- },
- "Chandogya Upanishad 6.8.7": {
-  "book": "Upanishads",
-  "summary": "The sage Uddalaka teaches his son Shvetaketu that the hidden essence of everything is the Self, and ends: \"You are that\" (tat tvam asi). The line is repeated nine times in the chapter.",
-  "src": "Max Müller, The Upanishads, Part 1 (1879), Chandogya Upanishad 6.8.7",
-  "quote": "That which is that subtle essence, in it all that exists has its self. It is the True. It is the Self, and thou, O Śvetaketu, art it.",
-  "tr": "Max Müller, The Upanishads, Part 1 (1879), public domain"
- },
- "Brihadaranyaka Upanishad 1.4.10": {
-  "book": "Upanishads",
-  "summary": "In the beginning there was only Brahman, and it knew itself: \"I am Brahman\" (aham brahmasmi). Whoever knows this, it says, becomes everything.",
-  "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 1.4.10"
- },
- "Brihadaranyaka Upanishad 2.4": {
-  "book": "Upanishads",
-  "summary": "Before leaving home for the forest, the sage Yajnavalkya tells his wife Maitreyi that wealth cannot make anyone immortal. Husband, wife, wealth and the worlds, he says, are loved not for their own sake but for the sake of the Self, and when the Self is known, everything is known.",
-  "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 2.4"
- },
- "Katha Upanishad 1.1": {
-  "book": "Upanishads",
-  "summary": "In anger, a father gives his son Nachiketa to Death. The boy waits three nights at the house of Yama, the god of death, and is granted three wishes. For the third he asks what happens to a person after death.",
-  "src": "Max Müller, The Upanishads, Part 2 (1884), Katha Upanishad 1.1"
- },
- "Mundaka Upanishad 1.2.7": {
-  "book": "Upanishads",
-  "summary": "The sacrifices of the Vedas are called frail, unsteady boats. Fools who think they are the highest good, it says, go again and again to old age and death.",
-  "src": "Max Müller, The Upanishads, Part 2 (1884), Mundaka Upanishad 1.2.7"
- },
- "Manusmriti 1.91": {
-  "book": "Manusmriti",
-  "summary": "The Lord gave the Shudra only one duty: to serve the three higher classes without complaint.",
-  "src": "Georg Bühler, The Laws of Manu (1886), chapter 1, verse 91",
-  "quote": "One occupation only the Lord prescribed to the Śūdra, to serve meekly even these (other) three castes.",
-  "tr": "Georg Bühler, The Laws of Manu (1886), public domain"
- },
- "Manusmriti 5.148": {
-  "book": "Manusmriti",
-  "summary": "As a child a woman is under her father, as a young woman under her husband, and as a widow under her sons. A woman must never be independent.",
-  "src": "Georg Bühler, The Laws of Manu (1886), chapter 5, verse 148",
-  "quote": "In childhood a female must be subject to her father, in youth to her husband, when her lord is dead to her sons; a woman must never be independent.",
-  "tr": "Georg Bühler, The Laws of Manu (1886), public domain"
- },
- "Brahma Sutra 2.1.35-36": {
-  "book": "Brahma Sutras",
-  "summary": "If God made some beings happy and others miserable, would He be unfair? The Sutras answer that He gives each soul what its past deeds deserve. When it is objected that there were no past deeds before the first creation, they reply that the cycle of births has no beginning.",
-  "src": "George Thibaut, The Vedanta Sutras (1890), 2.1.34 to 36"
- },
- "Bhagavata Purana 3.8": {
-  "book": "Puranas",
-  "summary": "While Vishnu lies on the cosmic waters, a lotus grows from his navel, and Brahma the creator is born inside it.",
-  "src": "Bhagavata Purana, Canto 3, chapter 8"
- },
- "Shiva Purana": {
-  "book": "Puranas",
-  "summary": "Brahma and Vishnu argue over which of them is greater. An endless pillar of fire appears. Vishnu searches for its bottom and Brahma for its top, and neither finds an end. Brahma lies that he found the top, and Shiva, appearing from the pillar, curses him.",
-  "src": "Shiva Purana, Vidyeshvara Samhita"
- },
- "Ramayana, Bala Kanda": {
-  "book": "Ramayana",
-  "summary": "The god Indra disguises himself as the sage Gautama and sleeps with Gautama's wife, Ahalya. The sage curses them both. Ahalya stays under the curse until Rama comes to the hermitage and frees her.",
-  "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 1 (Bala Kanda)"
- },
- "Ramayana, Kishkindha Kanda": {
-  "book": "Ramayana",
-  "summary": "Rama makes an alliance with the monkey prince Sugriva. While Sugriva fights his brother Vali, Rama shoots Vali from behind a tree. The dying Vali accuses Rama of striking a man who was not fighting him. Rama answers that Vali deserved death for taking his brother's wife, and that a king may hunt animals from hiding.",
-  "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 4 (Kishkindha Kanda)"
- },
- "Ramayana, Yuddha Kanda": {
-  "book": "Ramayana",
-  "summary": "After defeating Ravana, Rama tells Sita he fought to restore his own honor, and that she must prove her purity because people suspect her. Sita walks into a fire, and the fire god Agni brings her out unharmed.",
-  "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 6 (Yuddha Kanda)"
- },
- "Ramayana, Uttara Kanda": {
-  "book": "Ramayana",
-  "summary": "Back in Ayodhya, people gossip about Sita's time in Ravana's kingdom. Putting his duty as king first, Rama has his brother Lakshmana leave her, pregnant, in the forest near Valmiki's hermitage. Many scholars think this last book was added later.",
-  "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 7 (Uttara Kanda)"
- },
- "Matsya Purana": {
-  "book": "Puranas",
-  "summary": "Brahma makes a woman, Shatarupa, out of his own body, and then desires her. As she walks around him to escape his gaze, he grows extra heads so that he can keep looking at her.",
-  "src": "Matsya Purana, chapters 3 and 4"
- },
- "Brihadaranyaka Upanishad 4.4.5": {
-  "book": "Upanishads",
-  "summary": "As a person acts and behaves, so he becomes: doing good makes him good, doing evil makes him evil. Desire shapes the will, the will shapes action, and action shapes what he becomes, in this life and the next.",
-  "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 4.4.5"
- },
- "Mahabharata, Mausala Parva": {
-  "book": "Mahabharata",
-  "summary": "Book 16. Thirty-six years after the war, Krishna's clan, the Yadavas, turn on each other in a drunken brawl and are destroyed, as Gandhari's curse foretold. Krishna is killed by a hunter's arrow while resting in the forest, and his city, Dwaraka, is swallowed by the sea.",
-  "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 16"
- },
- "Mahabharata, Mahaprasthanika Parva": {
-  "book": "Mahabharata",
-  "summary": "Book 17. The Pandavas and Draupadi set out for the Himalayas to reach heaven. One by one they fall, each for a fault, until only Yudhishthira and a dog remain.",
-  "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 17"
- },
- "Mahabharata, Svargarohana Parva": {
-  "book": "Mahabharata",
-  "summary": "Book 18. In heaven Yudhishthira finds Duryodhana honored, while his own brothers seem to suffer in hell. It turns out to be an illusion and a test. In the end the warriors of both sides are said to reach heaven.",
-  "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 18"
- }
+  "Rig Veda 1.164.46": {
+    "book": "Rig Veda",
+    "summary": "The sages call one reality by the names of many gods: Indra, Mitra, Varuna, Agni and others. \"Truth is one; the wise call it by many names.\"",
+    "note": "Hindus often quote this to say that all religions lead to the same God. In the hymn itself, the names are all Vedic gods. It says nothing about other religions.",
+    "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 1, Hymn 164, verse 46",
+    "sa": "इन्द्रं मित्रं वरुणमग्निमाहुरथो दिव्यः स सुपर्णो गरुत्मान् ।\nएकं सद् विप्रा बहुधा वदन्त्यग्निं यमं मातरिश्वानमाहुः ॥",
+    "quote": "They call him Indra, Mitra, Varuṇa, Agni, and he is heavenly nobly-winged Garutmān.\nTo what is One, sages give many a title: they call it Agni, Yama, Mātariśvan.",
+    "tr": "Ralph T. H. Griffith, The Hymns of the Rigveda (1896), public domain"
+  },
+  "Rig Veda 10.129": {
+    "book": "Rig Veda",
+    "summary": "The hymn of creation pictures a time before there was being or non-being, death or immortality, night or day, when only \"the One\" breathed by its own power. It then asks who really knows how the world began, and ends by wondering whether even the one who watches over it from the highest heaven knows, \"or perhaps he does not know.\"",
+    "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 10, Hymn 129, verses 6 and 7",
+    "sa": "को अद्धा वेद क इह प्र वोचत्कुत आजाता कुत इयं विसृष्टिः ।\nअर्वाग्देवा अस्य विसर्जनेनाऽथा को वेद यत आबभूव ॥\nइयं विसृष्टिर्यत आबभूव यदि वा दधे यदि वा न ।\nयो अस्याध्यक्षः परमे व्योमन्त्सो अङ्ग वेद यदि वा न वेद ॥"
+  },
+  "Rig Veda 10.121": {
+    "book": "Rig Veda",
+    "summary": "In the beginning a golden womb or germ (Hiranyagarbha) arose, the one lord of all that was born, who holds up earth and sky. Each verse ends with the same question: to which god shall we offer our sacrifice?",
+    "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 10, Hymn 121, verse 1",
+    "sa": "हिरण्यगर्भः समवर्तताग्रे भूतस्य जातः पतिरेक आसीत् ।\nस दाधार पृथिवीं द्यामुतेमां कस्मै देवाय हविषा विधेम ॥"
+  },
+  "Rig Veda 10.90": {
+    "book": "Rig Veda",
+    "summary": "The gods sacrifice a cosmic Person (Purusha), and the world is made from his body. Verse 12 says the Brahmin came from his mouth, the warrior from his arms, the Vaishya from his thighs and the Shudra from his feet.",
+    "note": "This verse is the oldest root of the four classes, which later hardened into caste. The sacrifice makes the world and its ranks. It does not take away sin.",
+    "src": "Ralph Griffith, The Hymns of the Rigveda (1896), Book 10, Hymn 90, verse 12",
+    "sa": "ब्राह्मणोऽस्य मुखमासीद्बाहू राजन्य: कृतः ।\nऊरू तदस्य यद्वैश्य: पद्भ्यां शूद्रो अजायत ॥"
+  },
+  "Yajurveda 40.9": {
+    "book": "Yajur Veda",
+    "summary": "\"Into blind darkness enter those who worship asambhuti; into still greater darkness those who delight in sambhuti.\" The two words are usually taken to mean the unmanifest and the manifest.",
+    "note": "Some Hindu groups, such as the Arya Samaj, read it as a warning against worshipping created things and images. Others do not. The same verse is verse 12 of the Isha Upanishad.",
+    "src": "Ralph Griffith, The Texts of the White Yajurveda (1899), chapter 40",
+    "sa": "अन्धं तम: प्रविशन्ति येऽसंभूतिमुपासते ।\nततो भूय इव ते तमो य उ सम्भूत्या रताः ॥"
+  },
+  "Chandogya Upanishad 6.8.7": {
+    "book": "Upanishads",
+    "summary": "The sage Uddalaka teaches his son Shvetaketu that the hidden essence of everything is the Self, and ends: \"You are that\" (tat tvam asi). The line is repeated nine times in the chapter.",
+    "src": "Max Müller, The Upanishads, Part 1 (1879), Chandogya Upanishad 6.8.7",
+    "quote": "That which is that subtle essence, in it all that exists has its self. It is the True. It is the Self, and thou, O Śvetaketu, art it.",
+    "tr": "Max Müller, The Upanishads, Part 1 (1879), public domain"
+  },
+  "Brihadaranyaka Upanishad 1.4.10": {
+    "book": "Upanishads",
+    "summary": "In the beginning there was only Brahman, and it knew itself: \"I am Brahman\" (aham brahmasmi). Whoever knows this, it says, becomes everything.",
+    "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 1.4.10"
+  },
+  "Brihadaranyaka Upanishad 2.4": {
+    "book": "Upanishads",
+    "summary": "Before leaving home for the forest, the sage Yajnavalkya tells his wife Maitreyi that wealth cannot make anyone immortal. Husband, wife, wealth and the worlds, he says, are loved not for their own sake but for the sake of the Self, and when the Self is known, everything is known.",
+    "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 2.4"
+  },
+  "Katha Upanishad 1.1": {
+    "book": "Upanishads",
+    "summary": "In anger, a father gives his son Nachiketa to Death. The boy waits three nights at the house of Yama, the god of death, and is granted three wishes. For the third he asks what happens to a person after death.",
+    "src": "Max Müller, The Upanishads, Part 2 (1884), Katha Upanishad 1.1"
+  },
+  "Mundaka Upanishad 1.2.7": {
+    "book": "Upanishads",
+    "summary": "The sacrifices of the Vedas are called frail, unsteady boats. Fools who think they are the highest good, it says, go again and again to old age and death.",
+    "src": "Max Müller, The Upanishads, Part 2 (1884), Mundaka Upanishad 1.2.7"
+  },
+  "Manusmriti 1.91": {
+    "book": "Manusmriti",
+    "summary": "The Lord gave the Shudra only one duty: to serve the three higher classes without complaint.",
+    "src": "Georg Bühler, The Laws of Manu (1886), chapter 1, verse 91",
+    "quote": "One occupation only the Lord prescribed to the Śūdra, to serve meekly even these (other) three castes.",
+    "tr": "Georg Bühler, The Laws of Manu (1886), public domain"
+  },
+  "Manusmriti 5.148": {
+    "book": "Manusmriti",
+    "summary": "As a child a woman is under her father, as a young woman under her husband, and as a widow under her sons. A woman must never be independent.",
+    "src": "Georg Bühler, The Laws of Manu (1886), chapter 5, verse 148",
+    "quote": "In childhood a female must be subject to her father, in youth to her husband, when her lord is dead to her sons; a woman must never be independent.",
+    "tr": "Georg Bühler, The Laws of Manu (1886), public domain"
+  },
+  "Brahma Sutra 2.1.35-36": {
+    "book": "Brahma Sutras",
+    "summary": "If God made some beings happy and others miserable, would He be unfair? The Sutras answer that He gives each soul what its past deeds deserve. When it is objected that there were no past deeds before the first creation, they reply that the cycle of births has no beginning.",
+    "src": "George Thibaut, The Vedanta Sutras (1890), 2.1.34 to 36"
+  },
+  "Bhagavata Purana 3.8": {
+    "book": "Puranas",
+    "summary": "While Vishnu lies on the cosmic waters, a lotus grows from his navel, and Brahma the creator is born inside it.",
+    "src": "Bhagavata Purana, Canto 3, chapter 8"
+  },
+  "Shiva Purana": {
+    "book": "Puranas",
+    "summary": "Brahma and Vishnu argue over which of them is greater. An endless pillar of fire appears. Vishnu searches for its bottom and Brahma for its top, and neither finds an end. Brahma lies that he found the top, and Shiva, appearing from the pillar, curses him.",
+    "src": "Shiva Purana, Vidyeshvara Samhita"
+  },
+  "Ramayana, Bala Kanda": {
+    "book": "Ramayana",
+    "summary": "The god Indra disguises himself as the sage Gautama and sleeps with Gautama's wife, Ahalya. The sage curses them both. Ahalya stays under the curse until Rama comes to the hermitage and frees her.",
+    "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 1 (Bala Kanda)"
+  },
+  "Ramayana, Kishkindha Kanda": {
+    "book": "Ramayana",
+    "summary": "Rama makes an alliance with the monkey prince Sugriva. While Sugriva fights his brother Vali, Rama shoots Vali from behind a tree. The dying Vali accuses Rama of striking a man who was not fighting him. Rama answers that Vali deserved death for taking his brother's wife, and that a king may hunt animals from hiding.",
+    "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 4 (Kishkindha Kanda)"
+  },
+  "Ramayana, Yuddha Kanda": {
+    "book": "Ramayana",
+    "summary": "After defeating Ravana, Rama tells Sita he fought to restore his own honor, and that she must prove her purity because people suspect her. Sita walks into a fire, and the fire god Agni brings her out unharmed.",
+    "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 6 (Yuddha Kanda)"
+  },
+  "Ramayana, Uttara Kanda": {
+    "book": "Ramayana",
+    "summary": "Back in Ayodhya, people gossip about Sita's time in Ravana's kingdom. Putting his duty as king first, Rama has his brother Lakshmana leave her, pregnant, in the forest near Valmiki's hermitage. Many scholars think this last book was added later.",
+    "src": "Ralph Griffith, The Rámáyan of Válmíki (1870-1874), Book 7 (Uttara Kanda)"
+  },
+  "Matsya Purana": {
+    "book": "Puranas",
+    "summary": "Brahma makes a woman, Shatarupa, out of his own body, and then desires her. As she walks around him to escape his gaze, he grows extra heads so that he can keep looking at her.",
+    "src": "Matsya Purana, chapters 3 and 4"
+  },
+  "Brihadaranyaka Upanishad 4.4.5": {
+    "book": "Upanishads",
+    "summary": "As a person acts and behaves, so he becomes: doing good makes him good, doing evil makes him evil. Desire shapes the will, the will shapes action, and action shapes what he becomes, in this life and the next.",
+    "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 4.4.5"
+  },
+  "Mahabharata, Mausala Parva": {
+    "book": "Mahabharata",
+    "summary": "Book 16. Thirty-six years after the war, Krishna's clan, the Yadavas, turn on each other in a drunken brawl and are destroyed, as Gandhari's curse foretold. Krishna is killed by a hunter's arrow while resting in the forest, and his city, Dwaraka, is swallowed by the sea.",
+    "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 16"
+  },
+  "Mahabharata, Mahaprasthanika Parva": {
+    "book": "Mahabharata",
+    "summary": "Book 17. The Pandavas and Draupadi set out for the Himalayas to reach heaven. One by one they fall, each for a fault, until only Yudhishthira and a dog remain.",
+    "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 17"
+  },
+  "Mahabharata, Svargarohana Parva": {
+    "book": "Mahabharata",
+    "summary": "Book 18. In heaven Yudhishthira finds Duryodhana honored, while his own brothers seem to suffer in hell. It turns out to be an illusion and a test. In the end the warriors of both sides are said to reach heaven.",
+    "src": "Kisari Mohan Ganguli, The Mahabharata (1883 to 1896), public domain, Book 18"
+  },
+  "Brihadaranyaka Upanishad 1.3.28": {
+    "book": "Upanishads",
+    "summary": "A short prayer, chanted to this day: to be led from the unreal to the real, from darkness to light, and from death to immortality.",
+    "quote": "Lead me from the unreal to the real! Lead me from darkness to light! Lead me from death to immortality!",
+    "sa": "asato mā sad gamaya, tamaso mā jyotir gamaya, mṛtyor mā amṛtaṃ gamaya",
+    "note": "It names a real longing. The Bible answers it with a person: Jesus said, \"I am the light of the world\" (John 8:12), and He rose from the dead.",
+    "src": "Max Müller, The Upanishads, Part 2 (1884), Brihadaranyaka Upanishad 1.3.28"
+  }
 }
