@@ -38,7 +38,7 @@ const SIZES = {
     head: "lg:font-display lg:text-[1.75rem] lg:font-medium lg:normal-case lg:tracking-[-.01em] lg:text-ink lg:before:hidden",
     sub: "hidden",
     grid: "grid-cols-2 lg:grid-cols-1",
-    btn: "max-sm:relative max-sm:overflow-hidden max-sm:min-h-[clamp(6.5rem,13svh,8.5rem)] max-sm:flex-col max-sm:items-start max-sm:justify-center max-sm:gap-0.5 lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
+    btn: "max-sm:relative max-sm:overflow-hidden max-sm:min-h-[clamp(5.75rem,14svh,9rem)] max-sm:flex-col max-sm:items-start max-sm:justify-center max-sm:gap-0.5 lg:min-h-[92px] lg:gap-4 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft",
     title: "max-sm:text-[clamp(1.05rem,2.5svh,1.25rem)] lg:text-[1.4rem]",
     text: "lg:text-[.95rem]",
     icon: "wm h-9 w-9 lg:h-14 lg:w-14",
