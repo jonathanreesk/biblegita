@@ -31,7 +31,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
   return (
     <div className="fade-in flex flex-col">
       {/* Desktop: the welcome on the left, and everything needed to start in one card on the right */}
-      <div className="relative flex flex-col gap-3 pb-2 pt-1 lg:grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center lg:gap-12 lg:pb-6">
+      <div className="relative flex flex-col gap-3 pb-2 pt-1 lg:grid lg:min-h-[calc(100svh-3rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-12 lg:pb-12 lg:pt-14">
         <div className="absolute right-0 top-0 hidden lg:block">
           <ThemeToggle />
         </div>
@@ -52,7 +52,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         </ul>
         </div>
 
-        <div className="flex flex-col gap-3 lg:mt-12 lg:gap-5 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-7 lg:shadow-lift">
+        <div className="flex flex-col gap-3 lg:gap-6 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-9 lg:shadow-lift">
         <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && router.push(`/journey/${finished ? "method" : next!.id}`)} />
 
         <div className={`flex flex-wrap items-center gap-x-[18px] rounded-[28px] border border-line bg-surface shadow-lift lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${count > 0 ? "gap-y-4 p-5" : "gap-y-2 p-4"}`}>

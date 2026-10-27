@@ -28,7 +28,13 @@ export function ReaderChoice({
 
   return (
     <section id="reader-choice" aria-labelledby="reader-q" className={`flex scroll-mt-24 flex-col gap-2.5 rounded-[24px] transition-shadow ${nudge ? "nudge-ring" : ""}`}>
-      <span id="reader-q" className="label">Who is reading?</span>
+      <span
+        id="reader-q"
+        className={`label ${stacked ? "lg:font-display lg:text-[1.75rem] lg:font-medium lg:normal-case lg:tracking-[-.01em] lg:text-ink lg:before:hidden" : ""}`}
+      >
+        Who is reading?
+      </span>
+      {stacked && <p className="-mt-1 hidden text-[.95rem] text-muted lg:block">Choose one, and the guide will speak to you as you read.</p>}
       {nudge && (
         <p role="status" className="text-[.92rem] font-semibold text-gospel">
           First, tell us who is reading. Then we will begin.
@@ -44,14 +50,14 @@ export function ReaderChoice({
               aria-pressed={on}
               onClick={() => choose(o.v)}
               className={`flex min-h-14 flex-col items-start gap-0.5 rounded-[20px] border px-3.5 py-3 text-left transition active:scale-[.98] ${
-                on ? "border-gospel bg-gospel-soft" : "border-line bg-page hover:border-gospel"
-              }`}
+                stacked ? "lg:min-h-[92px] lg:justify-center lg:gap-1 lg:border-2 lg:px-6 lg:py-4 lg:hover:-translate-y-0.5 lg:hover:shadow-soft" : ""
+              } ${on ? "border-gospel bg-gospel-soft" : "border-line bg-page hover:border-gospel"}`}
             >
-              <b className="font-display text-[1.05rem] font-normal leading-tight">
+              <b className={`font-display text-[1.05rem] font-normal leading-tight ${stacked ? "lg:text-[1.4rem]" : ""}`}>
                 {on && <span aria-hidden="true">✓ </span>}
                 {o.title}
               </b>
-              <span className="text-[.8rem] leading-snug text-muted">{o.text}</span>
+              <span className={`text-[.8rem] leading-snug text-muted ${stacked ? "lg:text-[.95rem]" : ""}`}>{o.text}</span>
             </button>
           );
         })}
