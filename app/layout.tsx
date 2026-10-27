@@ -12,18 +12,18 @@ export const metadata: Metadata = {
     template: "%s | The Gita and the Gospel",
   },
   description:
-    "A study guide for any reader: the Hindu texts, from the Vedas to the Gita, set beside the Bible, the hard questions, and the hope of knowing God in Jesus Christ.",
+    "A study guide for any reader: the Hindu texts, from the Vedas to the Bhagavad Gita, set beside the Bible, the hard questions, and the hope of knowing God in Jesus Christ.",
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     siteName: "The Gita and the Gospel",
     title: "The Gita and the Gospel",
-    description: "Who is God, does He love us, and what are we here for? The Hindu texts, from the Vedas to the Gita, set beside the Bible.",
+    description: "Who is God, does He love us, and what are we here for? The Hindu texts, from the Vedas to the Bhagavad Gita, set beside the Bible.",
     url: "/",
     images: [{ url: "/share.jpg", width: 1200, height: 630, alt: "The Gita and the Gospel: who is God, does He love us, and what are we here for?" }],
   },
-  twitter: { card: "summary_large_image", images: ["/share.jpg"], title: "The Gita and the Gospel", description: "Who is God, does He love us, and what are we here for? The Hindu texts, from the Vedas to the Gita, set beside the Bible." },
+  twitter: { card: "summary_large_image", images: ["/share.jpg"], title: "The Gita and the Gospel", description: "Who is God, does He love us, and what are we here for? The Hindu texts, from the Vedas to the Bhagavad Gita, set beside the Bible." },
   appleWebApp: { capable: true, title: "Gita and Gospel", statusBarStyle: "default" },
   icons: { icon: "/icon.svg" },
 };
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "WebSite",
               name: "The Gita and the Gospel",
               url: "https://gitatogospel.org",
-              description: "A study guide for any reader: the Hindu texts, from the Vedas to the Gita, set beside the Bible, the hard questions, and the hope of knowing God in Jesus Christ.",
+              description: "A study guide for any reader: the Hindu texts, from the Vedas to the Bhagavad Gita, set beside the Bible, the hard questions, and the hope of knowing God in Jesus Christ.",
             }),
           }}
         />

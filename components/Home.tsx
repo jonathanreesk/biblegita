@@ -46,7 +46,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         </div>
         <div className="flex flex-col gap-[clamp(.75rem,2.2svh,1.4rem)] lg:gap-5">
         <h1 className="max-lg:text-[clamp(2rem,5svh,2.6rem)] lg:text-[3.6rem]">The Gita and the Gospel</h1>
-        <p className={`lede max-lg:text-[clamp(1.02rem,2.35svh,1.16rem)] max-lg:leading-[1.6] lg:text-[1.15rem] ${count > 0 ? "[@media(max-height:620px)_and_(max-width:1023px)]:hidden" : ""}`}>The Hindu texts, from the Vedas to the Gita, set beside the Bible and its one story of redemption (mukti) in Jesus Christ.</p>
+        <p className={`lede max-lg:text-[clamp(1.02rem,2.35svh,1.16rem)] max-lg:leading-[1.6] lg:text-[1.15rem] ${count > 0 ? "[@media(max-height:620px)_and_(max-width:1023px)]:hidden" : ""}`}>The Hindu texts, from the Vedas to the Bhagavad Gita, set beside the Bible and its one story of redemption (mukti) in Jesus Christ.</p>
 
         <ul className="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0 lg:flex-col lg:gap-2" aria-label="The questions this guide explores">
           {["Who is God?", "Does He love us?", "What are we here for?"].map((q, i) => (
