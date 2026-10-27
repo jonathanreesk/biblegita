@@ -1762,6 +1762,33 @@
    }
   ]
  },
+ "Luke 3:23": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 23,
+    "text": "Jesus himself, when he began to teach, was about thirty years old, being the son (as was supposed) of Joseph, the son of Heli,"
+   }
+  ]
+ },
+ "Luke 3:31": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 31,
+    "text": "the son of Melea, the son of Menan, the son of Mattatha, the son of Nathan, the son of David,"
+   }
+  ]
+ },
+ "Luke 3:38": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 38,
+    "text": "the son of Enos, the son of Seth, the son of Adam, the son of God."
+   }
+  ]
+ },
  "Malachi 3:6": {
   "t": "WEB",
   "v": [
@@ -1852,6 +1879,24 @@
    {
     "n": 28,
     "text": "“Come to me, all you who labor and are heavily burdened, and I will give you rest."
+   }
+  ]
+ },
+ "Matthew 1:16": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 16,
+    "text": "Jacob became the father of Joseph, the husband of Mary, from whom was born Jesus, who is called Christ."
+   }
+  ]
+ },
+ "Matthew 1:6": {
+  "t": "WEB",
+  "v": [
+   {
+    "n": 6,
+    "text": "Jesse became the father of King David. David became the father of Solomon by her who had been Uriah’s wife."
    }
   ]
  },
