@@ -75,7 +75,8 @@ export const MoonIcon = ({ className = "h-5 w-5" }: P) => (
 
 export const AskIcon = ({ className = "h-5 w-5" }: P) => (
   <svg {...base} className={className}>
-    <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z" />
-    <path d="M9.6 9.5a2.5 2.5 0 0 1 4.8 1c0 1.6-2.4 2-2.4 3.2M12 16.5h.01" />
+    <path d="M7.5 18.5 4 21V6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v9.5a2.5 2.5 0 0 1-2.5 2.5z" />
+    <path d="M9.9 9.2a2.2 2.2 0 1 1 3 2.05c-.55.22-.9.7-.9 1.25v.3" />
+    <path d="M12 15.6h.01" />
   </svg>
 );
