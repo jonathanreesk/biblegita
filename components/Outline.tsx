@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { PARTS, STATIONS } from "@/lib/stations";
 
-type Props = { pathname: string; done: Record<string, boolean>; onNavigate?: () => void; showDesc?: boolean };
+type Props = { pathname: string; done: Record<string, boolean>; onNavigate?: () => void; showDesc?: boolean; minutes?: Record<string, number> };
 
 // The journey outline: every part and step in order, with the current step highlighted.
-export function OutlineList({ pathname, done, onNavigate, showDesc }: Props) {
+export function OutlineList({ pathname, done, onNavigate, showDesc, minutes }: Props) {
   return (
     <>
       {PARTS.map((p, pi) => (
@@ -34,7 +34,8 @@ export function OutlineList({ pathname, done, onNavigate, showDesc }: Props) {
                 >
                   {isDone ? "✓" : s.n}
                 </span>
-                <span>{s.title}</span>
+                <span className="min-w-0 flex-1">{s.title}</span>
+                {minutes?.[s.id] && <span className="flex-none font-label text-[.72rem] text-muted">{minutes[s.id]} min</span>}
               </Link>
             );
           })}
@@ -45,7 +46,7 @@ export function OutlineList({ pathname, done, onNavigate, showDesc }: Props) {
 }
 
 // A side panel for phones: where you are, and every other step, one tap away.
-export function OutlineDrawer({ open, onClose, pathname, done }: { open: boolean; onClose: () => void; pathname: string; done: Record<string, boolean> }) {
+export function OutlineDrawer({ open, onClose, pathname, done, minutes }: { open: boolean; onClose: () => void; pathname: string; done: Record<string, boolean>; minutes?: Record<string, number> }) {
   const panel = useRef<HTMLDivElement>(null);
   const count = STATIONS.filter((s) => done[s.id]).length;
 
@@ -94,7 +95,7 @@ export function OutlineDrawer({ open, onClose, pathname, done }: { open: boolean
           </button>
         </div>
         <div className="flex flex-1 flex-col gap-1 overflow-y-auto px-3.5 pb-8 pt-1">
-          <OutlineList pathname={pathname} done={done} onNavigate={onClose} showDesc />
+          <OutlineList pathname={pathname} done={done} onNavigate={onClose} showDesc minutes={minutes} />
         </div>
       </div>
     </div>

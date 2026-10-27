@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Providers } from "@/components/Providers";
 import { Shell } from "@/components/Shell";
 import { askConfigured } from "@/lib/ask";
+import { getReadMinutes } from "@/lib/content";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -67,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Providers>
-          <Shell ask={askConfigured()}>{children}</Shell>
+          <Shell ask={askConfigured()} minutes={getReadMinutes()}>{children}</Shell>
         </Providers>
       </body>
     </html>

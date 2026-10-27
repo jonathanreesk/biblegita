@@ -21,7 +21,7 @@ function useHeader(pathname: string) {
   return { eyebrow: "Your journey", title: "The Gita and the Gospel", back: false };
 }
 
-export function Shell({ children, ask = false }: { children: React.ReactNode; ask?: boolean }) {
+export function Shell({ children, ask = false, minutes }: { children: React.ReactNode; ask?: boolean; minutes?: Record<string, number> }) {
   const pathname = usePathname() || "/";
   const router = useRouter();
   // Pages visited in this tab, so Back can return to the page the reader came from
@@ -90,7 +90,7 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
         <Link href="/" className="px-2.5 pb-3 font-display text-[1.35rem] leading-tight text-ink no-underline">
           The Gita and the Gospel
         </Link>
-        <OutlineList pathname={pathname} done={done} />
+        <OutlineList pathname={pathname} done={done} minutes={minutes} />
         <div className="mt-auto flex flex-col gap-0.5 border-t border-line pt-3.5">
           {tabs.slice(1).map((t) => (
             <Link
@@ -171,7 +171,7 @@ export function Shell({ children, ask = false }: { children: React.ReactNode; as
         </main>
       </div>
 
-      <OutlineDrawer open={outline} onClose={() => setOutline(false)} pathname={pathname} done={done} />
+      <OutlineDrawer open={outline} onClose={() => setOutline(false)} pathname={pathname} done={done} minutes={minutes} />
 
       {/* Mobile bottom tab bar */}
       <nav

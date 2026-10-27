@@ -16,7 +16,10 @@ function totalPhrase(minutes: Record<string, number>) {
   if (total <= 50) return `${Math.round(total / 5) * 5} minutes`;
   if (total <= 80) return "an hour";
   if (total <= 105) return "an hour and a half";
-  return `${Math.round(total / 30) / 2} hours`;
+  const halves = Math.round(total / 30);
+  const words = ["", "one", "two", "three", "four", "five", "six"];
+  const whole = words[Math.floor(halves / 2)] ?? String(Math.floor(halves / 2));
+  return halves % 2 ? `${whole} and a half hours` : `${whole} hours`;
 }
 
 export function Home({ minutes }: { minutes: Record<string, number> }) {
@@ -114,7 +117,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
         <h2 className="text-[1.7rem]">{NUMBERED} steps. Takes about {totalPhrase(minutes)}.</h2>
-        <p className="text-[.95rem] text-muted">Most steps take two to four minutes, and a few longer ones take about ten. Walk through them from the top, from why we are here to the glory ahead, in one sitting or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
+        <p className="text-[.95rem] text-muted">Each step allows time to read, open the verses, and stop to think and talk, so most take six to twelve minutes. Walk through them from the top, from why we are here to the glory ahead, over a few sittings or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
           <span className="chip g">Christian framework</span>
