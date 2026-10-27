@@ -361,6 +361,16 @@ export const GLOSSARY: Term[] = [
     plain: "\"Knowledge\": the road of spiritual knowledge, realizing that your true self is one with Brahman." },
   { id: "threeschools", term: "The three schools of Vedanta", side: "hindu", match: ["three main Hindu schools", "three schools", "Three main schools"],
     plain: "Three ways of reading the Upanishads and the Gita. Advaita (Shankara): all is one, and the self is Brahman. Vishishtadvaita (Ramanuja): God is personal, and souls are real parts of Him. Dvaita (Madhva): God and souls are always two, and God is supreme. They disagree on the most basic question: are God and the soul one or two?" },
+  { id: "lingapurana", term: "Linga Purana", say: "LING-guh poo-RAH-nuh", side: "hindu", match: ["Linga Purana"],
+    plain: "A Purana devoted to Shiva, named after the linga, the pillar-shaped symbol by which Shiva is worshipped in temples. It tells how Brahma and Vishnu could not find the end of an endless pillar of fire, and teaches that Shiva is the highest God." },
+  { id: "shivapurana", term: "Shiva Purana", say: "SHEE-vuh poo-RAH-nuh", side: "hindu", match: ["Shiva Purana"],
+    plain: "One of the main Puranas devoted to Shiva. It tells his stories, including the endless pillar of fire, and teaches worship of Shiva as the supreme God." },
+  { id: "vishnupurana", term: "Vishnu Purana", say: "VISH-noo poo-RAH-nuh", side: "hindu", match: ["Vishnu Purana"],
+    plain: "One of the oldest Puranas, devoted to Vishnu. It describes creation, the ages of the world and Vishnu's avatars, and treats Vishnu as the supreme God." },
+  { id: "matsyapurana", term: "Matsya Purana", say: "MUTS-yuh poo-RAH-nuh", side: "hindu", match: ["Matsya Purana"],
+    plain: "A Purana named after Vishnu's fish avatar (Matsya), who saves the first man from a great flood. It also tells of creation, including Brahma and Shatarupa." },
+  { id: "bhavishyapurana", term: "Bhavishya Purana", say: "bhuh-VISH-yuh poo-RAH-nuh", side: "hindu", match: ["Bhavishya Purana"],
+    plain: "\"The Purana of the future\": it claims to foretell later ages and rulers. Some of its \"prophecies\", such as those about Queen Victoria, were written in the 1800s." },
 ];
 
 const BY_ID = new Map(GLOSSARY.map((t) => [t.id, t]));
