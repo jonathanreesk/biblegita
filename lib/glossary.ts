@@ -34,7 +34,7 @@ export const GLOSSARY: Term[] = [
   { id: "vedanta", term: "Vedanta", say: "vay-DAHN-tuh", side: "hindu", match: ["Vedanta"],
     plain: "A big family of Hindu schools that build their teaching on the Upanishads, the Gita and a short summary text. Advaita and Dvaita are both Vedanta schools." },
   { id: "brahman", term: "Brahman", say: "BRAH-mun", side: "hindu", match: ["Brahman"],
-    plain: "In Hindu philosophy, the ultimate reality: the one infinite source and ground of everything." },
+    plain: "In Hindu philosophy, the one reality behind everything: infinite, and the source of all that exists." },
   { id: "nirguna", term: "Nirguna Brahman", say: "nir-GOO-nuh", side: "hindu", match: ["Nirguna Brahman", "Nirguna", "nirguna"],
     plain: "Ultimate reality \"without qualities\": beyond any description, with no personality, no love and no will." },
   { id: "saguna", term: "Saguna Brahman", say: "suh-GOO-nuh", side: "hindu", match: ["Saguna Brahman", "Saguna"],
@@ -180,7 +180,7 @@ export const GLOSSARY: Term[] = [
   { id: "shankara", term: "Shankara", say: "SHUN-kuh-ruh", side: "hindu", match: ["Shankara's", "Shankara"],
     plain: "An eighth-century teacher who gave Advaita its classic form." },
   { id: "ramanuja", term: "Ramanuja", say: "rah-MAH-noo-juh", side: "hindu", match: ["Ramanuja"],
-    plain: "An eleventh-century teacher of the \"qualified\" view, in which God is personal and souls are his devoted servants." },
+    plain: "An eleventh-century teacher who said God is personal, and souls are real and belong to Him as His devoted servants." },
   { id: "madhva", term: "Madhva", say: "MUDH-vuh", side: "hindu", match: ["Madhva"],
     plain: "A thirteenth-century teacher of the view that God and souls are eternally separate." },
 
