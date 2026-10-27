@@ -93,7 +93,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
 
       <div id="steps" className="flex scroll-mt-24 flex-col gap-3 pt-10">
         <span className="label">The whole guide</span>
-        <h2 className="text-[1.7rem]">{NUMBERED} steps, about {totalPhrase(minutes)}</h2>
+        <h2 className="text-[1.7rem]">{NUMBERED} steps. Takes about {totalPhrase(minutes)}.</h2>
         <p className="text-[.95rem] text-muted">Most steps take two to four minutes, and a few longer ones take about ten. Walk through them from the top, from why we are here to the glory ahead, in one sitting or a step at a time, or jump straight to the question that matters most to you. Look for these two colors throughout:</p>
         <div className="legend">
           <span className="chip d">Hindu framework</span>
