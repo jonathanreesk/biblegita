@@ -1,9 +1,9 @@
 // Receives a reader's question and forwards it to the guide's inbox.
 // Configure one of these in the hosting environment:
-//   QUESTIONS_FORMSPREE_ID      a Formspree form id (Formspree emails each submission)
+//   QUESTIONS_FORMSPREE_ID      a Formspree form id (Formspree emails each submission); defaults to the guide's form
 //   RESEND_API_KEY + QUESTIONS_EMAIL_TO (+ optional QUESTIONS_EMAIL_FROM)
 import { NextResponse } from "next/server";
-import { askConfigured } from "@/lib/ask";
+import { FORMSPREE_ID, askConfigured } from "@/lib/ask";
 
 const clip = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
   ].join("\n");
 
   try {
-    const formspree = process.env.QUESTIONS_FORMSPREE_ID;
+    const formspree = FORMSPREE_ID;
     const res = formspree
       ? await fetch(`https://formspree.io/f/${encodeURIComponent(formspree)}`, {
           method: "POST",
