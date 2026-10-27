@@ -137,6 +137,10 @@ export function SettingsView({ ask = false }: { ask?: boolean }) {
           Made to honor Jesus Christ, "the image of the invisible God" (Colossians 1:15), and to help every reader know Him. Built from <i>The Architecture of Sacred Texts</i>. Gita references follow the standard 18-chapter, 700-verse
           numbering; wording varies between translations, so read each verse in a translation you trust before using it.
         </p>
+        <p className="note">
+          Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), copyright © 2001 by Crossway, a publishing
+          ministry of Good News Publishers. Used by permission. All rights reserved. Bhagavad Gita verses are from the translation by Swami Sivananda.
+        </p>
       </div>
     </div>
   );

@@ -23,6 +23,11 @@ const ESV_DIR = path.join(process.cwd(), "data", "esv");
 if (fs.existsSync(ESV_DIR)) {
   for (const f of fs.readdirSync(ESV_DIR).filter((f) => f.endsWith(".json") || f.endsWith(".txt"))) {
     const book = JSON.parse(fs.readFileSync(path.join(ESV_DIR, f), "utf8"));
+    // A whole Bible: { books: { "John": { "3": { "16": "text" } } } }
+    if (book.books) {
+      for (const [name, chs] of Object.entries(book.books)) esv[name] = chs;
+      continue;
+    }
     const chapters = {};
     for (const ch of book.text) {
       const n = Number(/\.(\d+)$/.exec(ch.ID)?.[1]);

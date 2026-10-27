@@ -61,7 +61,7 @@ export function ScriptureIndex({ groups, verses }: { groups: RefGroup[]; verses:
           </button>
         ))}
       </div>
-      <p className="note">Tap a reference to read the verse.</p>
+      <p className="note">Tap a reference to read the verse. Bible verses are from the ESV®, © 2001 by Crossway. Used by permission. All rights reserved.</p>
 
       <div>
         {results.length === 0 && <p className="py-5 text-muted">No references match. Try a book name like Romans or Gita.</p>}

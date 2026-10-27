@@ -58,7 +58,7 @@ export const GLOSSARY: Term[] = [
   { id: "moksha", term: "Moksha", say: "MOKE-shuh", side: "hindu", match: ["moksha", "Moksha"],
     plain: "Liberation: being set free from the cycle of rebirth, often with the self merging into Brahman. It is the highest goal in most Hindu paths. It is not the same as Christian salvation, which is forgiveness of sin and a restored relationship with a personal God." },
   { id: "mukti", term: "Mukti (redemption)", say: "MOOK-tee", side: "christian", match: ["mukti", "Mukti"],
-    plain: "\"Freedom, being set free\": a word Christians across India use for salvation and redemption. In the Bible, mukti is freedom from sin and death, bought by Jesus on the cross: \"If therefore the Son makes you free, you will be free indeed\" (John 8:36). It is not escape from rebirth, but a forgiven person brought home to God." },
+    plain: "\"Freedom, being set free\": a word Christians across India use for salvation and redemption. In the Bible, mukti is freedom from sin and death, bought by Jesus on the cross: \"So if the Son sets you free, you will be free indeed\" (John 8:36). It is not escape from rebirth, but a forgiven person brought home to God." },
   { id: "uddhar", term: "Uddhar (salvation)", say: "OOD-dhaar", side: "christian", match: ["uddhar", "Uddhar", "Uddharkarta"],
     plain: "\"Lifting up, deliverance\": the word Hindi Bibles use for salvation. Jesus is called the Uddharkarta, the Savior. Krishna uses the same root in the Gita, calling himself the samuddharta, the one who lifts people out of the ocean of rebirth (Gita 12:7)." },
   { id: "chhutkara", term: "Chhutkara (redemption)", say: "CHHOOT-kaa-raa", side: "christian", match: ["chhutkara", "Chhutkara"],
