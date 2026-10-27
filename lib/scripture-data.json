@@ -215,6 +215,24 @@
    }
   ]
  },
+ "1 John 1:8": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 8,
+    "text": "If we say we have no sin, we deceive ourselves, and the truth is not in us."
+   }
+  ]
+ },
+ "1 John 3:2": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 2,
+    "text": "Beloved, we are God’s children now, and what we will be has not yet appeared; but we know that when he appears we shall be like him, because we shall see him as he is."
+   }
+  ]
+ },
  "1 John 3:4": {
   "t": "ESV",
   "v": [
@@ -2647,12 +2665,30 @@
    }
   ]
  },
+ "Romans 5:21": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 21,
+    "text": "so that, as sin reigned in death, grace also might reign through righteousness leading to eternal life through Jesus Christ our Lord."
+   }
+  ]
+ },
  "Romans 5:8": {
   "t": "ESV",
   "v": [
    {
     "n": 8,
     "text": "but God shows his love for us in that while we were still sinners, Christ died for us."
+   }
+  ]
+ },
+ "Romans 6:14": {
+  "t": "ESV",
+  "v": [
+   {
+    "n": 14,
+    "text": "For sin will have no dominion over you, since you are not under law but under grace."
    }
   ]
  },

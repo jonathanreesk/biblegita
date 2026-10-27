@@ -635,3 +635,18 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 .ss-stats li:last-child b{color:var(--gospel)}
 .ss-stats span{font-family:var(--f-label);font-size:.74rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 @media (prefers-reduced-motion:reduce){.ss-glow{animation:none}}
+/* Already, and not yet: sin's reign, its broken power now, and its end */
+.ayn{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow-sm)}
+.ayn ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.ayn li{position:relative;display:flex;flex-direction:column;gap:3px;max-width:none;font-size:.88rem;line-height:1.45;color:var(--muted)}
+.ayn li+li::before{content:"→";position:absolute;left:-16px;top:2px;color:var(--muted);font-weight:700}
+.ayn small{font-family:var(--f-label);font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gospel)}
+.ayn b{font-family:var(--f-display);font-weight:500;font-size:1.05rem;line-height:1.25;color:var(--ink)}
+.ayn .meter{position:relative;display:block;height:10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);overflow:hidden;margin-bottom:6px}
+.ayn .meter i{position:absolute;inset:0 auto 0 0;border-radius:999px}
+.ayn-before .meter i{width:100%;background:var(--warn)}
+.ayn-now .meter i{width:100%;background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--warn) 55%,transparent) 0 6px,transparent 6px 12px)}
+.ayn-now .meter::after{content:"";position:absolute;left:44%;top:-3px;bottom:-3px;width:10px;background:var(--surface);transform:skewX(-20deg)}
+.ayn-then .meter i{width:0}
+.ayn-then .meter{border-color:var(--gospel);background:var(--gospel-soft)}
+@media (max-width:640px){.ayn ol{grid-template-columns:1fr;gap:16px}.ayn li+li::before{content:"↓";left:0;top:-15px}}
