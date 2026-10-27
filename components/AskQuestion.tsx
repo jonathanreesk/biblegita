@@ -83,6 +83,7 @@ export function AskQuestion({
         <>
           <p className="leading-relaxed text-muted">
             {step ? "Something here unclear, or worth talking about? Ask, and a real person will read it." : "Ask anything about the guide, and a real person will read it."}
+            {prefs.reader !== "believer" && " No question is too simple, and none will offend us."}
           </p>
           <button
             type="button"
@@ -125,7 +126,7 @@ export function AskQuestion({
             className="absolute -left-[9999px] h-0 w-0 opacity-0"
             name="website"
           />
-          <p className="text-[.82rem] leading-snug text-muted">Give an email or a phone number (or both) so we can reply. We only use your details to answer you.</p>
+          <p className="text-[.82rem] leading-snug text-muted">{prefs.reader !== "believer" && "No question is too simple, and none will offend us. "}Give an email or a phone number (or both) so we can reply. We only use your details to answer you.</p>
           {problem && <p className="text-[.9rem] text-warn">{problem}</p>}
           {status === "error" && <p className="text-[.9rem] text-warn">Sorry, that did not send. Please try again in a moment.</p>}
           <div className="flex flex-wrap items-center gap-2.5">

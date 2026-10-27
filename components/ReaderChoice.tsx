@@ -3,8 +3,8 @@
 import { useProgress, type Reader } from "./Providers";
 
 const OPTIONS: { v: Reader; title: string; text: string }[] = [
+  { v: "seeker", title: "I'm Hindu, or exploring", text: "and curious how the texts compare" },
   { v: "believer", title: "I follow Jesus", text: "and want to share Him with Hindu friends" },
-  { v: "seeker", title: "I'm Hindu, or exploring", text: "and want to compare the texts" },
 ];
 
 // Asks who is reading. The same content shows for both; the framing around it adapts.

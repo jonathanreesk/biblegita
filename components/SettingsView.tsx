@@ -51,8 +51,8 @@ export function SettingsView({ ask = false }: { ask?: boolean }) {
           value={prefs.reader ?? ("" as Reader)}
           onChange={(reader) => setPrefs({ ...prefs, reader })}
           options={[
-            { v: "believer", label: "A follower of Jesus" },
             { v: "seeker", label: "Hindu, or exploring" },
+            { v: "believer", label: "A follower of Jesus" },
           ]}
         />
         <p className="note">The content is the same for both. This changes how the guide speaks to you.</p>
