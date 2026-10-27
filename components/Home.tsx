@@ -56,7 +56,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
         </div>
 
         <div className="flex flex-col gap-3 lg:gap-6 lg:rounded-[32px] lg:border lg:border-line lg:bg-surface lg:p-9 lg:shadow-lift">
-        <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && router.push(`/journey/${finished ? "method" : next!.id}`)} />
+        <ReaderChoice stacked nudge={nudge} onChosen={() => nudge && router.push(`/journey/${finished ? "made" : next!.id}`)} />
 
         {count === 0 && (
           <div className="flex items-center gap-3.5 rounded-[22px] bg-sand px-4 py-3.5 lg:px-5">
@@ -72,7 +72,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
               <path d="M9 56h44" stroke="var(--dharma)" strokeWidth="3" strokeLinecap="round" />
             </svg>
             <p className="text-[.9rem] leading-snug text-muted lg:text-[.95rem]">
-              <b className="font-display text-[1.08rem] font-normal text-ink">Settle in.</b> Pour a cup of chai or coffee and take your time. This is a thorough look at both, and your place is saved, so you can stop anytime and pick up right where you left off.
+              <b className="font-display text-[1.08rem] font-normal text-ink">Settle in.</b> Pour a cup of chai or coffee and take your time. This is a thorough look at both. Stop whenever you like, and come back to any step from the list of steps.
             </p>
           </div>
         )}
@@ -111,7 +111,7 @@ export function Home({ minutes }: { minutes: Record<string, number> }) {
             </>
           )}
           <Link
-            href={`/journey/${finished ? "method" : next.id}`}
+            href={`/journey/${finished ? "made" : next.id}`}
             onClick={(e) => {
               if (prefs.reader) return;
               e.preventDefault();

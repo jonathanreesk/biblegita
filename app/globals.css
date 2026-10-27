@@ -460,3 +460,28 @@ svg text[fill="var(--surface)"] tspan.verse{fill:var(--surface);text-decoration-
 .guide-path li:not(:last-child)::after{content:"→";margin-left:8px;color:var(--muted)}
 .guide-path li:last-child{background:var(--gospel);border-color:var(--gospel);color:var(--surface)}
 @media (prefers-reduced-motion:reduce){.gap-bridge{animation:none;stroke-dashoffset:0}}
+
+/* Before you begin: the shape of a step, in the colors the steps use */
+.anatomy{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;counter-reset:an}
+.anatomy li{display:block;max-width:none;position:relative;padding:12px 16px 12px 52px;border-radius:16px;font-size:.88rem;line-height:1.45;color:var(--muted);counter-increment:an}
+.anatomy li::before{content:counter(an);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-label);font-weight:600;font-size:.8rem;background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.anatomy b{display:block;font-family:var(--f-display);font-weight:500;font-size:1.05rem;color:var(--ink)}
+.anatomy .an-teach{background:var(--dharma-soft)}
+.anatomy .an-test{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.anatomy .an-reply{border:1px dashed var(--line)}
+.anatomy .an-answer{background:var(--gospel-soft)}
+.anatomy .an-christ{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--amber)}
+
+/* Small comparison tables, and the elephant parable */
+.mini-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.86rem;line-height:1.4;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.mini-table th,.mini-table td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.mini-table tr:last-child th,.mini-table tr:last-child td{border-bottom:0}
+.mini-table thead th{font-family:var(--f-label);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gospel);background:var(--gospel-soft)}
+.mini-table tbody th{font-weight:600;color:var(--ink);width:30%}
+.mini-table td{color:var(--muted)}
+.elephant svg{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
+.elephant .eye{animation:gl-breathe 4s ease-in-out infinite;transform-origin:210px 22px}
+.mini-table{table-layout:fixed}
+.mini-table td .ref,.mini-table td .verse{margin-top:4px;font-size:.78rem}
+.grid2>*{min-width:0}
+.mini-table{min-width:0}
