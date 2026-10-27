@@ -362,3 +362,4 @@ tspan.term:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 .spokes-one{border:2px solid var(--gospel);background:var(--gospel-soft);border-radius:16px;padding:10px 12px;display:block;line-height:1.45}
 .spokes-one b{display:block;margin-bottom:2px;font-family:var(--f-label);font-weight:700;font-size:.8rem;letter-spacing:.04em;color:var(--gospel)}
 .people.texts .person i{color:var(--dharma)}
+.tree-branch.pand{--c:var(--dharma)}.tree-branch.kaur{--c:var(--muted)}.tree-branch.mid{--c:var(--amber)}
