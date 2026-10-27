@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { useProgress, type Reader } from "./Providers";
 
 const OPTIONS: { v: Reader; title: string; text: string; icon: React.ReactNode }[] = [
@@ -115,6 +116,7 @@ export function ReaderChoice({
 // On a step: until the reader has chosen, the page waits, greyed out behind this question.
 export function ReaderPrompt() {
   const { prefs, ready } = useProgress();
+  const router = useRouter();
   const box = useRef<HTMLDivElement>(null);
   const open = ready && !prefs.reader;
 
@@ -141,6 +143,14 @@ export function ReaderPrompt() {
         style={{ outline: "none", borderRadius: 28 }}
         className="fade-in relative flex w-full max-w-[520px] flex-col gap-3 rounded-[28px] border border-line bg-surface p-6 shadow-lift outline-none sm:p-8"
       >
+        <button
+          type="button"
+          onClick={() => router.push("/")}
+          aria-label="Close and go back to the home page"
+          className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full border border-line bg-surface text-ink shadow-soft"
+        >
+          <span aria-hidden="true" className="text-lg leading-none">✕</span>
+        </button>
         <ReaderChoice stacked big />
       </div>
     </div>
