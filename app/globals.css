@@ -531,3 +531,9 @@ button[aria-pressed="true"] .reader-icon.seeker svg{animation:reader-spin 1.2s e
   .reader-icon.wm i{display:none}
   button[aria-pressed="true"] .reader-icon.wm svg{opacity:.22}
 }
+/* Choosing "I follow Jesus": the cross draws itself, then glows once */
+button[aria-pressed="true"] .reader-icon.believer svg path{stroke-dasharray:46;animation:cross-draw .9s ease both}
+button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s ease .7s both}
+@keyframes cross-draw{from{stroke-dashoffset:46}to{stroke-dashoffset:0}}
+@keyframes cross-glow{0%,100%{filter:none}40%{filter:drop-shadow(0 0 6px var(--gold)) drop-shadow(0 0 2px var(--gold))}}
+@media (prefers-reduced-motion:reduce){button[aria-pressed="true"] .reader-icon.believer svg,button[aria-pressed="true"] .reader-icon.believer svg path{animation:none}}
