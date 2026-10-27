@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { NUMBERED, PARTS, STATIONS, findStation, neighbors } from "@/lib/stations";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { OutlineDrawer, OutlineList } from "./Outline";
 import { ThemeToggle } from "./ThemeToggle";
+import { AskSheet } from "./AskSheet";
 import { useProgress } from "./Providers";
-import { BackIcon, BookIcon, ChevronIcon, GlossaryIcon, HomeIcon, ListIcon, SlidersIcon } from "./Icons";
+import { AskIcon, BackIcon, BookIcon, ChevronIcon, GlossaryIcon, HomeIcon, ListIcon, SlidersIcon } from "./Icons";
 
 function useHeader(pathname: string) {
   if (pathname.startsWith("/journey/")) {
@@ -20,7 +21,7 @@ function useHeader(pathname: string) {
   return { eyebrow: "Your journey", title: "The Gita and the Gospel", back: false };
 }
 
-export function Shell({ children }: { children: React.ReactNode }) {
+export function Shell({ children, ask = false }: { children: React.ReactNode; ask?: boolean }) {
   const pathname = usePathname() || "/";
   const router = useRouter();
   // Pages visited in this tab, so Back can return to the page the reader came from
@@ -41,6 +42,20 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const count = STATIONS.filter((s) => done[s.id]).length;
   const pct = (count / STATIONS.length) * 100;
   const [outline, setOutline] = useState(false);
+  const [asking, setAsking] = useState(false);
+  // The desktop Ask button steps aside while a step's own question card is on screen
+  const [cardVisible, setCardVisible] = useState(false);
+  useEffect(() => {
+    setAsking(false);
+    setCardVisible(false);
+    const card = document.getElementById("ask-card");
+    if (!card) return;
+    const io = new IntersectionObserver(([e]) => setCardVisible(e.isIntersecting), { threshold: 0.1 });
+    io.observe(card);
+    return () => io.disconnect();
+  }, [pathname]);
+  const askStep = here ? `${here.n}. ${here.title}` : undefined;
+  const closeAsk = useCallback(() => setAsking(false), []);
   const aside = useRef<HTMLElement>(null);
 
   // The outline closes when you move to another page, and the sidebar keeps the current step in view
@@ -109,7 +124,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <small className="truncate font-label text-[.72rem] font-semibold uppercase tracking-[.08em] text-muted">{header.eyebrow}</small>
               <strong className="truncate font-display text-[1.15rem] font-normal">{header.title}</strong>
             </div>
-            <ThemeToggle />
+            <div className="hidden lg:block">
+              <ThemeToggle />
+            </div>
             <button
               type="button"
               onClick={() => setOutline(true)}
@@ -123,9 +140,9 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <Link
                 href={`/journey/${nextStep.id}`}
                 aria-label={`Next step: ${nextStep.title}`}
-                className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft max-[359px]:w-10 max-[359px]:justify-center max-[359px]:px-0"
+                className="inline-flex h-10 flex-none items-center gap-1 rounded-full border border-gospel bg-gospel pl-4 pr-3 font-label text-[.88rem] font-semibold text-surface no-underline shadow-soft max-sm:w-10 max-sm:justify-center max-sm:px-0"
               >
-                <span className="max-[359px]:hidden">Next</span>
+                <span className="max-sm:hidden">Next</span>
                 <ChevronIcon />
               </Link>
             )}
@@ -151,14 +168,26 @@ export function Shell({ children }: { children: React.ReactNode }) {
       {/* Mobile bottom tab bar */}
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 frost border-t border-line lg:hidden"
+        className={`fixed inset-x-0 bottom-0 z-30 grid ${ask ? "grid-cols-5" : "grid-cols-4"} frost border-t border-line lg:hidden`}
         style={{
           paddingBottom: "env(safe-area-inset-bottom, 0px)",
           paddingLeft: "max(8px, env(safe-area-inset-left, 0px))",
           paddingRight: "max(8px, env(safe-area-inset-right, 0px))",
         }}
       >
-        {tabs.map((t) => (
+        {tabs.map((t, i) => [
+          ask && i === 2 && (
+            <button
+              key="ask"
+              type="button"
+              onClick={() => setAsking(true)}
+              aria-haspopup="dialog"
+              className="flex flex-col items-center gap-[3px] pb-2.5 pt-2 font-label text-[.74rem] font-semibold text-muted"
+            >
+              <AskIcon className="h-[22px] w-[22px] text-gospel" />
+              Ask
+            </button>
+          ),
           <Link
             key={t.href}
             href={t.href}
@@ -169,9 +198,26 @@ export function Shell({ children }: { children: React.ReactNode }) {
           >
             {t.icon}
             {t.label}
-          </Link>
-        ))}
+          </Link>,
+        ])}
       </nav>
+
+      {/* Desktop: a floating Ask button on every page */}
+      {ask && (
+        <button
+          type="button"
+          onClick={() => setAsking(true)}
+          aria-haspopup="dialog"
+          aria-label={askStep ? "Ask a question about this step" : "Ask a question"}
+          className={`fixed bottom-6 right-8 z-30 hidden h-12 items-center gap-2 rounded-full border border-gospel bg-gospel px-5 font-label text-[.92rem] font-semibold text-surface shadow-lift transition-[opacity,transform] duration-300 lg:inline-flex ${
+            cardVisible || asking ? "pointer-events-none translate-y-3 opacity-0" : "opacity-100"
+          }`}
+        >
+          <AskIcon />
+          Ask
+        </button>
+      )}
+      {asking && <AskSheet step={askStep} path={pathname} onClose={closeAsk} />}
     </div>
   );
 }

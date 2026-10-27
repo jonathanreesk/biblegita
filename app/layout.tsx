@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Providers } from "@/components/Providers";
 import { Shell } from "@/components/Shell";
+import { askConfigured } from "@/lib/ask";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <Providers>
-          <Shell>{children}</Shell>
+          <Shell ask={askConfigured()}>{children}</Shell>
         </Providers>
       </body>
     </html>
