@@ -538,3 +538,30 @@ button[aria-pressed="true"] .reader-icon.believer svg{animation:cross-glow 1.8s 
 @keyframes cross-draw{from{stroke-dashoffset:46}to{stroke-dashoffset:0}}
 @keyframes cross-glow{0%,100%{filter:none}40%{filter:drop-shadow(0 0 6px var(--gold)) drop-shadow(0 0 2px var(--gold))}}
 @media (prefers-reduced-motion:reduce){button[aria-pressed="true"] .reader-icon.believer svg,button[aria-pressed="true"] .reader-icon.believer svg path{animation:none}}
+
+/* The problem first: the problem-solving pipeline, each text's problem, and how truth travels */
+.frame-theme.g{background:var(--gospel-soft)}
+.frame-theme.g>span,.frame-steps.g li>span{color:var(--gospel)}
+.frame-steps.g li{border-top-color:var(--gospel)}
+.pipeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;counter-reset:pl}
+.pipeline li{position:relative;display:block;max-width:none;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 12px 12px;box-shadow:var(--shadow-sm);counter-increment:pl;font-size:.86rem;line-height:1.4;color:var(--muted)}
+.pipeline li::before{content:counter(pl);display:grid;place-items:center;width:28px;height:28px;margin-bottom:8px;border-radius:50%;background:var(--gospel);color:var(--surface);font-family:var(--f-label);font-weight:700;font-size:.85rem}
+.pipeline li+li::after{content:"→";position:absolute;left:-17px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700}
+.pipeline b{display:block;font-family:var(--f-display);font-weight:500;font-size:1.05rem;color:var(--ink);margin-bottom:2px}
+@media (max-width:640px){.pipeline{grid-template-columns:1fr 1fr;gap:12px}.pipeline li+li::after{display:none}}
+.problems{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.problems li{display:grid;grid-template-columns:auto 1fr;column-gap:12px;max-width:none;align-items:start;border-radius:16px;padding:12px 14px;font-size:.93rem;line-height:1.5;color:var(--ink)}
+.problems li.d{background:var(--dharma-soft)}
+.problems li.g{background:var(--gospel-soft);margin-top:6px}
+.problems .n{grid-row:span 2;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--surface);font-family:var(--f-label);font-weight:700;font-size:.82rem;color:var(--dharma);border:1px solid var(--line)}
+.problems li.g .n{color:var(--gospel)}
+.problems b{display:block;font-family:var(--f-display);font-weight:500;font-size:1.05rem}
+.problems i{font-style:normal;font-weight:600;color:var(--muted)}
+.truth-dirs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.truth-dirs .td{display:block;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow-sm);font-size:.88rem;line-height:1.45;color:var(--muted)}
+.truth-dirs b{display:block;font-family:var(--f-display);font-weight:500;font-size:1.02rem;color:var(--ink);margin:6px 0 2px}
+.td-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;font-weight:700;font-size:1.1rem}
+.td.ok .td-icon{background:var(--gospel-soft);color:var(--gospel)}
+.td.maybe .td-icon{background:var(--sand);color:var(--dharma)}
+.td.no .td-icon{background:color-mix(in srgb,var(--warn) 14%,transparent);color:var(--warn)}
+@media (max-width:640px){.truth-dirs{grid-template-columns:1fr}}
