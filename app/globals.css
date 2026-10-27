@@ -38,7 +38,7 @@ h3{font-size:1.25rem}
 p{margin:0}
 .label{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-label);font-weight:600;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dharma)}
 .label::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor;opacity:.7;flex:none}
-.lede{font-size:1.08rem;color:var(--muted);max-width:62ch}
+.lede{font-size:1.08rem;color:var(--muted);max-width:none}
 .stack{display:flex;flex-direction:column;gap:14px}
 .legend{display:flex;flex-wrap:wrap;gap:10px}
 .chip{font-family:var(--f-label);font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:999px}
@@ -136,7 +136,7 @@ html[data-size="large"]{font-size:112.5%}
 :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
 
 /* Focus: comfortable reading measure, and quiet panels instead of loud fills */
-.station p,.station li{max-width:68ch}
+.station p,.station li{max-width:none}
 .station .grid2 p,.station .grid2 li,.station .panel p{max-width:none}
 .block.claim{border-color:color-mix(in srgb,var(--dharma) 28%,transparent)}
 .block.answer{border-color:color-mix(in srgb,var(--gospel) 28%,transparent)}
